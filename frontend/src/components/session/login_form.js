@@ -17,11 +17,12 @@ class LoginForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) { // componentDidUpdate
+    debugger 
     if (nextProps.currentUser === true) {
       this.props.history.push('/questions');
     }
 
-    this.setState({ errors: nextProps.errors })
+    // this.setState({ errors: nextProps.errors })
   }
 
   update(field) {

@@ -10,6 +10,7 @@ import * as APIUtils from './util/question_api_util';
 import './index.css';
 import './main.css';
 import './navbar.css';
+import './new.css';
 
 import App from './App';
 
