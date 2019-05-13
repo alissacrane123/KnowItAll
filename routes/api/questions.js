@@ -34,4 +34,13 @@ router.post('/',
     }
 );
 
+router.get("/user/:id", (req, res) => {
+    Question.find({ author: req.params.id })
+        .sort({ date: -1 })
+        .then(questions => res.json(questions))
+        .catch(err =>
+            res.status(404).json({ noQuestionsFound: 'No questions found for that user'})
+        )
+})
+
 module.exports = router;
