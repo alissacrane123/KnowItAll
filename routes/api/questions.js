@@ -18,6 +18,7 @@ router.get("/", (req, res) => {
 router.post('/',
     // passport.authenticate('jwt', { session: false }),
     (req, res) => {
+        // debugger;
         const { errors, isValid } = validateQuestionInput(req.body);
 
         if (!isValid) {
@@ -26,7 +27,7 @@ router.post('/',
 
         const newQuestion = new Question({
             body: req.body.body,
-            author: req.user.id
+            author: req.body.authorId
         });
 
     newQuestion.save().then(question => res.json(question));
