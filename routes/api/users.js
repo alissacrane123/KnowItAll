@@ -18,13 +18,13 @@ router.post("/register", (req, res) => {
     return res.status(400).json(errors);
   }
 
-  User.findOne({ name: req.body.handle }).then(user => {
+  User.findOne({ name: req.body.username }).then(user => {
     if (user) {
-      errors.handle = "User already exists";
+      errors.username = "User already exists";
       return res.status(400).json(errors);
     } else {
       const newUser = new User({
-        handle: req.body.handle,
+        username: req.body.username,
         email: req.body.email,
         password: req.body.password
       });
@@ -36,7 +36,7 @@ router.post("/register", (req, res) => {
           newUser
             .save()
             .then(user => {
-              const payload = { id: user.id, handle: user.name };
+              const payload = { id: user.id, username: user.username };
 
               jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
                 res.json({
@@ -54,13 +54,13 @@ router.post("/register", (req, res) => {
 
 
 router.post('/login', (req, res) => {
-  const email = req.body.email;
+  const username = req.body.username;
   const password = req.body.password;
 
-  User.findOne({ email })
+  User.findOne({ username })
     .then(user => {
       if (!user) {
-        return res.status(404).json({ email: 'This user does not exist' });
+        return res.status(404).json({ username: 'This user does not exist' });
       }
 
       bcrypt.compare(password, user.password)
@@ -68,7 +68,7 @@ router.post('/login', (req, res) => {
           if (isMatch) {
             const payload = {
               id: user.id,
-              handle: user.handle,
+              username: user.username,
               email: user.email,
             }
             jwt.sign(
