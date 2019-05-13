@@ -1,3 +1,4 @@
+
 import * as QuestionAPIUtil from '../util/question_api_util';
 
 export const RECEIVE_QUESTIONS = "RECEIVE_QUESTIONS";
@@ -36,3 +37,4 @@ export const poseQuestion = data => dispatch => (
     .then(question => dispatch(receiveNewQuestion(question)))
     .catch(err => console.log(err))
 );
+

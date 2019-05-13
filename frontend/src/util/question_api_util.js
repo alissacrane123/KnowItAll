@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+
 export const getQuestions = () => {
   return axios.get('/api/questions')
 };
@@ -11,3 +12,4 @@ export const getUserQuestions = id => {
 export const poseQuestion = data => {
   return axios.post('/api/questions/', data)
 }
+

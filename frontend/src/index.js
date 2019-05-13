@@ -30,6 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     store = configureStore(preloadedState);
 
+    window.store = store;
+    window.getState = store.getState;
+
     const currentTime = Date.now() / 1000;
 
     // If the user's token has expired
