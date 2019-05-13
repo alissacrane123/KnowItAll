@@ -2,6 +2,7 @@ import React from 'react';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Switch } from 'react-router-dom';
 import NavBarContainer from './navbar/navbar_container';
+import { Route } from 'react-router-dom';
 
 import MainPageContainer from './main/main_page_container';
 import LoginFormContainer from './session/login_form_container';
@@ -19,8 +20,8 @@ const App = () => (
     </Switch>
 
     <Switch>
-      <ProtectedRoute exact path="/questions" component={QuestionIndexContainer} />
-      <ProtectedRoute exact path="/new" component={QuestionComposeContainer} />
+      <Route exact path="/questions" component={QuestionIndexContainer} />
+      <Route exact path="/new" component={QuestionComposeContainer} />
     </Switch>
   </div>
 );

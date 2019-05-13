@@ -9,6 +9,7 @@ import { logout } from './actions/session_actions';
 import './index.css';
 import './main.css';
 import './navbar.css';
+import './new.css';
 
 import App from './App';
 

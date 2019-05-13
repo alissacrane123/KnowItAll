@@ -36,7 +36,7 @@ class QuestionCompose extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="new-question-container">
         <form onSubmit={this.handleSubmit}>
           <div>
             <input type="textarea"

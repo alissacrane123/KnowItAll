@@ -13,11 +13,17 @@ class QuestionIndex extends React.Component {
     this.props.fetchQuestions();
   }
 
-  componentDidUpdate(newState) {
-    this.setState({ questions: newState.questions })
-  }
+  // componentDidUpdate(newState) {
+  //   this.setState({ questions: newState.questions })
+  // }
 
   render() {
+    // if (!this.props.questions) {
+    //   return null;
+    // } else {
+    //   let questions = this.props.questions
+    // }
+    // debugger 
 
     return (
       <div className="index-body-container">

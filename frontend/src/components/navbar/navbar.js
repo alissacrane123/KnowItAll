@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 // import './navbar.css'
 
 class NavBar extends React.Component {
@@ -12,17 +13,19 @@ class NavBar extends React.Component {
   logoutUser(e) {
     e.preventDefault();
     this.props.logout();
+    this.props.history.push('/login')
   }
 
   // Selectively render links dependent on whether the user is logged in
   getLinks() {
     if (this.props.loggedIn) {
       return (
-        <div className="navbar-links-container">
-          <Link className="navbar-link" to={'/new'}>New Question</Link>
-          <Link className="navbar-link" to={'/profile'}>Profile</Link>
-          <Link className="navbar-link" to={'/stats'}>Stats</Link>
-          <button className="navbar-link" onClick={this.logoutUser}>Logout</button>
+        <div className="navbar-buttons-container">
+          <Link className="nav-link" to={'/new'}><button className="nav-button" >New Question</button></Link>
+          <Link className="nav-link" to={'/questions'}><button className="nav-button" >All Questions</button></Link>
+          {/* <Link to={'/profile'}><button className="nav-button" >Profile</button></Link> */}
+          {/* <Link to={'/stats'}><button className="nav-button" >Stats</button></Link> */}
+          <div className="nav-link"><button className="nav-button" onClick={this.logoutUser}>Logout</button></div>
         </div>
       );
     } else {
@@ -37,12 +40,12 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <div className="main">
+      <div className="navbar-container">
         <div className="navbar-header-container">
-          <h1>Know It All</h1>
+          <div>LOGO</div>
         </div>
 
-        <div className="navbar-container">
+        <div className="navbar-links-container">
           {this.getLinks()}
         </div>
       </div>
@@ -50,4 +53,4 @@ class NavBar extends React.Component {
   }
 }
 
-export default NavBar;
+export default withRouter(NavBar);
