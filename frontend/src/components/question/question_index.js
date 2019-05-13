@@ -14,7 +14,7 @@ class QuestionIndex extends React.Component {
   }
 
   componentDidUpdate(newState) {
-    this.setState({ questions: newState.questions })
+    // this.setState({ questions: newState.questions })
   }
 
   render() {

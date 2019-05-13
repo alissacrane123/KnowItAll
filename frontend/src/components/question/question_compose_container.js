@@ -5,7 +5,7 @@ import QuestionCompose from './question_compose';
 const mapStateToProps = (state) => {
   return {
     currentUser: state.session.user,
-    newQuestion: state.questions.new
+    // newQuestion: state.questions.new
   };
 };
 
