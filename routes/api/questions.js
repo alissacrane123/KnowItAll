@@ -26,7 +26,7 @@ router.post('/',
 
         const newQuestion = new Question({
             body: req.body.body,
-            author: req.body.author
+            author: req.user.id
         });
 
     newQuestion.save().then(question => res.json(question));
