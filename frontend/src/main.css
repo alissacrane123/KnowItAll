@@ -1,0 +1,66 @@
+
+
+#root, html, body, .main-div {
+  height: 100%;
+  width: 100%;
+}
+
+.main-body-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.main-title-container {
+  position: absolute;
+  top: 100px;
+  max-width: 50%;
+}
+
+.main-links-container,  {
+  position: absolute;
+  top: 200px;
+  height: 100px;
+  /* max-width: 50%; */
+}
+
+.main-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+  width: 100%;
+}
+
+
+/* --------- LOGIN ------------- */
+
+.session-form-container {
+  position: absolute;
+  top: 200px;
+  min-height: 40%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.session-form {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid pink;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+.login-header-container {
+  text-align: center; 
+}
