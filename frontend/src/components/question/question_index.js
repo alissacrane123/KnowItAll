@@ -9,13 +9,13 @@ class QuestionIndex extends React.Component {
   }
 
 
-  // componentDidMount() {
-  //   this.props.fetchQuestions
-  // }
+  componentDidMount() {
+    this.props.fetchQuestions();
+  }
 
-  // componentDidUpdate(newState) {
-  //   this.setState({ questions: })
-  // }
+  componentDidUpdate(newState) {
+    this.setState({ questions: newState.questions })
+  }
 
   render() {
 
@@ -35,3 +35,5 @@ class QuestionIndex extends React.Component {
     )
   }
 }
+
+export default QuestionIndex;
