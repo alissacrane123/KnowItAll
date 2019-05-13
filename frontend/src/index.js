@@ -7,6 +7,9 @@ import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 
 import './index.css';
+import './main.css';
+import './navbar.css';
+
 import App from './App';
 
 

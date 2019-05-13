@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -15,24 +16,20 @@ class LoginForm extends React.Component {
     this.renderErrors = this.renderErrors.bind(this);
   }
 
-  // Once the user has been authenticated, redirect to the questions page
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps) { // componentDidUpdate
     if (nextProps.currentUser === true) {
       this.props.history.push('/questions');
     }
 
-    // Set or clear errors
     this.setState({ errors: nextProps.errors })
   }
 
-  // Handle field updates (called in the render method)
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
   }
 
-  // Handle form submission
   handleSubmit(e) {
     e.preventDefault();
 
@@ -44,7 +41,6 @@ class LoginForm extends React.Component {
     this.props.login(user);
   }
 
-  // Render the session errors if there are any
   renderErrors() {
     return (
       <ul>
@@ -59,26 +55,47 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <div>
-            <input type="text"
-              value={this.state.username}
-              onChange={this.update('username')}
-              placeholder="username"
-            />
-            <br />
-            <input type="password"
-              value={this.state.password}
-              onChange={this.update('password')}
-              placeholder="Password"
-            />
-            <br />
-            <input type="submit" value="Submit" />
-            {this.renderErrors()}
-          </div>
-        </form>
+      <div className="main-body-container">
+
+        <div className="main-title-container">
+          <h1>Know It All</h1>
+        </div>
+
+        <div className="session-form-container">
+          <form className="session-form" onSubmit={this.handleSubmit}>
+            <div className="session-header-container">
+              <div>Login Below!</div>
+            </div>
+            <div className="login-inputs">
+              <input type="text"
+                value={this.state.username}
+                onChange={this.update('username')}
+                placeholder="username"
+              />
+              <br />
+              <input type="password"
+                value={this.state.password}
+                onChange={this.update('password')}
+                placeholder="Password"
+              />
+              <br />
+              <input type="submit" value="Submit" />
+              {this.renderErrors()}
+            </div>
+
+            <div className="switch-session">
+              <Link className="main-link" to={'/signup'}>Signup instead</Link>
+            </div>
+          </form>
+        </div>
+
+
+        <footer>
+        </footer>
+
       </div>
+
+
     );
   }
 }

@@ -6,7 +6,7 @@ const passport = require('passport');
 const Question = require('../../models/Question');
 const validateQuestionInput = require('../../validation/questions');
 
-router.get("/test", (req, res) => res.json({ msg: "This is the questions route" }));
+router.get("/test", (req, res) => res.json({ msg: "This is the tweets route" }));
 
 router.get("/", (req, res) => {
     Question.find()

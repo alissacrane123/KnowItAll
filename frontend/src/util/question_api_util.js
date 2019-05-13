@@ -1,9 +1,15 @@
 import axios from 'axios';
 
-export const createQuestion = (data) => {
-    return axios.post('/api/questions', data);
+
+export const getQuestions = () => {
+  return axios.get('/api/questions')
 };
 
-export const fetchQuestions = () => {
-    return axios.get('/api/questions');
+export const getUserQuestions = id => {
+  return axios.get(`/api/questions/user/${id}`)
 };
+
+export const poseQuestion = data => {
+  return axios.post('/api/questions/', data)
+}
+
