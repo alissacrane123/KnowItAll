@@ -39,6 +39,7 @@ class NavBar extends React.Component {
     return (
       <div>
         <h1>KnowItAll</h1>
+        
         {this.getLinks()}
       </div>
     );
