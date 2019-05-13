@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class LoginForm extends React.Component {
     this.renderErrors = this.renderErrors.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps) { // componentDidUpdate
     if (nextProps.currentUser === true) {
       this.props.history.push('/questions');
     }
@@ -62,7 +63,7 @@ class LoginForm extends React.Component {
 
         <div className="session-form-container">
           <form className="session-form" onSubmit={this.handleSubmit}>
-            <div className="login-header-container">
+            <div className="session-header-container">
               <div>Login Below!</div>
             </div>
             <div className="login-inputs">
@@ -80,6 +81,10 @@ class LoginForm extends React.Component {
               <br />
               <input type="submit" value="Submit" />
               {this.renderErrors()}
+            </div>
+
+            <div className="switch-session">
+              <Link className="main-link" to={'/signup'}>Signup instead</Link>
             </div>
           </form>
         </div>

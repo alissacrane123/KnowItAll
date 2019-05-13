@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -63,9 +64,13 @@ class SignupForm extends React.Component {
         </div>
 
         <div className="session-form-container">
-          <form onSubmit={this.handleSubmit}>
-            <div className="session-form">
-              <br />
+          <form className="session-form" onSubmit={this.handleSubmit}>
+
+            <div className="session-header-container">
+              <div>Signup Below!</div>
+            </div>
+
+            <div className="signup-inputs">
               <input type="text"
                 value={this.state.email}
                 onChange={this.update('email')}
@@ -92,6 +97,10 @@ class SignupForm extends React.Component {
               <br />
               <input type="submit" value="Submit" />
               {this.renderErrors()}
+            </div>
+
+            <div className="switch-session">
+              <Link className="main-link" to={'/login'}>Login instead</Link>
             </div>
           </form>
         </div>
