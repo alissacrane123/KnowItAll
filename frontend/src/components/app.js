@@ -7,6 +7,7 @@ import MainPageContainer from './main/main_page_container';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import QuestionComposeContainer from './question/question_compose_container';
+import QuestionIndexContainer from './question/question_index_container';
 
 const App = () => (
   <div className="main-div">
@@ -18,8 +19,8 @@ const App = () => (
     </Switch>
 
     <Switch>
-      {/* <ProtectedRoute exact path="/questions" component={QuestionComposeContainer} /> */}
-      <ProtectedRoute exact path="/new_question" component={QuestionComposeContainer} />
+      <ProtectedRoute exact path="/questions" component={QuestionIndexContainer} />
+      <ProtectedRoute exact path="/new" component={QuestionComposeContainer} />
     </Switch>
   </div>
 );

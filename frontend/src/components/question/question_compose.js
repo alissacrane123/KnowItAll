@@ -5,31 +5,32 @@ class QuestionCompose extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      text: "",
-      newQuestion: ""
+    this.state = { 
+      body: "",
+      authorId: this.props.currentUser.id
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({ newQuestion: nextProps.newQuestion.text });
+    this.setState({ newQuestion: nextProps.newQuestion.body });
   }
 
   handleSubmit(e) {
     e.preventDefault();
     let question = {
-      text: this.state.text
+      body: this.state.body,
+      authorId: this.state.authorId
     };
 
     this.props.poseQuestion(question);
-    this.setState({ text: '' })
+    this.setState({ body: '' })
   }
 
   update() {
     return e => this.setState({
-      text: e.currentTarget.value
+      body: e.currentTarget.value
     });
   }
 
@@ -39,7 +40,7 @@ class QuestionCompose extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <div>
             <input type="textarea"
-              value={this.state.text}
+              value={this.state.body}
               onChange={this.update()}
               placeholder="Ask a question..."
             />
