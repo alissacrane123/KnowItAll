@@ -10,6 +10,7 @@ export const getUserQuestions = id => {
 };
 
 export const poseQuestion = data => {
+  // debugger
   return axios.post('/api/questions/', data)
 }
 

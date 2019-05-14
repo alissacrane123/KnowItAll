@@ -10,7 +10,8 @@ class QuestionCompose extends React.Component {
       authorId: this.props.currentUser.id,
       otherUserId: '',
       answer1: '',
-      answer2: ''
+      answer2: '',
+      questionId: undefined
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,8 +28,34 @@ class QuestionCompose extends React.Component {
       authorId: this.state.authorId
     };
 
-    this.props.poseQuestion(question);
+    let answer1;
+    let answer2;
+
+    let { newQuestion, createAnswer, poseQuestion } = this.props;
+
+    poseQuestion(question)
+      .then( 
+        newQuestion => {
+          // debugger
+          if (newQuestion != undefined) {
+            answer1 = { body: this.state.answer1, 
+                        authorId: this.state.authorId,
+                        questionId: newQuestion.question.data._id}
+            createAnswer(answer1)
+
+            // answer2 = { body: this.state.answer2,
+            //             authorId: this.state.authorId,
+            //             questionId: newQuestion.question.data._id}
+            // createAnswer(answer2)
+            // this.setState({ questionId: newQuestion.question.data.id})
+          }
+        }).then(() => this.setState({ answer1: '' }))
+
+    // debugger 
+    // this.props.createAnswer(answer)
     this.setState({ body: '' })
+    // this.setState({ answer1: '' })
+    // this.setState({ answer2: '' })
   }
 
   update(field) {

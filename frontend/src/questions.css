@@ -6,6 +6,26 @@
   flex-direction: column;
 }
 
+.index-friends-container {
+  display: flex;
+  flex-direction: column;  
+  margin: 10px;
+  border-radius: 4px;
+  background: pink;
+}
+
+.friends-header-container {
+  margin: 10px;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.friends-container {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
 .index-questions-container {
   /* height: 100%; */
   /* width: 100%; */
