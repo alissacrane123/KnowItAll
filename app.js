@@ -1,11 +1,11 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+// let cors = require('cors');
 const db = require("./config/keys").mongoURI;
 const users = require("./routes/api/users");
 const questions = require("./routes/api/questions");
-const comments = require("./routes/api/comments");
-const answers = require("./routes/api/answers");
+const search = require('./routes/api/search');
 const User = require('./models/User')
 const bodyParser = require('body-parser');
 
@@ -16,6 +16,12 @@ mongoose
   
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+// app.use(cors());
+// app.use(function (req, res, next) {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//   next();
+// });
 
 app.get("/", (req, res) => {
   const user = new User({
@@ -29,9 +35,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/users", users);
 app.use("/api/questions", questions);
-app.use("/api/comments", comments);
-app.use("/api/answers", answers);
-
+app.use("/api/search", search);
 
 
 const port = process.env.PORT || 5000;
