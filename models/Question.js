@@ -10,6 +10,10 @@ const QuestionSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'users'
     },
+    // answers: [{ 
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'answers' 
+    // }],
     date: {
         type: Date,
         default: Date.now
