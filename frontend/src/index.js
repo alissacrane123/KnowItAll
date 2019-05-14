@@ -11,6 +11,7 @@ import './index.css';
 import './main.css';
 import './navbar.css';
 import './new.css';
+import './questions.css';
 
 import App from './App';
 
