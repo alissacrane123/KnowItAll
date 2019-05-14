@@ -36,8 +36,8 @@ class QuestionCompose extends React.Component {
     poseQuestion(question)
       .then( 
         newQuestion => {
-          // debugger
-          if (newQuestion != undefined) {
+          debugger
+          if (newQuestion !== undefined) {
             answer1 = { body: this.state.answer1, 
                         authorId: this.state.authorId,
                         questionId: newQuestion.question.data._id}

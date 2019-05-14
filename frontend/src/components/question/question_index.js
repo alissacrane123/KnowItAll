@@ -1,20 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Friend from '../friend/friend';
-// import CreatFriend from '../friend/create_friend';
+import CreateFriend from '../friend/create_friend';
 
 class QuestionIndex extends React.Component {
   constructor(props) {
     super(props)
 
-    this.state = { questions: [] }
+    this.state = { questions: [],  }
   }
 
 
   componentDidMount() {
     let { fetchQuestions, fetchFriends, currentUser } = this.props
     fetchQuestions();
-    fetchFriends(currentUser.id)
+    fetchFriends(currentUser.id);
     // this.setState({questions: this.props.questions })
     // debugger
   }
@@ -26,6 +26,8 @@ class QuestionIndex extends React.Component {
 
 
   render() {
+    let { addFriend, currentUser, fetchUser, friend } = this.props;
+
     let questions;
 
     if (!this.props.questions) {
@@ -42,13 +44,13 @@ class QuestionIndex extends React.Component {
     
     let friends;
 
-    if (this.props.friends === {}) {
+    if (this.props.friends[0] === undefined) {
       // debugger
-      return null;
+      friends = [];
     } else {
       // debugger
-      friends = this.props.friends.map(friend => (
-        <Friend friend={friend} fetchFriend={this.props.fetchFriend}/>
+      friends = this.props.friends.map(friendObj => (
+        <Friend friendObj={friendObj} fetchUser={fetchUser} friend={friend}/>
       ))
     }
     
@@ -63,6 +65,9 @@ class QuestionIndex extends React.Component {
           <div className="friends-container">
             { friends }     
           </div> 
+          <div className="new-friend-container">
+            <CreateFriend addFriend={addFriend} currentUser={currentUser} />
+          </div>
         </div>
 
         <div className="index-questions-container">
@@ -76,6 +81,19 @@ class QuestionIndex extends React.Component {
             {questions}
           </div>
         </div>
+
+
+        {/* <CreateFriend addFriend={addFriend} currentUser={currentUser}/> */}
+        {/* <div className="add-friend-container">
+          <div className="add-friend-header-container">
+            <div className="add-friend-header">
+              To add a new friend, enter their username below:
+            </div>
+          </div>
+          <div className="username-input-container">
+            <input className="username-input" type="text" value="" />
+          </div>
+        </div> */}
 
       </div>
     )

@@ -16,14 +16,18 @@ import { RECEIVE_FRIEND, RECEIVE_FRIENDS } from '../actions/friend_actions';
 const UsersReducer = (state = { friends: {}, current: {}, friend: {} }, action) => {
   Object.freeze(state);
   let newState = Object.assign({}, state);
+  // debugger
   switch (action.type) {
     case RECEIVE_USER:
-      newState.current = action.user.data
+      // debugger
+      newState.friend = action.user.data
       return newState;
     case RECEIVE_FRIENDS:
+      // debugger 
       newState.friends = action.friends.data;
       return newState;
     case RECEIVE_FRIEND:
+      debugger
       newState.friend = action.friend.data;
       return newState;
     default:

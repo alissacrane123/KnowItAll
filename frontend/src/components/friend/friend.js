@@ -7,6 +7,11 @@ class Friend extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
+  componentDidMount() {
+    let { friend, fetchUser, friendObj } = this.props;
+    fetchUser(friendObj.friend_id)
+  }
+
   handleClick(e) {
     e.preventDefault();
     this.props.fetchFriend(this.props.friend.id)
@@ -14,7 +19,11 @@ class Friend extends React.Component {
 
   render() {
     let { friend } = this.props;
-
+    debugger
+    if (Object.keys(friend).length === 0) {
+      return null;
+    } 
+    debugger
     return (
       <div className="friend-container">
 
