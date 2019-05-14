@@ -11,11 +11,13 @@ class QuestionIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchQuestions();
+    // this.setState({questions: this.props.questions })
+    // debugger
   }
 
 
-  // componentDidUpdate(newState) {
-  //   this.setState({ questions: newState.questions })
+  // componentDidUpdate() {
+
   // }
 
 
@@ -26,7 +28,7 @@ class QuestionIndex extends React.Component {
       return null;
     } else {
       questions = this.props.questions.map(question => (
-        <div className="question-item-container">
+        <div key={question.id} className="question-item-container">
           <div key={question.id} className="question-body">
             {question.body}
           </div>
