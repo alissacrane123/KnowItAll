@@ -7,7 +7,8 @@ const comments = require("./routes/api/comments");
 const answers = require("./routes/api/answers");
 const questions = require("./routes/api/questions");
 const search = require('./routes/api/search');
-const User = require('./models/User')
+const friends = require('./routes/api/friends');
+const User = require('./models/User');
 const bodyParser = require('body-parser');
 
 mongoose
@@ -34,6 +35,7 @@ app.use("/api/questions", questions);
 app.use("/api/comments", comments);
 app.use("/api/answers", answers);
 app.use("/api/search", search);
+app.user("/api/friends", friends);
 
 
 const port = process.env.PORT || 5000;
