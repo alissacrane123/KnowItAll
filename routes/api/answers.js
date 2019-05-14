@@ -36,8 +36,14 @@ router.post('/',
 );
 
 router.patch("/:id", (req, res) => {
-    Answer.find({ id: req.params.id })
-    //continue 
+    Answer.findById(req.params.id)
+        .then(answer => {
+            answer.winner = req.body.winner;
+            answer.save().then(answer => res.json(answer));
+        })
+        .catch(err =>
+            res.status(404).json({ noAnswerFound: 'No answer found' })
+        )
 })
 
 router.get("/question/:id", (req, res) => {
