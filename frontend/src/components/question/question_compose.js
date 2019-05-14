@@ -49,12 +49,12 @@ class QuestionCompose extends React.Component {
             // createAnswer(answer2)
             // this.setState({ questionId: newQuestion.question.data.id})
           }
-          // debugger
-        })
+        }).then(() => this.setState({ answer1: '' }))
+
     // debugger 
     // this.props.createAnswer(answer)
     this.setState({ body: '' })
-    this.setState({ answer1: '' })
+    // this.setState({ answer1: '' })
     // this.setState({ answer2: '' })
   }
 
