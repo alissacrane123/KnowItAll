@@ -52,6 +52,19 @@ router.post("/register", (req, res) => {
   });
 });
 
+router.get('/:id', (req, res) => {
+  
+  User.findOne({ _id: req.params.id })
+    .then(user => {
+      if (!user) {
+        return res.status(404).json({ username: 'This user does not exist' });
+      }
+      // debugger;
+      res.json(user)
+    })
+    .catch(err => res.json(err))
+})
+
 
 router.post('/login', (req, res) => {
   const username = req.body.username;
