@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Friend from '../friend/friend';
+// import CreatFriend from '../friend/create_friend';
 
 class QuestionIndex extends React.Component {
   constructor(props) {
@@ -11,7 +12,9 @@ class QuestionIndex extends React.Component {
 
 
   componentDidMount() {
-    this.props.fetchQuestions();
+    let { fetchQuestions, fetchFriends, currentUser } = this.props
+    fetchQuestions();
+    fetchFriends(currentUser.id)
     // this.setState({questions: this.props.questions })
     // debugger
   }
@@ -39,9 +42,11 @@ class QuestionIndex extends React.Component {
     
     let friends;
 
-    if (!this.props.friends) {
+    if (this.props.friends === {}) {
+      // debugger
       return null;
     } else {
+      // debugger
       friends = this.props.friends.map(friend => (
         <Friend friend={friend} fetchFriend={this.props.fetchFriend}/>
       ))
@@ -56,7 +61,7 @@ class QuestionIndex extends React.Component {
             <div className="friends-header">Select a friend to challenge:</div>
           </div>
           <div className="friends-container">
-            {/* { friends }      */}
+            { friends }     
           </div> 
         </div>
 

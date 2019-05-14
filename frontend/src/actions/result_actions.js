@@ -19,7 +19,7 @@ export const clearResults = () => {
 export const fetchResults = (query) => dispatch => {
   return axios.get(`api/search/${query}`)
   .then(results => {
-    console.log(results)
+    // console.log(results)
     dispatch(receiveResults(results));
   })
   .catch(err => console.log(err, 'did not make it to search'))

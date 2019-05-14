@@ -1,5 +1,5 @@
 import React from 'react';
-// import QuestionBox from './question_box';
+import Result from './results';
 
 class QuestionCompose extends React.Component {
   constructor(props) {
@@ -51,11 +51,12 @@ class QuestionCompose extends React.Component {
           }
         }).then(() => this.setState({ answer1: '' }))
 
-    // debugger 
+    this.props.fetchResults(this.state.body);
     // this.props.createAnswer(answer)
     this.setState({ body: '' })
-    // this.setState({ answer1: '' })
     // this.setState({ answer2: '' })
+
+    
   }
 
   update(field) {
@@ -65,6 +66,17 @@ class QuestionCompose extends React.Component {
   }
 
   render() {
+    let results;
+    if (!this.props.results[0]) {
+      // return null;
+      results = [];
+    } else {
+      // debugger
+      results = this.props.results.map(result => (
+        <Result result={result} />
+      ))
+    }
+
     return (
       <div className="new-body-container">
 
@@ -97,6 +109,12 @@ class QuestionCompose extends React.Component {
             </div>
           </div> 
         </form>
+
+        <div className="results-body-container">
+          <div className="results-container">
+            { results }
+          </div>
+        </div>
 
       </div>
     )
