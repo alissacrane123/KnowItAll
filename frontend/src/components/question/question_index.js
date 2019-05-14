@@ -20,23 +20,37 @@ class QuestionIndex extends React.Component {
 
 
   render() {
-    // if (!this.props.questions) {
-    //   return null;
-    // } else {
-    //   let questions = this.props.questions
-    // }
+    let questions;
+
+    if (!this.props.questions) {
+      return null;
+    } else {
+      questions = this.props.questions.map(question => (
+        <div className="question-item-container">
+          <div key={question.id} className="question-body">
+            {question.body}
+          </div>
+        </div>
+      ));
+    }
     // debugger 
 
     return (
       <div className="index-body-container">
 
-        <div className="index-new-container">
-        
+        <div className="index-new-container">       
         </div>
 
         <div className="index-questions-container">
+          <div className="index-header-container" >
+            <div className="index-header">
+              Recently Asked Questions Listed Below:
+            </div>
+          </div>
 
-
+          <div className="questions-container">
+            {questions}
+          </div>
         </div>
 
       </div>
