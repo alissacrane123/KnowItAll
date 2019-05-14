@@ -7,7 +7,10 @@ class QuestionCompose extends React.Component {
 
     this.state = { 
       body: "",
-      authorId: this.props.currentUser.id
+      authorId: this.props.currentUser.id,
+      otherUserId: '',
+      answer1: '',
+      answer2: ''
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -28,27 +31,46 @@ class QuestionCompose extends React.Component {
     this.setState({ body: '' })
   }
 
-  update() {
+  update(field) {
     return e => this.setState({
-      body: e.currentTarget.value
+      [field]: e.currentTarget.value
     });
   }
 
   render() {
     return (
-      <div className="new-question-container">
-        <form onSubmit={this.handleSubmit}>
-          <div>
+      <div className="new-body-container">
+
+        <form className="new-form-container" onSubmit={this.handleSubmit}>
+          
+          <div className="question-input-container">
             <input type="textarea"
               value={this.state.body}
-              onChange={this.update()}
+              onChange={this.update('body')}
               placeholder="Ask a question..."
             />
             <input type="submit" value="Submit" />
           </div>
+ 
+          <div className="answers-container">
+             <div className="answer-input-container">
+               <input className="answer1-input"
+                 value={this.state.answer1}
+                 onChange={this.update('answer1')}
+                 placeholder="Your answer"
+               />
+             </div>
+
+            <div className="answer-input-container">
+              <input className="answer2-input"
+                value={this.state.answer2}
+                onChange={this.update('answer2')}
+                placeholder="Your friend's answer"
+              />
+            </div>
+          </div> 
         </form>
-        <br />
-        {/* <QuestionBox text={this.state.newQuestion} /> */}
+
       </div>
     )
   }
