@@ -11,7 +11,20 @@ router.get("/test", (req, res) => res.json({ msg: "This is the tweets route" }))
 router.get("/", (req, res) => {
     Question.find()
         .sort({ date: -1 })
-        .then(questions => res.json(questions))
+        .populate('answers')
+        .exec()
+        .then(questions => {
+            // debugger;
+            res.json(questions
+            // questions: questions.map(question => {
+            //     debugger;
+            //     return {
+            //         body: question.body,
+            //         date: question.date,
+            //         answers: question.answer
+            //     }
+            // })
+            )})
         .catch(err => res.status(404).json({ noQuestionsFound: 'No questions found'}));
 });
 
