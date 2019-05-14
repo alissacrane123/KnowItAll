@@ -13,9 +13,9 @@ class QuestionCompose extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.setState({ newQuestion: nextProps.newQuestion.body });
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   this.setState({ newQuestion: nextProps.newQuestion.body });
+  // }
 
   handleSubmit(e) {
     e.preventDefault();

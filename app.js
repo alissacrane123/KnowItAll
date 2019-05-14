@@ -5,6 +5,7 @@ const db = require("./config/keys").mongoURI;
 const users = require("./routes/api/users");
 const questions = require("./routes/api/questions");
 const comments = require("./routes/api/comments");
+const answers = require("./routes/api/answers");
 const User = require('./models/User')
 const bodyParser = require('body-parser');
 
@@ -29,6 +30,7 @@ app.get("/", (req, res) => {
 app.use("/api/users", users);
 app.use("/api/questions", questions);
 app.use("/api/comments", comments);
+app.use("/api/answers", answers);
 
 
 
