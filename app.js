@@ -35,7 +35,7 @@ app.use("/api/questions", questions);
 app.use("/api/comments", comments);
 app.use("/api/answers", answers);
 app.use("/api/search", search);
-app.user("/api/friends", friends);
+app.use("/api/friends", friends);
 
 
 const port = process.env.PORT || 5000;
