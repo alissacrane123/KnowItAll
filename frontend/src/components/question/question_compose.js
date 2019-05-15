@@ -15,11 +15,26 @@ class QuestionCompose extends React.Component {
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   // componentWillReceiveProps(nextProps) {
   //   this.setState({ newQuestion: nextProps.newQuestion.body });
   // }
+
+  handleClick(user) {
+    let { updateAnswer, currentUser, friendId } = this.props
+    let data;
+
+    if (user === 'current') {
+      data = { userId: currentUser.id, questionId: this.state.questionId }
+      updateAnswer(data)
+    } else {
+      data = { userId: friendId, questionId: this.state.questionId}
+      updateAnswer(data)
+    }
+
+  }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -31,24 +46,25 @@ class QuestionCompose extends React.Component {
     let answer1;
     let answer2;
 
-    let { newQuestion, createAnswer, poseQuestion } = this.props;
+    let { newQuestion, createAnswer, poseQuestion, friendId } = this.props;
 
     poseQuestion(question)
       .then( 
         newQuestion => {
-          if (newQuestion != undefined) {
+          // debugger
+          if (newQuestion !== undefined) {
             answer1 = { body: this.state.answer1, 
                         authorId: this.state.authorId,
                         questionId: newQuestion.question.data._id}
             createAnswer(answer1)
 
-            // answer2 = { body: this.state.answer2,
-            //             authorId: this.state.authorId,
-            //             questionId: newQuestion.question.data._id}
-            // createAnswer(answer2)
-            // this.setState({ questionId: newQuestion.question.data.id})
+            answer2 = { body: this.state.answer2,
+                        authorId: friendId,
+                        questionId: newQuestion.question.data._id}
+            createAnswer(answer2)
+            this.setState({ questionId: newQuestion.question.data.id})
           }
-        }).then(() => this.setState({ answer1: '' }))
+        })
 
     this.props.fetchResults(this.state.body);
     // this.props.createAnswer(answer)
@@ -65,6 +81,7 @@ class QuestionCompose extends React.Component {
   }
 
   render() {
+    // debugger
     let results;
     if (!this.props.results[0]) {
       // return null;
@@ -74,7 +91,21 @@ class QuestionCompose extends React.Component {
       results = this.props.results.map(result => (
         <Result result={result} />
       ))
+      // debugger 
+      results.unshift(
+        <div className="buttons-container">
+          <div className="current-button">
+            <button onClick={this.handleClick('current')}>I WON</button>
+          </div>
+          <div className="friend-button">
+            <button onClick={this.handleClick('friend')}>FRIEND WON</button>
+          </div>
+        </div>
+      )
     }
+
+    let { friendId } = this.props;
+    // debugger 
 
     return (
       <div className="new-body-container">

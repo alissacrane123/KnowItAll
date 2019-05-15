@@ -17,3 +17,8 @@ export const fetchUserAnswers = id => {
   return axios.get(`api/answers/user/${id}`)
 };
 
+export const updateAnswer = data => {
+  return axios.patch(`api/answers/`, data)
+}
+
+

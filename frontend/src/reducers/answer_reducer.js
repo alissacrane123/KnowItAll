@@ -18,6 +18,10 @@ const AnswerReducer = (state = { all: {}, question: {}, new: undefined }, action
     case RECEIVE_NEW_QUESTION:
       newState.new = action.question.data;
       return newState;
+    case RECEIVE_ANSWER:
+      // debugger 
+      newState.new = action.answer.data;
+      return newState;
     default: 
       return state;
   }

@@ -17,6 +17,7 @@ class LoginForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) { // componentDidUpdate
+
     if (nextProps.currentUser === true) {
       this.props.history.push('/questions');
     }

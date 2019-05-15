@@ -35,16 +35,6 @@ router.post('/',
     }
 );
 
-router.patch("/:id", (req, res) => {
-    Answer.findById(req.params.id)
-        .then(answer => {
-            answer.winner = req.body.winner;
-            answer.save().then(answer => res.json(answer));
-        })
-        .catch(err =>
-            res.status(404).json({ noAnswerFound: 'No answer found' })
-        )
-})
 
 router.get("/question/:id", (req, res) => {
     Answer.find({ question: req.params.id })
@@ -63,5 +53,17 @@ router.get("/user/:id", (req, res) => {
             res.status(404).json({ noAnswersFound: 'No answers found for that user' })
         );
 });
+
+router.patch("/", (req, res) => {
+    let authorId = req.body.userId;
+    let questionId = req.body.questionId;
+    Answer.findOne({ question: questionId, author: authorId })
+        .then(answer => {
+            answer.winner = true;
+            answer.save().then(answer => res.json(answer));
+        }, err => { console.log(err) });
+
+});
+
 
 module.exports = router;
