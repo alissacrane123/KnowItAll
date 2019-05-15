@@ -55,7 +55,7 @@ class QuestionCompose extends React.Component {
             console.log(newQuestion);
             answer1 = { body: this.state.answer1, 
                         authorId: this.state.authorId,
-                        questionId: newQuestion.id}
+                        questionId: newQuestion.question.data._id}
             createAnswer(answer1)
 
             answer2 = { body: this.state.answer2,
@@ -95,10 +95,10 @@ class QuestionCompose extends React.Component {
       results.unshift(
         <div className="buttons-container">
           <div className="current-button">
-            <button onClick={this.handleClick('current')}>I WON</button>
+            <button onClick={() =>this.handleClick('current')}>I WON</button>
           </div>
           <div className="friend-button">
-            <button onClick={this.handleClick('friend')}>FRIEND WON</button>
+            <button onClick={()=>this.handleClick('friend')}>FRIEND WON</button>
           </div>
         </div>
       )
