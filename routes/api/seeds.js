@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const moment = require('moment');
 const User = require('../../models/User');
 const Friend = require('../../models/Friend');
 const Question = require('../../models/Question');
@@ -75,14 +76,22 @@ module.exports = async function seedEverything(req, res) {
     Answer.deleteMany({});
     let answerIds = [];
     const answers = [
-        { body: 'The North Pole', author: userIds[0], question: questionIds[0], winner: true },
-        { body: 'The Fortress of Solitude', author: userIds[1], question: questionIds[0] },
-        { body: 'China', author: userIds[1], question: questionIds[1], winner: true },
-        { body: 'India', author: userIds[0], question: questionIds[1] },
-        { body: '1250 feet', author: userIds[2], question: questionIds[2], winner: true },
-        { body: '9001 feet', author: userIds[1], question: questionIds[2] },
-        { body: 'Samuel L. Jackson', author: userIds[3], question: questionIds[3], winner: true },
-        { body: 'Danny DeVito', author: userIds[1], question: questionIds[3] }
+        { body: 'The North Pole', author: userIds[0], question: questionIds[0], winner: true,
+            date: moment().subtract(4, 'd').subtract(2, 's').toDate() },
+        { body: 'The Fortress of Solitude', author: userIds[1], question: questionIds[0], 
+            date: moment().subtract(4, 'd').subtract(1, 's').toDate() },
+        { body: 'China', author: userIds[1], question: questionIds[1], winner: true, 
+            date: moment().subtract(3, 'd').subtract(2, 's').toDate() },
+        { body: 'India', author: userIds[0], question: questionIds[1], 
+            date: moment().subtract(3, 'd').subtract(1, 's').toDate() },
+        { body: '1250 feet', author: userIds[2], question: questionIds[2], winner: true, 
+            date: moment().subtract(2, 'd').subtract(2, 's').toDate() },
+        { body: '9001 feet', author: userIds[1], question: questionIds[2], 
+            date: moment().subtract(2, 'd').subtract(1, 's').toDate() },
+        { body: 'Samuel L. Jackson', author: userIds[3], question: questionIds[3], winner: true, 
+            date: moment().subtract(1, 'd').subtract(2, 's').toDate() },
+        { body: 'Danny DeVito', author: userIds[1], question: questionIds[3], 
+            date: moment().subtract(1, 'd').subtract(1, 's').toDate() }
     ];
     for (let answer of answers) {
         let newAnswer = new Answer(answer);
