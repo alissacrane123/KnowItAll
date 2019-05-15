@@ -47,15 +47,15 @@ class QuestionCompose extends React.Component {
     let answer2;
 
     let { newQuestion, createAnswer, poseQuestion, friendId } = this.props;
-
     poseQuestion(question)
       .then( 
         newQuestion => {
-          // debugger
           if (newQuestion !== undefined) {
+            console.log("new question:");
+            console.log(newQuestion);
             answer1 = { body: this.state.answer1, 
                         authorId: this.state.authorId,
-                        questionId: newQuestion.question.data._id}
+                        questionId: newQuestion.id}
             createAnswer(answer1)
 
             answer2 = { body: this.state.answer2,

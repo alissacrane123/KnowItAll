@@ -21,13 +21,12 @@ class CreateFriend extends React.Component {
         
         newFriend => {
           if (newFriend !== undefined) {
-            // debugger 
             other = { friendName: currentUser.username, 
                       userId: newFriend.friend.data.friend_id }
-            addFriend(other)
+            addFriend(other);
           }
         }
-      )   
+      );
   }
 
 
