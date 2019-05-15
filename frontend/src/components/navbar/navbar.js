@@ -40,6 +40,7 @@ class NavBar extends React.Component {
 
   render() {
     return (
+      <div className="nc2">
       <div className="navbar-container">
         <div className="navbar-header-container">
           <div>LOGO</div>
@@ -48,6 +49,7 @@ class NavBar extends React.Component {
         <div className="navbar-links-container">
           {this.getLinks()}
         </div>
+      </div>
       </div>
     );
   }
