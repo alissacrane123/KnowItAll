@@ -13,7 +13,9 @@
   height: 100%;
   width: 100%;
 
-  
+  background-image: url("https://images.unsplash.com/photo-1554147850-dd1191b9b948?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .main-title-container {
@@ -21,7 +23,8 @@
     top: 0px;
     /* max-width: 50%; */
     width: 100%;
-    background: rgb(49, 134, 173, 0.5);
+    background: rgb(49, 134, 173);
+    /* background: white; */
     text-align: center;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
