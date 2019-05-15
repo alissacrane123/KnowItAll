@@ -85,8 +85,7 @@ module.exports = async function seedEverything(req, res) {
         { body: 'Danny DeVito', author: userIds[1], question: questionIds[3] }
     ];
     for (let answer of answers) {
-        let newAnswer = new Answer(answer)
-
+        let newAnswer = new Answer(answer);
         await newAnswer.save();
         answerIds.push(newAnswer.id);
     }
@@ -94,7 +93,20 @@ module.exports = async function seedEverything(req, res) {
     /* COMMENT SEEDING */
     Comment.deleteMany({});
     const comments = [
-        { body: "Everyone knows Santa isn't real", author: userIds[3], question: questionIds[0] },
-    ]
+        { body: "Everyone knows Santa isn't real.", author: userIds[3], question: questionIds[0] },
+        { body: "Dude, SUPERMAN lives in the Fortress of Solitude...duh.", author: userIds[2], question: questionIds[0] },
+        { body: "Interesting question, I thought it was Mozambique.", author: userIds[2], question: questionIds[1] },
+        { body: "Definitely over 9000 feet.", author: userIds[0], question: questionIds[2] },
+        { body: "Wait, does the height of the antennae thingy count?", author: userIds[3], question: questionIds[2] },
+        { body: "It's gotta be Harrison Ford.", author: userIds[0], question: questionIds[3] },
+        { body: "I would have guessed Susan Sarandon.", author: userIds[2], question: questionIds[3] },
+        { body: "Could have sworn it was Danny DeVito...", author: userIds[1], question: questionIds[3] },
+    ];
+
+    for (let comment of comments) {
+        let newComment = new Comment(comment);
+        await newComment.save();
+    }
+
     res.send('Database seeded!');
 }
