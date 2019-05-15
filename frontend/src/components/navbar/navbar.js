@@ -23,7 +23,7 @@ class NavBar extends React.Component {
         <div className="navbar-buttons-container">
           <Link className="nav-link" to={'/new'}><button className="nav-button" >New Question</button></Link>
           <Link className="nav-link" to={'/questions'}><button className="nav-button" >All Questions</button></Link>
-          {/* <Link to={'/profile'}><button className="nav-button" >Profile</button></Link> */}
+          <Link className="nav-link" to={'/profile'}><button className="nav-button" >Profile</button></Link>
           {/* <Link to={'/stats'}><button className="nav-button" >Stats</button></Link> */}
           <div className="nav-link"><button className="nav-button" onClick={this.logoutUser}>Logout</button></div>
         </div>

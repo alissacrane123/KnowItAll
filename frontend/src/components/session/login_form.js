@@ -17,7 +17,7 @@ class LoginForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) { // componentDidUpdate
-    debugger 
+
     if (nextProps.currentUser === true) {
       this.props.history.push('/questions');
     }
@@ -59,28 +59,30 @@ class LoginForm extends React.Component {
       <div className="main-body-container">
 
         <div className="main-title-container">
-          <h1>Know It All</h1>
+          <h1 className="main-title">KNOW IT ALL</h1>
         </div>
 
         <div className="session-form-container">
           <form className="session-form" onSubmit={this.handleSubmit}>
             <div className="session-header-container">
-              <div>Login Below!</div>
+              <div>Login Below:</div>
             </div>
             <div className="login-inputs">
-              <input type="text"
+              <input className="login-input"
+                type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
                 placeholder="username"
               />
-              <br />
-              <input type="password"
+
+              <input className="login-input"
+                type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 placeholder="Password"
               />
-              <br />
-              <input type="submit" value="Submit" />
+
+              <input className="login-submit" type="submit" value="Submit" />
               {this.renderErrors()}
             </div>
 

@@ -9,6 +9,7 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import QuestionComposeContainer from './question/question_compose_container';
 import QuestionIndexContainer from './question/question_index_container';
+import ProfileContainer from './profile/profile_container';
 
 const App = () => (
   <div className="main-div">
@@ -22,6 +23,7 @@ const App = () => (
     <Switch>
       <Route exact path="/questions" component={QuestionIndexContainer} />
       <Route exact path="/new" component={QuestionComposeContainer} />
+      <Route exact path="/profile" component={ProfileContainer} />
     </Switch>
   </div>
 );

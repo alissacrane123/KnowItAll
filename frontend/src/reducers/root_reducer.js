@@ -13,8 +13,7 @@ const RootReducer = combineReducers({
   questions,
   users,
   answers,
-  results
-
+  results,
 });
 
 export default RootReducer;
