@@ -37,3 +37,8 @@ export const createAnswer = answer => dispatch => (
     .catch(err => console.log(err))
 );
 
+export const updateAnswer = data => dispatch => (
+  APIUtil.updateAnswer(data)
+    .then(answer => dispatch(receiveAnswer(answer)))
+    .catch(err => console.log(err))
+)

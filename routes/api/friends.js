@@ -17,11 +17,11 @@ router.get("/", (req, res) => {
 router.post('/',
     // passport.authenticate('jwt', { session: false }),
     (req, res) => {
-        debugger 
+        // debugger 
         User.findOne({ username: req.body.friendName })
             
             .then(newFriend => {
-                debugger 
+                // debugger 
                 if (!newFriend) {
                     return res.status(404).json('Friend not found')
                 }

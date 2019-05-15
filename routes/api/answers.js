@@ -38,13 +38,24 @@ router.post('/',
 router.patch("/:id", (req, res) => {
     Answer.findById(req.params.id)
         .then(answer => {
-            answer.winner = req.body.winner;
+            answer.winner = true;
             answer.save().then(answer => res.json(answer));
         })
         .catch(err =>
             res.status(404).json({ noAnswerFound: 'No answer found' })
         )
 })
+
+// router.patch("/", (req, res) => {
+//     Answer.find({ author: req.body.userId, question: questionId })
+//         .then(answer => {
+//             answer.winner = req.body.winner;
+//             answer.save().then(answer => res.json(answer));
+//         })
+//         .catch(err =>
+//             res.status(404).json({ noAnswerFound: 'No answer found' })
+//         );
+// });
 
 router.get("/question/:id", (req, res) => {
     Answer.find({ question: req.params.id })

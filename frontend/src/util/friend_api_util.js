@@ -12,6 +12,6 @@ export const fetchFriend = friendId => {
 }
 
 export const addFriend = (data) => {
-  debugger 
+  // debugger 
   return axios.post(`/api/friends/`, data)
 }

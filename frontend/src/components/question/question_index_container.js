@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
     questions: Object.values(state.questions.all),
     // friends: Object.values(state.users.friends),
     friends: state.users.friends,
-    friend: state.users.friend,
+    users: state.users.users, // object
     newFriend: state.users.friend
   };
 };

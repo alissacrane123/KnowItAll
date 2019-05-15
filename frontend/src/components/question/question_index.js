@@ -7,7 +7,7 @@ class QuestionIndex extends React.Component {
   constructor(props) {
     super(props)
 
-    this.state = { questions: [],  }
+    this.state = { questions: []  }
   }
 
 
@@ -26,7 +26,7 @@ class QuestionIndex extends React.Component {
 
 
   render() {
-    let { addFriend, currentUser, fetchUser, friend } = this.props;
+    let { addFriend, currentUser, fetchUser, users, fetchFriend } = this.props;
 
     let questions;
 
@@ -47,11 +47,13 @@ class QuestionIndex extends React.Component {
     if (this.props.friends[0] === undefined) {
       // debugger
       friends = [];
+      // return null;
     } else {
       // debugger
       friends = this.props.friends.map(friendObj => (
-        <Friend friendObj={friendObj} fetchUser={fetchUser} friend={friend}/>
+        <Friend friendObj={friendObj} fetchUser={fetchUser} users={users} fetchFriend={fetchFriend}/>
       ))
+      // friends = this.props.friends
     }
     
 
@@ -63,6 +65,7 @@ class QuestionIndex extends React.Component {
             <div className="friends-header">Select a friend to challenge:</div>
           </div>
           <div className="friends-container">
+            {/* <Friend friends={friends} fetchUser={fetchUser} friend={friend} /> */}
             { friends }     
           </div> 
           <div className="new-friend-container">
