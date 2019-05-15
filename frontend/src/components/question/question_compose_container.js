@@ -5,6 +5,7 @@ import QuestionCompose from './question_compose';
 import { create } from 'domain';
 import { fetchResults } from '../../actions/result_actions';
 
+
 const mapStateToProps = (state, ownProps) => {
   let friendId;
   // debugger
