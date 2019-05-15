@@ -4,6 +4,7 @@ const User = require('../../models/User');
 const Friend = require('../../models/Friend');
 const Question = require('../../models/Question');
 const Answer = require('../../models/Answer');
+const Comment = require('../../models/Comment');
 const bcrypt = require('bcryptjs');
 
 module.exports = async function seedEverything(req, res) {
@@ -91,6 +92,9 @@ module.exports = async function seedEverything(req, res) {
     }
 
     /* COMMENT SEEDING */
-
+    Comment.deleteMany({});
+    const comments = [
+        { body: "Everyone knows Santa isn't real", author: userIds[3], question: questionIds[0] },
+    ]
     res.send('Database seeded!');
 }
