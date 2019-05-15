@@ -45,9 +45,9 @@ class SignupForm extends React.Component {
 
   renderErrors() {
     return (
-      <ul>
+      <ul className="errors-container">
         {Object.keys(this.state.errors).map((error, i) => (
-          <li key={`error-${i}`}>
+          <li className="errors" key={`error-${i}`}>
             {this.state.errors[error]}
           </li>
         ))}
@@ -58,57 +58,66 @@ class SignupForm extends React.Component {
   render() {
     return (
       <div className="main-body-container">
+        {this.renderErrors()}
 
         <div className="main-title-container">
           <h1 className="main-title">KNOW IT ALL</h1>
         </div>
 
-        <div className="session-form-container">
-          <form className="session-form" onSubmit={this.handleSubmit}>
+        <div className="signup-form-container">
+          <form className="signup-form" onSubmit={this.handleSubmit}>
 
             <div className="session-header-container">
               <div>Signup Below:</div>
             </div>
 
-            <div className="signup-inputs-container">
-              <div className="signup-input">
-                <input type="text"
+            {/* <div className="signup-inputs-container"> */}
+            <div className="signup-inputs">
+              {/* <div className="signup-input"> */}
+              <input className="signup-input" type="text"
                   value={this.state.email}
                   onChange={this.update('email')}
                   placeholder="Email"
                 />
-              </div>
-              <div className="signup-input">
-                <input type="text"
+              
+              {/* <div className="signup-input"> */}
+              <input className="signup-input" type="text"
                   value={this.state.username}
                   onChange={this.update('username')}
                   placeholder="username"
                 />
-              </div>
-              <div className="signup-input">
-                <input type="password"
+              {/* </div> */}
+              {/* <div className="signup-input"> */}
+              <input className="signup-input" 
+                  type="password"
                   value={this.state.password}
                   onChange={this.update('password')}
                   placeholder="Password"
                 />
-              </div>
-              <div className="signup-input">
-                <input type="password"
+              {/* </div> */}
+              {/* <div className="signup-input"> */}
+              <input className="signup-input"
+                  type="password"
                   value={this.state.password2}
                   onChange={this.update('password2')}
                   placeholder="Confirm Password"
                 />
-              </div>
-              <div className="signup-submit">
-                <input type="submit" value="Submit" />
-              </div>
-                {this.renderErrors()}
+              {/* </div> */}
+
+                
+            </div>
+            <div className="signup-submit">
+              <input className="login-submit"
+                type="submit" value="Submit" />
             </div>
 
-            <div className="switch-session">
-              <Link className="main-link" to={'/login'}>Login instead</Link>
+            <div className="switch-signup">
+              <Link className="main-link-signup" to={'/login'}>Login instead</Link>
             </div>
+
+            {/* {this.renderErrors()} */}
           </form>
+          {/* {this.renderErrors()} */}
         </div>
 
 
