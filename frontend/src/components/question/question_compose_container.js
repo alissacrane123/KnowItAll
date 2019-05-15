@@ -29,7 +29,7 @@ const mapDispatchToProps = dispatch => {
     poseQuestion: data => dispatch(poseQuestion(data)),
     createAnswer: answer => dispatch(createAnswer(answer)),
     fetchResults: data => dispatch(fetchResults(data)),
-    updateAnswer: answerId => dispatch(updateAnswer(answerId))
+    updateAnswer: (data) => dispatch(updateAnswer(data))
   };
 };
 

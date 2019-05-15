@@ -46,7 +46,7 @@ class Profile extends React.Component {
         </div>)
     );
     }
-    // debugger
+
     if (!this.props.answers.all[0]) {
       rightAnswers = 0;
     } else {

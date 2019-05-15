@@ -56,9 +56,10 @@ router.get("/user/:id", (req, res) => {
 
 router.patch("/", (req, res) => {
     let authorId = req.body.userId;
-    let questionId = req.body.questionId;
-    Answer.findOne({ question: questionId, author: authorId })
-        .then(answer => {
+    Answer.find({ author: authorId })
+        .sort({ date: -1 })
+        .then(answers => {
+            answer = answers[0];
             answer.winner = true;
             answer.save().then(answer => res.json(answer));
         }, err => { console.log(err) });
