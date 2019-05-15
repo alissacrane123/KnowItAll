@@ -27,7 +27,7 @@ export const fetchAnswers = () => dispatch => (
 
 export const fetchQuestionAnswers = id => dispatch => (
   APIUtil.fetchQuestionAnswers(id)
-    .then(answers => receiveQuestionAnswers(answers))
+    .then(answers => dispatch(receiveQuestionAnswers(answers)))
     .catch(err => console.log(err))
 );
 

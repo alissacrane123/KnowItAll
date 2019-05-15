@@ -17,8 +17,8 @@ class MainPage extends React.Component {
     if (this.props.loggedIn) {
       return (
         <div className="main-links">
-          <Link className="main-link" to={'/new'}>New Question</Link>
-          <Link className="main-link" to={'/profile'}>Profile</Link>
+          <Link className="main-link" to={'/new'}><button className="main-button" >New Question</button></Link>
+          <Link className="main-link" to={'/profile'}><button className="main-button" >Profile</button></Link>
           <Link className="main-link" to={'/stats'}>Stats</Link>
           <button className="main-link" onClick={this.logoutUser}>Logout</button>
         </div>
@@ -26,8 +26,8 @@ class MainPage extends React.Component {
     } else {
       return (
         <div className="main-links">
-          <Link className="main-link" to={'/signup'}>Signup</Link>
-          <Link className="main-link" to={'/login'}>Login</Link>
+          <Link className="main-link" to={'/signup'}><button className="main-button" >Signup</button></Link>
+          <Link className="main-link" to={'/login'}><button className="main-button" >Login</button></Link>
         </div>
       );
     }
