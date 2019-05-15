@@ -116,3 +116,20 @@ height: 100%;
   height: 30px;
   width: 40px;
 }
+
+.friend-link-continer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: space-between;
+  align-items: center;
+  border: 1px solid rgb(180, 179, 179);
+}
+
+.friend-link {
+  width: 25%;
+  color: rgb(150, 137, 137);
+  font-weight: 700;
+  font-size: 24px;
+  text-decoration: none;
+}
