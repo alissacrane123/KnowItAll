@@ -20,10 +20,10 @@
   max-width: 50%;
 }
 
-.main-links-container,  {
+.main-links-container  {
   position: absolute;
-  top: 200px;
-  height: 100px;
+  top: 150px;
+  width: 100%;
   /* max-width: 50%; */
 }
 
@@ -31,9 +31,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  /* justify-content: space-around; */
+  height: 100%;
+  /* width: 100%; */
+  padding: 50px;
+}
+
+.main-link {
+    width: 100px;
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+.main-button {
   height: 100%;
   width: 100%;
+  border-radius: 4px;
 }
 
 
@@ -53,15 +66,63 @@
 }
 
 .session-form {
-  height: 100%;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  border: 2px solid pink;
-  border-radius: 4px;
-  padding: 20px;
+    height: 340px;
+    width: 340px;
+    display: flex;
+    flex-direction: column;
+    border: 5px solid pink;
+    border-radius: 20px;
+    padding-left: 80px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 80px;
+    background: rgb(49, 134, 173);
 }
 
 .session-header-container {
-  text-align: center; 
+  height: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 25px;
+    font-weight: bolder;
+    color: white;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.login-inputs {
+      height: 200px;
+    flex-direction: column;
+    display: flex;
+}
+
+.login-input {
+     height: 25px;
+    border-radius: 5px;
+    border: none;
+        font-size: 20px;
+        margin-bottom: 10px;
+    padding: 10px;
+}
+
+.login-submit {
+  height: 25px;
+  width: 80px;
+}
+
+
+/* --------- SIGNUP ------------- */
+
+.signup-inputs-container {
+        /* height: 200px; */
+    flex-direction: column;
+    display: flex;
+}
+
+.signup-input {
+       height: 25px;
+    border-radius: 5px;
+    border: none;
+        font-size: 20px;
+        margin-bottom: 10px;
+    padding: 10px;
 }

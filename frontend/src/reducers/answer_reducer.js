@@ -4,7 +4,7 @@ import { RECEIVE_NEW_QUESTION } from '../actions/question_actions';
 const AnswerReducer = (state = { all: {}, question: {}, new: undefined }, action) => {
   Object.freeze(state);
   let newState = Object.assign({}, state);
-  debugger
+  // debugger
   switch (action.type) {
     case RECEIVE_ANSWERS:
       newState.all = action.answers.data;
