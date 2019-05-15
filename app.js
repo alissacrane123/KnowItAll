@@ -8,6 +8,7 @@ const answers = require("./routes/api/answers");
 const questions = require("./routes/api/questions");
 const search = require('./routes/api/search');
 const friends = require('./routes/api/friends');
+const seedEverything = require('./routes/api/seeds');
 const User = require('./models/User');
 const bodyParser = require('body-parser');
 const path = require('path');
@@ -44,6 +45,7 @@ app.use("/api/comments", comments);
 app.use("/api/answers", answers);
 app.use("/api/search", search);
 app.use("/api/friends", friends);
+app.use("/api/seeds", seedEverything); //this will wipe the DB and replace it with only seeded data!!
 
 
 const port = process.env.PORT || 5000;
