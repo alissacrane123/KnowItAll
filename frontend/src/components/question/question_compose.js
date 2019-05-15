@@ -85,11 +85,10 @@ class QuestionCompose extends React.Component {
 
     if(this.state.winner !== ""){
       return (
-      <>  
-          <h1>this.state.winner wins!</h1>
+        <div className="new-form-container" style={{paddingTop: "90px"}}>
           <iframe src="https://giphy.com/embed/aWRWTF27ilPzy" width="480" height="359" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-          <p>{this.state.winner} wins!</p>
-      </>
+          <h1>{this.state.winner} wins!</h1>
+      </div>
         )
     }
     else if(!this.props.results[0] && this.state.questionSent === true ) {
@@ -108,7 +107,7 @@ class QuestionCompose extends React.Component {
           <div className="current-button">
             <button onClick={() =>this.handleClick('current')}>I WON</button>
           </div>
-          <div className="friend-button">
+          <div className="current-button">
             <button onClick={()=>this.handleClick('friend')}>FRIEND WON</button>
           </div>
         </div>
@@ -119,22 +118,23 @@ class QuestionCompose extends React.Component {
     // debugger 
 
     return (
+      <>
       <div className="new-body-container">
 
         <form className="new-form-container" onSubmit={this.handleSubmit}>
           
           <div className="question-input-container">
             <input type="textarea"
+                className="question-inputs"
               value={this.state.body}
               onChange={this.update('body')}
               placeholder="Ask a question..."
             />
-            <input type="submit" value="Submit" />
           </div>
  
           <div className="answers-container">
              <div className="answer-input-container">
-               <input className="answer1-input"
+               <input className="question-inputs"
                  value={this.state.answer1}
                  onChange={this.update('answer1')}
                  placeholder="Your answer"
@@ -142,22 +142,23 @@ class QuestionCompose extends React.Component {
              </div>
 
             <div className="answer-input-container">
-              <input className="answer2-input"
+                <input className="question-inputs"
                 value={this.state.answer2}
                 onChange={this.update('answer2')}
                 placeholder="Your friend's answer"
               />
             </div>
           </div> 
+            <input className="question-inputs" type="submit" value="Submit" />
         </form>
-
-        <div className="results-body-container">
-          <div className="results-container">
-            { results }
-          </div>
-        </div>
-
       </div>
+      <div className="results-body-container">
+        <div className="results-container">
+          {results}
+        </div>
+      </div>
+      </>
+      
     )
   }
 }
