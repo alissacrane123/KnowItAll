@@ -1,3 +1,15 @@
+.nc2 {
+  position: fixed;
+  top: 0;
+  height: 90px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: white;
+  border-bottom: 2px solid rgb(180, 179, 179);
+}
+
 .navbar-container {
   position: fixed;
   top: 0;
@@ -6,7 +18,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background: rgb(49, 134, 173, 0.5);
+  background: rgba(231, 144, 212, 0.5);
 }
 
 
@@ -26,7 +38,14 @@
 .nav-button {
   width: 90px;
   height: 40px;
-  border-radius: 4px;
-
+  /* border-radius: 4px; */
+  background: none;
+  border: none;
+  font-size: 16px;
+  COLOR: rgb(150, 137, 137);
+  font-weight: bolder;
 }
 
+.nav-button:hover {
+  border-bottom: 2px solid white;
+}

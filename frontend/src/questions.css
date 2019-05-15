@@ -1,18 +1,27 @@
 .index-body-container {
-  height: 100%;
-  width: 100%;
-  padding-top: 90px;
-  display: flex;
-  flex-direction: column;
+height: 100%;
+    width: 100%;
+    padding-top: 90px;
+    display: flex;
+    flex-direction: row;
+        justify-content: space-evenly;
+        color: rgb(119, 112, 112)
 }
 
 .index-friends-container {
+  position: fixed;
+  left: 0;
+  margin-left: 40px;
   display: flex;
   flex-direction: column;  
   margin: 10px;
   border-radius: 4px;
-  background: pink;
+  /* background: pink; */
       margin-top: 80px;
+      width: 50%;
+      margin-left: 80px; 
+      margin-right: 40px;
+      /* border: 2px solid rgb(119, 112, 112); */
 }
 
 .friends-header-container {
@@ -28,13 +37,17 @@
 }
 
 .index-questions-container {
+      margin-left: auto;
   /* height: 100%; */
   /* width: 100%; */
   display: flex;
   flex-direction: column;  
-  margin: 10px;
-  border-radius: 4px;
-  background: pink;
+  margin-right: 80px;
+  /* margin-left: 40px;   */
+border-radius: 4px;
+  /* background: pink; */
+  margin-top: 80px;
+  width: 50%;
   /* align-items: center; */
 }
 
@@ -58,8 +71,8 @@
   min-height: 30px;
   padding: 10px;
   margin-bottom: 10px;
-  border-radius: 8px;
-  background: rgb(243, 151, 243);
+  /* border-radius: 8px; */
+  background: rgba(231, 144, 212, 0.5);
   /* color: white; */
 }
 

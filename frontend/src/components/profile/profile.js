@@ -46,7 +46,7 @@ class Profile extends React.Component {
         </div>)
     );
     }
-    debugger
+
     if (!this.props.answers.all[0]) {
       rightAnswers = 0;
     } else {
@@ -76,7 +76,7 @@ class Profile extends React.Component {
     ];
 
     return (
-      <div class="profile-container-wrapper">
+      <div className="profile-container-wrapper">
         <div className="profile-margin"></div>
         <div className="profile-container">
           
