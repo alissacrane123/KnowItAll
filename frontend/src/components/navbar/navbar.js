@@ -43,7 +43,7 @@ class NavBar extends React.Component {
       <div className="nc2">
       <div className="navbar-container">
         <div className="navbar-header-container">
-          <div>LOGO</div>
+            <img className="logo-img" src="https://66.media.tumblr.com/c3713205799d45db82b3c7de42053888/tumblr_prk4e73csi1wyb2l8o1_640.png" alt="block letters KnowItAll"></img>
         </div>
 
         <div className="navbar-links-container">
