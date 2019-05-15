@@ -62,3 +62,11 @@
   background: rgb(243, 151, 243);
   /* color: white; */
 }
+
+#false {
+  background:red;
+}
+
+#true {
+  background:greenyellow;
+}
