@@ -30,6 +30,8 @@ const UsersReducer = (state = { friends: {}, friend: {}, users: {} }, action) =>
     case RECEIVE_FRIEND:
       // debugger
       newState.friend = action.friend.data;
+      // debugger
+      newState.friends.push(action.friend.data);
       return newState;
     default:
       return state;

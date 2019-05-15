@@ -30,7 +30,12 @@ class Profile extends React.Component {
     let winnerQuestions;
 
     if (!this.props.answers.all[0] || !this.props.questions.user[0]) {
-      return null;
+      // return null;
+      return (
+        <div className="profile-header">
+          <div className="prof-header">Welcome, {this.props.currentUser.username}!</div>
+        </div>
+      )
     } else {
       winnerQuestions = this.props.answers.all.map(answer => ( {[answer.question]: [answer.winner] } ));
       winnerQuestions = winnerQuestions.reduce(function (result, item) {
@@ -77,10 +82,13 @@ class Profile extends React.Component {
 
     return (
       <div className="profile-container-wrapper">
+        <div className="profile-header">
+          <div className="prof-header">Welcome, {this.props.currentUser.username}!</div>
+        </div>
         <div className="profile-margin"></div>
         <div className="profile-container">
           
-          <div className="index-questions-container" id="profile-questions-container">
+          <div className="index-questions-container2" id="profile-questions-container">
             <div className="index-header-container" >
               <div className="index-header">
                 Your Questions Listed Below:
