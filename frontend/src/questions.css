@@ -9,7 +9,7 @@ height: 100%;
 }
 
 .index-friends-container {
-  position: fixed;
+  /* position: fixed; */
   left: 0;
   margin-left: 40px;
   display: flex;
