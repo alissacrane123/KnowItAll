@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-const db = require("./config/keys").mongoURI;
+const db = require("./config/keys_dev").mongoURI;
 const users = require("./routes/api/users");
 const comments = require("./routes/api/comments");
 const answers = require("./routes/api/answers");
@@ -10,6 +10,14 @@ const search = require('./routes/api/search');
 const friends = require('./routes/api/friends');
 const User = require('./models/User');
 const bodyParser = require('body-parser');
+const path = require('path');
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('frontend/build'));
+  app.get('/', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+  })
+}
 
 mongoose
   .connect(db, { useNewUrlParser: true })
