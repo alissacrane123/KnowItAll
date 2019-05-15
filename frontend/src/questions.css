@@ -17,14 +17,26 @@ height: 100%;
   margin: 10px;
   border-radius: 4px;
   /* background: pink; */
-      margin-top: 80px;
+      /* margin-top: 80px;
       width: 47%;
       margin-left: 80px; 
-      margin-right: 40px;
+      margin-right: 40px; */
       /* border: 2px solid rgb(119, 112, 112); */
+          margin-left: 80px;
+  /* height: 100%; */
+  /* width: 100%; */
+  display: flex;
+  flex-direction: column;  
+  margin-right: 80px;
+  /* margin-left: 40px;   */
+  border-radius: 4px;
+  /* background: pink; */
+  margin-top: 80px;
+  width: 35%
 }
 
 .friends-header-container {
+  /* color: rgb(119, 112, 112); */
   margin: 10px;
   padding: 10px;
   font-size: 18px;
@@ -47,8 +59,9 @@ height: 100%;
   border-radius: 4px;
   /* background: pink; */
   margin-top: 80px;
-  width: 50%;
+  width: 47%;
   /* align-items: center; */
+  /* color: rgb(119, 112, 112); */
 }
 
 .index-header-container {
@@ -58,6 +71,7 @@ height: 100%;
   /* border-radius: 8px;
   background: purple;
   color: white; */
+  color: rgb(119, 112, 112);
 }
 
 .questions-container  {
@@ -94,3 +108,11 @@ height: 100%;
   list-style: none;
 }
 
+.add-friend-form {
+  min-height: 130px;
+}
+
+.new-friend-submit-container {
+  height: 30px;
+  width: 40px;
+}
