@@ -26,7 +26,7 @@ class QuestionIndex extends React.Component {
 
 
   render() {
-    let { addFriend, currentUser, fetchUser, users, fetchFriend } = this.props;
+    let { addFriend, currentUser, fetchUser, users, answers, fetchFriend, fetchUserAnswers} = this.props;
     let questions;
 
     if (!this.props.questions) {
@@ -50,7 +50,7 @@ class QuestionIndex extends React.Component {
     } else {
       // debugger
       friends = this.props.friends.map(friendObj => (
-        <Friend friendObj={friendObj} fetchUser={fetchUser} users={users} fetchFriend={fetchFriend}/>
+        <Friend friendObj={friendObj} fetchUser={fetchUser} users={users} answers={answers} fetchFriend={fetchFriend} fetchUserAnswers={fetchUserAnswers}/>
       ))
       // friends = this.props.friends
     }
