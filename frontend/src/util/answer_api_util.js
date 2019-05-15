@@ -13,3 +13,7 @@ export const fetchQuestionAnswers = id => {
   return axios.get(`api/answers/question/${id}`)
 };
 
+export const fetchUserAnswers = id => {
+  return axios.get(`api/answers/user/${id}`)
+};
+

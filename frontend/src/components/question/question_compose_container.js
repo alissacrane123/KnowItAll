@@ -6,7 +6,6 @@ import { create } from 'domain';
 import { fetchResults } from '../../actions/result_actions';
 
 const mapStateToProps = (state) => {
-  // debugger
   return {
     currentUser: state.session.user,
     newQuestion: state.questions.new,
