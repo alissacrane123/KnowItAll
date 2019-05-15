@@ -10,7 +10,7 @@ const bcrypt = require('bcryptjs');
 module.exports = async function seedEverything(req, res) {
     /* USER SEEDING */
     const users = [
-        { username: "Allisa", email: "Allisa@knowitall.com", password: "password" },
+        { username: "Alissa", email: "Allisa@knowitall.com", password: "password" },
         { username: "Aubrie", email: "Aubrie@knowitall.com", password: "password" },
         { username: "Brett", email: "Brett@knowitall.com", password: "password" },
         { username: "Nate", email: "Nate@knowitall.com", password: "password" }

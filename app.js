@@ -45,7 +45,7 @@ app.use("/api/comments", comments);
 app.use("/api/answers", answers);
 app.use("/api/search", search);
 app.use("/api/friends", friends);
-app.use("/api/seeds", seedEverything); //this will wipe the DB and replace it!!
+app.use("/api/seeds", seedEverything); //this will wipe the DB and replace it with only seeded data!!
 
 
 const port = process.env.PORT || 5000;
