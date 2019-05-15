@@ -27,7 +27,6 @@ class QuestionIndex extends React.Component {
 
   render() {
     let { addFriend, currentUser, fetchUser, users, fetchFriend } = this.props;
-
     let questions;
 
     if (!this.props.questions) {
