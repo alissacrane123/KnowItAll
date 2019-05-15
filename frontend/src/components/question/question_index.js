@@ -63,6 +63,7 @@ class QuestionIndex extends React.Component {
           <div className="friends-header-container">
             <div className="friends-header">Select a friend to challenge:</div>
           </div>
+          
           <div className="friends-container">
             {/* <Friend friends={friends} fetchUser={fetchUser} friend={friend} /> */}
             { friends }     
@@ -70,6 +71,7 @@ class QuestionIndex extends React.Component {
           <div className="new-friend-container">
             <CreateFriend addFriend={addFriend} currentUser={currentUser} />
           </div>
+          
         </div>
 
         <div className="index-questions-container">

@@ -49,3 +49,9 @@
 .nav-button:hover {
   border-bottom: 2px solid white;
 }
+
+.logo-img {
+  height: 60px;
+  margin-top: 13px;
+  margin-left: 18px;
+}
