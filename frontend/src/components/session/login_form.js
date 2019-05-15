@@ -13,7 +13,7 @@ class LoginForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.renderErrors = this.renderErrors.bind(this);
+    // this.renderErrors = this.renderErrors.bind(this);
   }
 
   componentWillReceiveProps(nextProps) { // componentDidUpdate
@@ -44,9 +44,9 @@ class LoginForm extends React.Component {
 
   renderErrors() {
     return (
-      <ul>
+      <ul className="errors-container">
         {Object.keys(this.state.errors).map((error, i) => (
-          <li key={`error-${i}`}>
+          <li className="errors" key={`error-${i}`}>
             {this.state.errors[error]}
           </li>
         ))}
@@ -57,6 +57,8 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div className="main-body-container">
+
+        {this.renderErrors()}
 
         <div className="main-title-container">
           <h1 className="main-title">KNOW IT ALL</h1>
@@ -81,14 +83,16 @@ class LoginForm extends React.Component {
                 onChange={this.update('password')}
                 placeholder="Password"
               />
-
-              <input className="login-submit" type="submit" value="Submit" />
-              {this.renderErrors()}
+              
+              <div className="signup-submit">
+                <input type="submit" value="LOG IN" className="login-submit" />
+              </div>
             </div>
 
-            <div className="switch-session">
-              <Link className="main-link" to={'/signup'}>Signup instead</Link>
+            <div className="switch-signup">
+              <Link className="main-link" to={'/signup'}>SIGNUP INSTEAD</Link>
             </div>
+
           </form>
         </div>
 

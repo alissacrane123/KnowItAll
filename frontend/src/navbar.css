@@ -44,6 +44,7 @@
   font-size: 16px;
   COLOR: rgb(150, 137, 137);
   font-weight: bolder;
+  outline: none;
 }
 
 .nav-button:hover {
