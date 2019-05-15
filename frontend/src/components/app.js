@@ -21,9 +21,9 @@ const App = () => (
     </Switch>
 
     <Switch>
-      <Route exact path="/questions" component={QuestionIndexContainer} />
-      <Route exact path="/new" component={QuestionComposeContainer} />
-      <Route exact path="/profile" component={ProfileContainer} />
+      <ProtectedRoute exact path="/questions" component={QuestionIndexContainer} />
+      <ProtectedRoute exact path="/new" component={QuestionComposeContainer} />
+      <ProtectedRoute exact path="/profile" component={ProfileContainer} />
     </Switch>
   </div>
 );

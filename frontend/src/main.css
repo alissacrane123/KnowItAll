@@ -129,7 +129,7 @@
     
 }
 
-.login-submit {
+.login-submit, .main-button {
     height: 40px;
     width: 100px;
     /* width: 100%; */
@@ -204,7 +204,7 @@
     
 }
 
-.signup-submit, .switch-signup {
+.signup-submit, .switch-signup, .main-button {
   margin-top: 10px;
   display: flex;
   align-items: center;
