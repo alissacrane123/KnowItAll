@@ -2,7 +2,7 @@ import * as ResultAPIUtil from '../util/result_api_util';
 import axios, { AxiosRequestConfig, AxiosPromise, AxiosResponse } from 'axios';
 
 export const RECEIVE_RESULTS = "RECEIVE_RESULTS";
-export const CLEAR_RESULTS = "RECEIVE_RESULTS";
+export const CLEAR_RESULTS = "CLEAR_RESULTS";
 
 
 export const receiveResults = results => ({

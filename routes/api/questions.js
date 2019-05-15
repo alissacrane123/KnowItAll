@@ -14,17 +14,8 @@ router.get("/", (req, res) => {
         .populate('answers')
         .exec()
         .then(questions => {
-            // debugger;
             res.json(questions
-            // questions: questions.map(question => {
-            //     debugger;
-            //     return {
-            //         body: question.body,
-            //         date: question.date,
-            //         answers: question.answer
-            //     }
-            // })
-            )})
+        )})
         .catch(err => res.status(404).json({ noQuestionsFound: 'No questions found'}));
 });
 

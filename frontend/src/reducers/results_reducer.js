@@ -8,7 +8,8 @@ const ResultsReducer = (state = { all: {} }, action) => {
       newState.all = action.results.data;
       return newState;
     case CLEAR_RESULTS:
-      return [];
+      newState.all = [];
+      return newState;
     default:
       return state;
   }
