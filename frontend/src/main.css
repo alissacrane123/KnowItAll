@@ -12,12 +12,27 @@
   justify-content: center;
   height: 100%;
   width: 100%;
+
+  
 }
 
 .main-title-container {
-  position: absolute;
-  top: 100px;
-  max-width: 50%;
+    position: absolute;
+    top: 0px;
+    /* max-width: 50%; */
+    width: 100%;
+    background: rgb(49, 134, 173, 0.5);
+    text-align: center;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.main-title {
+  color: rgb(12, 107, 151);
+}
+
+.main-title {
+  text-align: center;
+/* background: rgb(49, 134, 173, 0.5); */
 }
 
 .main-links-container  {
@@ -66,27 +81,27 @@
 }
 
 .session-form {
-    height: 340px;
+height: 340px;
     width: 340px;
     display: flex;
     flex-direction: column;
-    border: 5px solid pink;
-    border-radius: 20px;
+    border: 8px solid rgb(49, 134, 173);
+    /* border-radius: 20px; */
     padding-left: 80px;
     padding-top: 30px;
     padding-bottom: 30px;
     padding-right: 80px;
-    background: rgb(49, 134, 173);
+    background: rgb(49, 134, 173, 0.5);
 }
 
 .session-header-container {
   height: 40px;
-    text-align: center;
+    /* text-align: center; */
     margin-bottom: 20px;
     font-size: 25px;
     font-weight: bolder;
     color: white;
-    font-family: "Comic Sans MS", cursive, sans-serif;
+    /* font-family: "Comic Sans MS", cursive, sans-serif; */
 }
 
 .login-inputs {
