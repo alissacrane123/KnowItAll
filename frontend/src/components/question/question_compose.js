@@ -80,6 +80,14 @@ class QuestionCompose extends React.Component {
     });
   }
 
+  questionSubmitButton() {
+    if(this.state.body && this.state.answer1 && this.state.answer2) {
+      return <input className="question-submit" type="submit" value="Submit" />
+    } else {
+      return <input className="question-submit" disabled type="submit" value="Submit" />
+    }
+  }
+
   render() {
     let results;
 
@@ -166,7 +174,7 @@ class QuestionCompose extends React.Component {
                 />
               </div>
             </div> 
-              <input className="question-submit" type="submit" value="Submit" />
+              {this.questionSubmitButton()}
           </form>
         </div>
 
