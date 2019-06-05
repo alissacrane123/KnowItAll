@@ -121,47 +121,52 @@ class QuestionCompose extends React.Component {
       <div className="new-body-wrapper">
         <div className="new-body-container">
 
-          <section className="question-media">
-            <section>
-              <h2>Player 1</h2>
-              <div className="question-img--wrapper">
-      
-                <img id="slide-left" src="http://lorempixel.com/output/cats-q-c-100-100-4.jpg"></img>
-              </div>
-              <h2>Player 2</h2>
-              <div className="question-img--wrapper">
-                <img id="slide-right" src="http://lorempixel.com/output/cats-q-c-100-100-4.jpg"></img>
-              </div>
-            </section>
-          </section>
+          
 
           <form className="new-form-container" onSubmit={this.handleSubmit}>
             <div className="question-input-container">
+              <h2>ASK YOUR QUESTION</h2>
               <input type="textarea"
                   className="question-inputs"
                 value={this.state.body}
                 onChange={this.update('body')}
-                placeholder="Ask a question..."
+                placeholder="ex: Do doves cry?"
               />
             </div>
+
+            <section className="question-media">
+                <div className="question-media--player">
+                  <h2>Player 1</h2>
+                  <div className="question-img--wrapper">
+                    <img id="slide-left" src="http://lorempixel.com/output/cats-q-c-100-100-4.jpg"></img>
+                  </div>
+                </div>
+                <div className="question-media--player">
+                  <h2>Player 2</h2>
+                  <div className="question-img--wrapper">
+                    <img id="slide-right" src="http://lorempixel.com/output/cats-q-c-100-100-4.jpg"></img>
+                  </div>
+                </div>
+            </section>
             
             <div className="answers-container">
               <div className="answer-input-container">
                 <input className="question-inputs"
                   value={this.state.answer1}
                   onChange={this.update('answer1')}
-                  placeholder="Your answer"
+                  placeholder="ex: Yes, (TY Prince)"
                 />
               </div>
+
               <div className="answer-input-container">
                   <input className="question-inputs"
                   value={this.state.answer2}
                   onChange={this.update('answer2')}
-                  placeholder="Your friend's answer"
+                  placeholder="ex: No Way"
                 />
               </div>
             </div> 
-              <input className="question-inputs" type="submit" value="Submit" />
+              <input className="question-submit" type="submit" value="Submit" />
           </form>
         </div>
 

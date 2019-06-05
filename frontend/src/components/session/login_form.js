@@ -14,7 +14,10 @@ class LoginForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
     this.handleScroll = this.handleScroll.bind(this);
+    this.clearedErrors = false;
+
     // this.renderErrors = this.renderErrors.bind(this);
   }
 
@@ -24,7 +27,7 @@ class LoginForm extends React.Component {
       this.props.history.push('/questions');
     }
 
-    // this.setState({ errors: nextProps.errors })
+    this.setState({ errors: nextProps.errors });
   }
 
   update(field) {
@@ -41,13 +44,19 @@ class LoginForm extends React.Component {
       password: this.state.password
     };
 
-    if (e.currentTarget.value != "LOG IN") {
-      user = {
+
+    this.props.login(user);
+  }
+
+  handleDemoSubmit(e) {
+
+    e.preventDefault();
+
+    let user = {
         username: 'aubrie',
         password: '123456'
-      };
-    } 
-
+    };
+    
     this.props.login(user);
   }
 
@@ -104,10 +113,11 @@ class LoginForm extends React.Component {
               
               <div className="signup-submit">
                 <input type="submit" value="LOG IN" className="login-submit" />
-                <input type="submit" value="DEMO" className="login-submit" />
+                <button className="login-submit" onClick={this.handleDemoSubmit}>DEMO</button>
+                {/* <input type="submit" value="DEMO" className="login-submit" /> */}
               </div>
               <input onClick={this.handleScroll} className="main-button" id="how-it-works" type="button" value="How It Works" />
-              <div className="login-line"></div>
+              {/* <div className="login-line"></div> */}
             </div>
 
 

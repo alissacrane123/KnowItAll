@@ -265,5 +265,19 @@
 .errors {
   background: rgba(247, 245, 246);
   padding: 5px;
+  z-index: 9;
   border-radius: 5px;
+  margin: 5px;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  cursor: pointer;
+}
+
+input[type="submit"]{
+  cursor: pointer;
 }
