@@ -16,10 +16,10 @@ function HowItWorks() {
       </section>
       
       <section className="how-it-works--section-1">
-        <img src="https://66.media.tumblr.com/f5fed4443174c2febcb5fc04785f8bbc/tumblr_psl8v3ZL9X1wyb2l8o1_540.png"></img>
+        <img src="https://66.media.tumblr.com/2caa0defd52f13a3e140424249fde6b6/tumblr_psmv01FkER1wyb2l8o1_540.png"></img>
         <article>
           <h2>1 // OPEN KNOWITALL</h2>
-          <p>Open the KnowItAll app on one of your phones. Select Charlie from your friend list, enter Charlie's idiotic assumption about flamingos.</p>
+          <p>Open the KnowItAll app on one of your phones. Challenge Charlie by clicking his name on your friend list.</p>
         </article>
       </section>
 
@@ -27,7 +27,9 @@ function HowItWorks() {
         <img src="https://66.media.tumblr.com/ddef0c68704735c61de4c1775f02cbb7/tumblr_psldefJsES1wyb2l8o1_540.png"></img>
         <article>
           <h2>2 // ASK A QUESTION</h2>
-          <p>KnowItAll serves up google results through SERP API & Google Custom Search. To Charlie's humiliation he learns you CANNOT own a flamingo under bird law 34573453.
+          <p>Enter Charlie's idiotic assumption about flamingos in the question field. Add each of your answers in the answer boxes.
+            KnowItAll serves up google results through SERP API & Google Custom Search.
+            To Charlie's humiliation he learns you CANNOT own a flamingo under bird law 34573453.
             Voice of reason: uhh why wouldn't I just use google? 
             Beeecause KnowItAll keeps score, dun dun dun!</p>
         </article>
@@ -37,18 +39,21 @@ function HowItWorks() {
         <img src="https://66.media.tumblr.com/e07d28e9b5660118e207635a77f6dd57/tumblr_psldefJsES1wyb2l8o2_540.png"></img>
         <article>
           <h2>3 // WHO KNEW IT?</h2>
-          <p>Select a winner, see an awesome K.O. gif</p>
+          <p>Select a winner, we'll pull up an awesome K.O. gif. Choose some combo of the following
+            1) Wave the gif about and while doing a victory dance. 2) 
+            Feel better knowing your friend is now all the wiser. </p>
         </article>
       </section>
 
       <section className="how-it-works--section">
-        <img src="https://66.media.tumblr.com/557cc905afcd17b3a76b24a23065e4db/tumblr_psldefJsES1wyb2l8o3_540.png"></img>
+        <img id="wizard-leader" width="200" src="https://66.media.tumblr.com/dfba6578988ca82667b7bc62b9abc1fb/tumblr_psmu1mQyzf1wyb2l8o1_540.png"></img>
         <article>
           <h2>4 // RANKINGS</h2>
           <p>On the main page you'll see each of your friends rank.
-            Everyone starts as a spud. What's a spud? A baby potato, you uncultured swine.
-            From there you can prove you KnowItAll and reign as a wizard amongst plebs. The lowest
-            ranking is of course a piece of poo. Don't be a piece of poo.</p>
+            Everyone starts as a spud. What's a spud? It's a baby potato.
+            From there you can prove you KnowItAll and reign as a WIZARD amongst,
+            well, mostly spuds and a few select lizards. The lowest ranking is of 
+            course a piece of poo. Don't be a piece of poo.</p>
         </article>
       </section>
 

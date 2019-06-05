@@ -44,3 +44,7 @@
 .how-it-works--section p, .how-it-works--section-1 p {
   font-size: 24px;
 }
+
+#wizard-leader {
+  height: 230px;
+}
