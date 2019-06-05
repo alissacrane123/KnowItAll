@@ -73,6 +73,28 @@
   background: rgba(231, 144, 212, 0.5);
 }
 
+.question-inputs {
+  margin: 20px 0px;
+  width: 83%;
+}
+
+.question-input-container h2 {
+  margin-top: 80px;
+}
+
+.new-form-container, .answers-container {
+  width: 100%;
+  height: 100%;
+}
+
+.question-media, .answers-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 60%;
+  margin: 20px;
+}
+
 #false {
   background:rgb(150, 137, 137);
 }
