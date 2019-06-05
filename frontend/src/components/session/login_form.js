@@ -1,5 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import HowItWorks from '../how-it-works/how_it_works';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -12,27 +14,25 @@ class LoginForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.renderErrors = this.renderErrors.bind(this);
+    this.handleScroll = this.handleScroll.bind(this);
+    // this.renderErrors = this.renderErrors.bind(this);
   }
 
-  // Once the user has been authenticated, redirect to the questions page
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps) { // componentDidUpdate
+
     if (nextProps.currentUser === true) {
       this.props.history.push('/questions');
     }
 
-    // Set or clear errors
-    this.setState({ errors: nextProps.errors })
+    // this.setState({ errors: nextProps.errors })
   }
 
-  // Handle field updates (called in the render method)
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
   }
 
-  // Handle form submission
   handleSubmit(e) {
     e.preventDefault();
 
@@ -41,15 +41,29 @@ class LoginForm extends React.Component {
       password: this.state.password
     };
 
+    if (e.currentTarget.value != "LOG IN") {
+      user = {
+        username: 'aubrie',
+        password: '123456'
+      };
+    } 
+
     this.props.login(user);
   }
 
-  // Render the session errors if there are any
+  handleScroll() {
+    window.scroll({
+      behavior: 'smooth',
+      left: 0,
+      top: 700
+    });
+  }
+
   renderErrors() {
     return (
-      <ul>
+      <ul className="errors-container">
         {Object.keys(this.state.errors).map((error, i) => (
-          <li key={`error-${i}`}>
+          <li className="errors" key={`error-${i}`}>
             {this.state.errors[error]}
           </li>
         ))}
@@ -59,26 +73,58 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <div>
-            <input type="text"
-              value={this.state.username}
-              onChange={this.update('username')}
-              placeholder="username"
-            />
-            <br />
-            <input type="password"
-              value={this.state.password}
-              onChange={this.update('password')}
-              placeholder="Password"
-            />
-            <br />
-            <input type="submit" value="Submit" />
-            {this.renderErrors()}
-          </div>
-        </form>
+      <div className="main-body-container">
+
+        {this.renderErrors()}
+
+        <div className="main-title-container">
+          <h1 className="main-title">KNOW IT ALL</h1>
+        </div>
+
+        <div className="session-form-container">
+          <form className="session-form" onSubmit={this.handleSubmit}>
+            <div className="session-header-container">
+              <div className="header-default">Login</div>
+              <Link className="main-link" to={'/signup'}>Sign Up</Link>
+            </div>
+            <div className="login-inputs">
+              <input className="login-input"
+                type="text"
+                value={this.state.username}
+                onChange={this.update('username')}
+                placeholder="username"
+              />
+
+              <input className="login-input"
+                type="password"
+                value={this.state.password}
+                onChange={this.update('password')}
+                placeholder="Password"
+              />
+              
+              <div className="signup-submit">
+                <input type="submit" value="LOG IN" className="login-submit" />
+                <input type="submit" value="DEMO" className="login-submit" />
+              </div>
+              <input onClick={this.handleScroll} className="main-button" id="how-it-works" type="button" value="How It Works" />
+              <div className="login-line"></div>
+            </div>
+
+
+
+          </form>
+          
+          <HowItWorks />
+        </div>
+
+        
+
+        <footer>
+        </footer>
+
       </div>
+
+
     );
   }
 }

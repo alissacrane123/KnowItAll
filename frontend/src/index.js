@@ -5,8 +5,16 @@ import configureStore from './store/store';
 import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
+import * as APIUtils from './util/question_api_util';
 
 import './index.css';
+import './main.css';
+import './navbar.css';
+import './new.css';
+import './questions.css';
+import './profile.css';
+import './how-it-works.css';
+
 import App from './App';
 
 
@@ -26,6 +34,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const preloadedState = { session: { isAuthenticated: true, user: decodedUser } };
 
     store = configureStore(preloadedState);
+
+    window.store = store;
+    window.getState = store.getState;
+    window.APIUtils = APIUtils;
 
     const currentTime = Date.now() / 1000;
 

@@ -1,0 +1,135 @@
+.index-body-container {
+height: 100%;
+    width: 100%;
+    padding-top: 90px;
+    display: flex;
+    flex-direction: row;
+        justify-content: space-evenly;
+        color: rgb(119, 112, 112)
+}
+
+.index-friends-container {
+  /* position: fixed; */
+  left: 0;
+  margin-left: 40px;
+  display: flex;
+  flex-direction: column;  
+  margin: 10px;
+  border-radius: 4px;
+  /* background: pink; */
+      /* margin-top: 80px;
+      width: 47%;
+      margin-left: 80px; 
+      margin-right: 40px; */
+      /* border: 2px solid rgb(119, 112, 112); */
+          margin-left: 80px;
+  /* height: 100%; */
+  /* width: 100%; */
+  display: flex;
+  flex-direction: column;  
+  margin-right: 80px;
+  /* margin-left: 40px;   */
+  border-radius: 4px;
+  /* background: pink; */
+  margin-top: 80px;
+  width: 35%
+}
+
+.friends-header-container {
+  /* color: rgb(119, 112, 112); */
+  margin: 10px;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.friends-container {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.index-questions-container, .result-container {
+      margin-left: auto;
+  /* height: 100%; */
+  /* width: 100%; */
+  display: flex;
+  flex-direction: column;  
+  margin-right: 80px;
+  /* margin-left: 40px;   */
+  border-radius: 4px;
+  /* background: pink; */
+  margin-top: 80px;
+  width: 47%;
+  /* align-items: center; */
+  /* color: rgb(119, 112, 112); */
+}
+
+.index-header-container {
+  margin: 10px;
+  padding: 10px;
+  font-size: 18px;
+  /* border-radius: 8px;
+  background: purple;
+  color: white; */
+  color: rgb(119, 112, 112);
+}
+
+.questions-container  {
+  /* width: 100%; */
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.question-item-container, .result-data-container, .friend-container {
+  min-height: 30px;
+  padding: 10px;
+  margin-bottom: 10px;
+  /* border-radius: 8px; */
+  background: rgba(231, 144, 212, 0.5);
+  /* color: white; */
+}
+
+#false {
+  background:rgb(150, 137, 137);
+}
+
+#true {
+  background: rgba(231, 144, 212, 0.5);
+}
+
+.result-container {
+ width: 90%;
+ margin-top: 20px;
+ margin-bottom: 20px;
+}
+
+.result-data-container {
+  list-style: none;
+}
+
+.add-friend-form {
+  min-height: 130px;
+}
+
+.new-friend-submit-container {
+  height: 30px;
+  width: 40px;
+}
+
+.friend-link-continer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: space-between;
+  align-items: center;
+  border: 1px solid rgb(180, 179, 179);
+}
+
+.friend-link {
+  width: 25%;
+  color: rgb(150, 137, 137);
+  font-weight: 700;
+  font-size: 24px;
+  text-decoration: none;
+}

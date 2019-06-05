@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 // import './navbar.css'
 
 class NavBar extends React.Component {
@@ -12,24 +13,26 @@ class NavBar extends React.Component {
   logoutUser(e) {
     e.preventDefault();
     this.props.logout();
+    this.props.history.push('/login')
   }
 
   // Selectively render links dependent on whether the user is logged in
   getLinks() {
     if (this.props.loggedIn) {
       return (
-        <div>
-          <Link to={'/new'}>New Question</Link>
-          <Link to={'/profile'}>Profile</Link>
-          <Link to={'/stats'}>Stats</Link>
-          <button onClick={this.logoutUser}>Logout</button>
+        <div className="navbar-buttons-container">
+          {/* <Link className="nav-link" to={'/new'}><button className="nav-button" >Challenge</button></Link> */}
+          <Link className="nav-link" to={'/questions'}><button className="nav-button" >FEED</button></Link>
+          <Link className="nav-link" to={'/profile'}><button className="nav-button" >PROFILE</button></Link>
+          {/* <Link to={'/stats'}><button className="nav-button" >Stats</button></Link> */}
+          <div className="nav-link"><button className="nav-button" onClick={this.logoutUser}>LOGOUT</button></div>
         </div>
       );
     } else {
       return (
         <div>
-          <Link to={'/signup'}>Signup</Link>
-          <Link to={'/login'}>Login</Link>
+          <Link to={'/signup'}>SIGNUP</Link>
+          <Link to={'/login'}>LOGIN</Link>
         </div>
       );
     }
@@ -37,13 +40,19 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>KnowItAll</h1>
-        
-        {this.getLinks()}
+      <div className="nc2">
+      <div className="navbar-container">
+        <div className="navbar-header-container">
+            <img className="logo-img" src="https://66.media.tumblr.com/c3713205799d45db82b3c7de42053888/tumblr_prk4e73csi1wyb2l8o1_640.png" alt="block letters KnowItAll"></img>
+        </div>
+
+        <div className="navbar-links-container">
+          {this.getLinks()}
+        </div>
+      </div>
       </div>
     );
   }
 }
 
-export default NavBar;
+export default withRouter(NavBar);
