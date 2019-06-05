@@ -25,13 +25,12 @@
 }
 
 .friends-header-container {
-  margin: 10px;
-  padding: 10px;
+  margin: 5px;
   font-size: 18px;
 }
 
 .friends-container {
-  padding: 30px;
+  padding: 25px;
   display: flex;
   flex-direction: column;
 }
@@ -47,19 +46,20 @@
   flex-direction: column;  
   margin-right: 80px;
   border-radius: 4px;
-  margin-top: 80px;
-  width: 47%;
+  margin-top: 100px;
+  width: 45%;
 }
 
 .index-header-container {
-  margin: 10px;
-  padding: 10px;
+  margin-top: -5px;
   font-size: 18px;
   color: rgb(119, 112, 112);
 }
 
 .questions-container  {
   padding: 30px;
+  padding-left: 10px;
+  padding-right: 160px;
   display: flex;
   flex-direction: column;
 }
