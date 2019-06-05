@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import HowItWorks from '../how-it-works/how_it_works';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -13,6 +14,7 @@ class LoginForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleScroll = this.handleScroll.bind(this);
     // this.renderErrors = this.renderErrors.bind(this);
   }
 
@@ -39,7 +41,22 @@ class LoginForm extends React.Component {
       password: this.state.password
     };
 
+    if (e.currentTarget.value != "LOG IN") {
+      user = {
+        username: 'aubrie',
+        password: '123456'
+      };
+    } 
+
     this.props.login(user);
+  }
+
+  handleScroll() {
+    window.scroll({
+      behavior: 'smooth',
+      left: 0,
+      top: 700
+    });
   }
 
   renderErrors() {
@@ -67,7 +84,8 @@ class LoginForm extends React.Component {
         <div className="session-form-container">
           <form className="session-form" onSubmit={this.handleSubmit}>
             <div className="session-header-container">
-              <div>Login Below:</div>
+              <div className="header-default">Login</div>
+              <Link className="main-link" to={'/signup'}>Sign Up</Link>
             </div>
             <div className="login-inputs">
               <input className="login-input"
@@ -86,16 +104,20 @@ class LoginForm extends React.Component {
               
               <div className="signup-submit">
                 <input type="submit" value="LOG IN" className="login-submit" />
+                <input type="submit" value="DEMO" className="login-submit" />
               </div>
+              <input onClick={this.handleScroll} className="main-button" id="how-it-works" type="button" value="How It Works" />
+              <div className="login-line"></div>
             </div>
 
-            <div className="switch-signup">
-              <Link className="main-link" to={'/signup'}>SIGNUP INSTEAD</Link>
-            </div>
+
 
           </form>
+          
+          <HowItWorks />
         </div>
 
+        
 
         <footer>
         </footer>
