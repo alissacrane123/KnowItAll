@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import HowItWorks from '../how-it-works/how_it_works';
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class SignupForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleScroll = this.handleScroll.bind(this);
     this.clearedErrors = false;
   }
 
@@ -43,6 +45,14 @@ class SignupForm extends React.Component {
     this.props.signup(user, this.props.history);
   }
 
+  handleScroll() {
+    window.scroll({
+      behavior: 'smooth',
+      left: 0,
+      top: 700
+    });
+  }
+
   renderErrors() {
     return (
       <ul className="errors-container">
@@ -68,7 +78,8 @@ class SignupForm extends React.Component {
           <form className="signup-form" onSubmit={this.handleSubmit}>
 
             <div className="session-header-container">
-              <div>Signup Below:</div>
+              <div className="header-default">Sign Up</div>
+              <Link className="main-link" to={'/login'}>Login</Link>
             </div>
 
             {/* <div className="signup-inputs-container"> */}
@@ -104,20 +115,17 @@ class SignupForm extends React.Component {
                 />
               {/* </div> */}
 
-                
             </div>
             <div className="signup-submit">
               <input className="login-submit"
                 type="submit" value="Submit" />
             </div>
-
-            <div className="switch-signup">
-              <Link className="main-link-signup" to={'/login'}>Login instead</Link>
-            </div>
-
+            <input onClick={this.handleScroll} className="main-button" type="button" value="How It Works"/>
+            <div className="main-line"></div>
             {/* {this.renderErrors()} */}
           </form>
           {/* {this.renderErrors()} */}
+          <HowItWorks />
         </div>
 
 
