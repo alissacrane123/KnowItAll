@@ -15,7 +15,7 @@ import './questions.css';
 import './profile.css';
 import './how-it-works.css';
 
-import App from './App';
+// import App from './App';
 
 
 document.addEventListener('DOMContentLoaded', () => {

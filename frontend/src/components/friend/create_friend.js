@@ -11,7 +11,7 @@ class CreateFriend extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    let { currentUser, addFriend, newFriend } = this.props
+    let { currentUser, addFriend } = this.props
 
     let friend = { friendName: this.state.username, userId: this.state.userId}
     let other;
@@ -43,7 +43,7 @@ class CreateFriend extends React.Component {
       <form onSubmit={this.handleSubmit} className="add-friend-form">
         <div className="add-friend-header-container">
           <div className="add-friend-header">
-            To add a new friend, enter their username below:
+            To <strong>Add</strong> a new friend, enter their username below:
             </div>
         </div>
         <div className="username-input-container">

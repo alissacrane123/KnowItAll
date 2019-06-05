@@ -61,7 +61,7 @@ class QuestionIndex extends React.Component {
 
         <div className="index-friends-container">
           <div className="friends-header-container">
-            <div className="friends-header">Select a friend to challenge:</div>
+            <h2 className="friends-header">CHALLENGE A FRIEND:</h2>
           </div>
           
           <div className="friends-container">
@@ -76,9 +76,9 @@ class QuestionIndex extends React.Component {
 
         <div className="index-questions-container">
           <div className="index-header-container" >
-            <div className="index-header">
-              Recently Asked Questions Listed Below:
-            </div>
+            <h3 className="index-header">
+              Question Feed:
+            </h3>
           </div>
 
           <div className="questions-container">
