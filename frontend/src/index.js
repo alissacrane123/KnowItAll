@@ -13,7 +13,6 @@ import './navbar.css';
 import './new.css';
 import './questions.css';
 import './profile.css';
-import './how-it-works.css';
 
 import App from './App';
 
