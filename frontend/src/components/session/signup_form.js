@@ -11,7 +11,7 @@ class SignupForm extends React.Component {
       username: '',
       password: '',
       password2: '',
-      errors: {}
+      errors: {} 
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -69,7 +69,6 @@ class SignupForm extends React.Component {
     return (
       <div className="main-body-container">
         {this.renderErrors()}
-
         <div className="main-title-container">
           <h1 className="main-title">KNOW IT ALL</h1>
         </div>
@@ -121,14 +120,12 @@ class SignupForm extends React.Component {
                 type="submit" value="Submit" />
             </div>
             <input onClick={this.handleScroll} className="main-button" type="button" value="How It Works"/>
-            <div className="main-line"></div>
+            {/* <div className="main-line"></div> */}
             {/* {this.renderErrors()} */}
           </form>
           {/* {this.renderErrors()} */}
           <HowItWorks />
         </div>
-
-
         <footer>
         </footer>
 
