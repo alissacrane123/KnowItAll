@@ -269,3 +269,15 @@
   border-radius: 5px;
   margin: 5px;
 }
+
+button {
+  cursor: pointer;
+}
+
+a {
+  cursor: pointer;
+}
+
+input[type="submit"]{
+  cursor: pointer;
+}
