@@ -6,14 +6,14 @@ import CreateFriend from '../friend/create_friend';
 class QuestionIndex extends React.Component {
   constructor(props) {
     super(props)
-
     this.state = { questions: []  }
   }
 
 
   componentDidMount() {
-    let { fetchQuestions, fetchFriends, currentUser } = this.props
+    let { fetchQuestions, fetchFriends, currentUser, fetchStats } = this.props
     fetchQuestions();
+    fetchStats();
     fetchFriends(currentUser.id);
     // this.setState({questions: this.props.questions })
     // debugger
@@ -26,7 +26,7 @@ class QuestionIndex extends React.Component {
 
 
   render() {
-    let { addFriend, currentUser, fetchUser, users, answers, fetchFriend, fetchUserAnswers, stats, fetchUserStats} = this.props;
+    let { addFriend, currentUser, fetchUser, users, answers, fetchFriend, fetchUserAnswers, stats, fetchUserStats } = this.props;
     let questions;
 
     if (!this.props.questions) {

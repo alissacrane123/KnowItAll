@@ -3,7 +3,7 @@ import { fetchQuestions } from '../../actions/question_actions';
 import { fetchFriends, fetchFriend, addFriend } from '../../actions/friend_actions';
 import { fetchUser } from '../../actions/user_actions';
 import { fetchUserAnswers } from '../../actions/answer_actions';
-import { fetchUserStats } from '../../actions/stats_actions';
+import { fetchUserStats, fetchStats } from '../../actions/stats_actions';
 
 import QuestionIndex from './question_index';
 
@@ -29,7 +29,8 @@ const mapDispatchToProps = dispatch => {
     addFriend: (data) => dispatch(addFriend(data)),
     fetchUser: userId => dispatch(fetchUser(userId)),
     fetchUserAnswers: (userId) => dispatch(fetchUserAnswers(userId)),
-    fetchUserStats: (userId) => dispatch(fetchUserStats(userId))
+    fetchUserStats: (userId) => dispatch(fetchUserStats(userId)),
+    fetchStats: () => dispatch(fetchStats())
   };
 };
 

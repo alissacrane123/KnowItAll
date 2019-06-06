@@ -15,7 +15,8 @@ class Friend extends React.Component {
 
   render() {
     let { users, friendObj, stats } = this.props;
-    let score; 
+    let score;
+    let friend_stats = stats.all.filter(el => el._id === friendObj.friend_id)[0];
     let avatar;
 
     // check if there are any users, friend, or stats loaded then
@@ -29,7 +30,9 @@ class Friend extends React.Component {
     if (!this.props.stats.all[0]) {
       score = 0;
     } else {
-      score = stats.all.filter(el => el._id === friendObj.friend_id)[0].AvgPercent
+      if (friend_stats != undefined) {
+        score = friend_stats.AvgPercent
+      }
     }
 
     if (!this.props.answers.all[0]) {
