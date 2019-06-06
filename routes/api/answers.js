@@ -5,6 +5,7 @@ const passport = require('passport');
 
 const Answer = require('../../models/Answer');
 const validateAnswerInput = require('../../validation/answers');
+let ObjectId = require('mongodb').ObjectID;
 
 router.get("/test", (req, res) => res.json({ msg: "This is the answers route" }));
 
@@ -14,6 +15,50 @@ router.get("/", (req, res) => {
         .then(answers => res.json(answers))
         .catch(err => res.status(404).json({ noAnswersFound: 'No answers found' }));
 });
+
+// aggregate
+// group on author id
+// create total column, and sum 1 for each author
+// create correct column, sum on condition winner equal to true count as 1
+// after grouping & creating columns use project to divide the two columns
+router.get("/stats", (req, res) => {
+    Answer.aggregate([
+        { $group: {
+            _id: "$author",
+            Total: { $sum: 1 },
+            Correct: { $sum: { $cond: [{ $eq: ["$winner", true] }, 1, 0 ]}},
+        } },
+        { $project: {
+            Total: 1, Correct: 1, AvgPercent: { $toInt: { $multiply: [ { $divide: ["$Correct", "$Total"] }, 100 ] } } } }
+    ])
+    .then(answers => res.json(answers))
+    .catch(err => res.status(404).json({ noAnswersFound: 'No answers found' }));
+});
+
+
+// When trying to match a _id in aggregation you must first cast it as an objectId
+// see: https://stackoverflow.com/questions/36193289/moongoose-aggregate-match-does-not-match-ids/36193485#36193485
+router.get("/stats/user/:id", (req, res) => {
+    let myId = ObjectId.createFromHexString(req.params.id)
+    Answer.aggregate([
+        { $match: { author: myId } },
+        {
+            $group: {
+                _id: "$author",
+                Total: { $sum: 1 },
+                Correct: { $sum: { $cond: [{ $eq: ["$winner", true] }, 1, 0] } },
+            }
+        },
+        {
+            $project: {
+                Total: 1, Correct: 1, AvgPercent: { $toInt: { $multiply: [{ $divide: ["$Correct", "$Total"] }, 100] } }
+            }
+        }
+    ])
+        .then(answers => res.json(answers))
+        .catch(err => res.status(404).json({ noAnswersFound: 'No answers found' }));
+});
+
 
 router.post('/',
     // passport.authenticate('jwt', { session: false }),
@@ -35,6 +80,8 @@ router.post('/',
     }
 );
 
+// total: { $count: "$_id" },
+// totalCorrect: { $count: { "$winner": "true" } }
 
 router.get("/question/:id", (req, res) => {
     Answer.find({ question: req.params.id })
