@@ -1,5 +1,5 @@
 import { RECEIVE_USER } from '../actions/user_actions';
-import { RECEIVE_FRIEND, RECEIVE_FRIENDS } from '../actions/friend_actions';
+import { RECEIVE_FRIEND, RECEIVE_FRIENDS, CLEAR_FRIENDS } from '../actions/friend_actions';
 
 // const UsersReducer = (state = {}, action) => {
 //   Object.freeze(state);
@@ -22,6 +22,9 @@ const UsersReducer = (state = { friends: {}, friend: {}, users: {} }, action) =>
       // debugger
       // newState.friend = action.user.data
       newState.users[action.user.data._id] = action.user.data
+      return newState;
+    case CLEAR_FRIENDS:
+      newState.friends = [];
       return newState;
     case RECEIVE_FRIENDS:
       // debugger 
