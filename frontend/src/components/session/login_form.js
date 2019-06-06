@@ -17,12 +17,9 @@ class LoginForm extends React.Component {
     this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
     this.handleScroll = this.handleScroll.bind(this);
     this.clearedErrors = false;
-
-    // this.renderErrors = this.renderErrors.bind(this);
   }
 
   componentWillReceiveProps(nextProps) { // componentDidUpdate
-
     if (nextProps.currentUser === true) {
       this.props.history.push('/questions');
     }
@@ -44,12 +41,10 @@ class LoginForm extends React.Component {
       password: this.state.password
     };
 
-
     this.props.login(user);
   }
 
   handleDemoSubmit(e) {
-
     e.preventDefault();
 
     let user = {
@@ -81,15 +76,22 @@ class LoginForm extends React.Component {
   }
 
   render() {
+
+    let usernameError;
+    if ((this.props.errors != undefined && this.props.errors.username != undefined)) {
+      usernameError = <p className="error">{this.props.errors.username}</p>;
+    }
+
+    let passwordError;
+    if ((this.props.errors != undefined && this.props.errors.password != undefined)) {
+      passwordError = <p className="error">{this.props.errors.password}</p>;
+    }
+
     return (
       <div className="main-body-container">
-
-        {this.renderErrors()}
-
         <div className="main-title-container">
           <h1 className="main-title">KNOW IT ALL</h1>
         </div>
-
         <div className="session-form-container">
           <form className="session-form" onSubmit={this.handleSubmit}>
             <div className="session-header-container">
@@ -97,44 +99,31 @@ class LoginForm extends React.Component {
               <Link className="main-link" to={'/signup'}>Sign Up</Link>
             </div>
             <div className="login-inputs">
+              {usernameError}
               <input className="login-input"
                 type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
                 placeholder="username"
               />
-
+              {passwordError}
               <input className="login-input"
                 type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 placeholder="Password"
               />
-              
               <div className="signup-submit">
                 <input type="submit" value="LOG IN" className="login-submit" />
                 <button className="login-submit" onClick={this.handleDemoSubmit}>DEMO</button>
-                {/* <input type="submit" value="DEMO" className="login-submit" /> */}
               </div>
               <input onClick={this.handleScroll} className="main-button" id="how-it-works" type="button" value="How It Works" />
-              {/* <div className="login-line"></div> */}
             </div>
-
-
-
           </form>
           
           <HowItWorks />
         </div>
-
-        
-
-        <footer>
-        </footer>
-
       </div>
-
-
     );
   }
 }
