@@ -66,72 +66,69 @@ class SignupForm extends React.Component {
   }
 
   render() {
+
+    let emailError;
+    if ((this.props.errors != undefined && this.props.errors.email != undefined)) {
+      emailError = <p className="error">{this.props.errors.email}</p>;
+    }
+
+    let usernameError;
+    if ((this.props.errors != undefined && this.props.errors.username != undefined)) {
+      usernameError = <p className="error">{this.props.errors.username}</p>;
+    }
+
+    let passwordError;
+    if ((this.props.errors != undefined && this.props.errors.password != undefined)) {
+      passwordError = <p className="error">{this.props.errors.password}</p>;
+    }
+
     return (
       <div className="main-body-container">
-        {this.renderErrors()}
         <div className="main-title-container">
           <h1 className="main-title">KNOW IT ALL</h1>
         </div>
-
         <div className="signup-form-container">
           <form className="signup-form" onSubmit={this.handleSubmit}>
-
             <div className="session-header-container">
               <div className="header-default">Sign Up</div>
               <Link className="main-link" to={'/login'}>Login</Link>
             </div>
-
-            {/* <div className="signup-inputs-container"> */}
+            {emailError}
             <div className="signup-inputs">
-              {/* <div className="signup-input"> */}
               <input className="signup-input" type="text"
                   value={this.state.email}
                   onChange={this.update('email')}
                   placeholder="Email"
                 />
-              
-              {/* <div className="signup-input"> */}
+              {usernameError}
               <input className="signup-input" type="text"
                   value={this.state.username}
                   onChange={this.update('username')}
                   placeholder="username"
                 />
-              {/* </div> */}
-              {/* <div className="signup-input"> */}
+              {passwordError}
               <input className="signup-input" 
                   type="password"
                   value={this.state.password}
                   onChange={this.update('password')}
                   placeholder="Password"
                 />
-              {/* </div> */}
-              {/* <div className="signup-input"> */}
               <input className="signup-input"
                   type="password"
                   value={this.state.password2}
                   onChange={this.update('password2')}
                   placeholder="Confirm Password"
                 />
-              {/* </div> */}
-
             </div>
             <div className="signup-submit">
               <input className="login-submit"
                 type="submit" value="Submit" />
             </div>
             <input onClick={this.handleScroll} className="main-button" type="button" value="How It Works"/>
-            {/* <div className="main-line"></div> */}
-            {/* {this.renderErrors()} */}
           </form>
-          {/* {this.renderErrors()} */}
           <HowItWorks />
         </div>
-        <footer>
-        </footer>
-
       </div>
-
-
     );
   }
 }
