@@ -29,7 +29,7 @@ const mapDispatchToProps = dispatch => {
     addFriend: (data) => dispatch(addFriend(data)),
     fetchUser: userId => dispatch(fetchUser(userId)),
     fetchUserAnswers: (userId) => dispatch(fetchUserAnswers(userId)),
-    fetchUserStats: (userId) => dispatch(fetchUserStats(userId))
+    fetchUserStats: (userId) => dispatch(fetchUserStats(userId)),
   };
 };
 

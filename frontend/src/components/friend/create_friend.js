@@ -18,7 +18,6 @@ class CreateFriend extends React.Component {
 
     addFriend(friend)
       .then(
-        
         newFriend => {
           if (newFriend !== undefined) {
             other = { friendName: currentUser.username, 

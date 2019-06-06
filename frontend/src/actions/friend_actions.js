@@ -3,6 +3,7 @@ import * as APIUtil from '../util/friend_api_util';
 
 export const RECEIVE_FRIENDS = "RECEIVE_FRIENDS";
 export const RECEIVE_FRIEND = "RECEIVE_FRIEND";
+export const CLEAR_FRIENDS = "CLEAR_FRIENDS";
 
 // export const RECEIVE_NEW_FRIEND = "RECEIVE_NEW_FRIEND"; // UNSURE
 
@@ -20,6 +21,12 @@ export const receiveFriend = friend => ({
   type: RECEIVE_FRIEND,
   friend
 })
+
+export const clearFriends = () => {
+  return {
+    type: CLEAR_FRIENDS
+  }
+}
 
 export const addFriend = data => dispatch => (
   APIUtil.addFriend(data)
