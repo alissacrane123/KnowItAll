@@ -10,6 +10,12 @@ class NavBar extends React.Component {
     this.getLinks = this.getLinks.bind(this);
   }
 
+  componentDidMount() {
+    let { fetchUserStats, fetchStats, currentUser } = this.props;
+    fetchStats();
+    fetchUserStats(currentUser.id);
+  }
+
   logoutUser(e) {
     e.preventDefault();
     this.props.logout();
