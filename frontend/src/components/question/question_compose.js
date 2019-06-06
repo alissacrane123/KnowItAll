@@ -97,12 +97,12 @@ class QuestionCompose extends React.Component {
       return (
         <div className="new-form-container" style={{paddingTop: "90px"}}>
           <iframe src="https://giphy.com/embed/aWRWTF27ilPzy" width="480" height="359" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-          <h1>{this.state.winner} wins!</h1>
+          <h1>{this.state.winner || "brett"} wins!</h1>
       </div>
         )
     }
     else if(!this.props.results[0] && this.state.questionSent === true ) {
-      results = ["LOADING RESULTS"]}
+      results = <div className="lds-facebook"><div></div><div></div><div></div></div>}
     else if(!this.props.results[0]) {
       // return null;
       results = [];

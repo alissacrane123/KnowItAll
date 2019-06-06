@@ -61,7 +61,7 @@ class Friend extends React.Component {
             
             {users[friendObj.friend_id].username}
             
-            <div>{score}%<div style={{ fontSize: 12 }}>correct</div></div>
+            <div>{score || "0"}%<div style={{ fontSize: 12 }}>correct</div></div>
 
           </div>
         </Link>
