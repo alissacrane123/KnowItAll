@@ -52,17 +52,16 @@ class Friend extends React.Component {
 
     return (
       <div className="friend-container">
-
-        <div className="friend-link-continer">
-          <div>{avatar}</div>
-          
-          <Link className="friend-link"  to={{pathname: '/new', state: {friendId: friendObj.friend_id}}}>
+        <Link className="friend-link"  to={{pathname: '/new', state: {friendId: friendObj.friend_id}}}>
+          <div className="friend-link-continer">
+            <div>{avatar}</div>
+            
             {users[friendObj.friend_id].username}
-          </Link>
+            
+            <div>{score}%<div style={{ fontSize: 12 }}>correct</div></div>
 
-          <div>{score}</div>
-
-        </div>
+          </div>
+        </Link>
       </div>
     )
   }
