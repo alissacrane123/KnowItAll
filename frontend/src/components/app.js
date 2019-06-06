@@ -14,7 +14,7 @@ import ProfileContainer from './profile/profile_container';
 const App = () => (
   <div className="main-div">
     <Switch>
-      <AuthRoute exact path="/" component={SignupFormContainer} />
+      <AuthRoute exact path="/" component={LoginFormContainer} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <NavBarContainer />
