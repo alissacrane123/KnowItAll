@@ -134,6 +134,7 @@ class QuestionCompose extends React.Component {
           
 
           <form className="new-form-container" onSubmit={this.handleSubmit}>
+            <div className="fight-bar"></div>
             <div className="question-input-container">
               <h2>ASK YOUR QUESTION</h2>
               <input type="textarea"
@@ -152,7 +153,7 @@ class QuestionCompose extends React.Component {
                   </div>
                 </div>
                 <div className="question-media--player">
-                  <h2>{this.props.friendName}</h2>
+                  <h2>{this.props.friendName || "brett"}</h2>
                   <div className="question-img--wrapper">
                     <img id="slide-right" src="http://lorempixel.com/output/cats-q-c-100-100-4.jpg"></img>
                   </div>
