@@ -9,7 +9,7 @@ class QuestionIndex extends React.Component {
   }
 
   componentDidMount() {
-    let { fetchQuestions, fetchFriends, currentUser, fetchStats } = this.props
+    let { fetchQuestions, fetchFriends, currentUser } = this.props
     fetchQuestions();
     fetchFriends(currentUser.id);
     // this.setState({questions: this.props.questions })
@@ -17,7 +17,7 @@ class QuestionIndex extends React.Component {
   }
 
   render() {
-    let { addFriend, currentUser, fetchUser, users, answers, fetchFriend, fetchUserAnswers, stats, fetchUserStats } = this.props;
+    let { addFriend, currentUser, fetchUser, users, fetchFriend, stats, fetchUserStats, fetchStats } = this.props;
     let questions;
 
     if (!this.props.questions) {
@@ -35,13 +35,12 @@ class QuestionIndex extends React.Component {
     let friends;
 
     if (this.props.friends[0] === undefined) {
-      // debugger
       friends = [];
       // return null;
     } else {
       // debugger
       friends = this.props.friends.map(friendObj => (
-        <Friend key={friendObj.id} friendObj={friendObj} fetchUser={fetchUser} users={users} answers={answers} fetchFriend={fetchFriend} fetchUserAnswers={fetchUserAnswers} stats={stats} fetchUserStats={fetchUserStats}/>
+        <Friend key={friendObj.id} currentUser={currentUser} friendObj={friendObj} fetchUser={fetchUser} users={users} fetchFriend={fetchFriend} stats={stats} fetchUserStats={fetchUserStats} fetchStats={fetchStats}/>
       ))
       // friends = this.props.friends
     }
@@ -57,7 +56,7 @@ class QuestionIndex extends React.Component {
           
           <div className="friends-container">
             {/* <Friend friends={friends} fetchUser={fetchUser} friend={friend} /> */}
-            { friends }     
+            { friends }
           </div> 
           <div className="new-friend-container">
             <CreateFriend addFriend={addFriend} currentUser={currentUser} />

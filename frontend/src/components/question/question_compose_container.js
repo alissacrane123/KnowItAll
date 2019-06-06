@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => {
   // debugger
   if (ownProps.location.state !== undefined ) {
     friendId = ownProps.location.state.friendId;
-      friendName = state.users.users[friendId].username;
+    friendName = state.users.users[friendId].username;
   } else {
     friendId = null;
   }
