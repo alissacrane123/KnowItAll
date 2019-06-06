@@ -71,7 +71,7 @@ class QuestionCompose extends React.Component {
     this.props.fetchResults(this.state.body);
     // this.props.createAnswer(answer)
     // this.setState({ answer2: '' })
-
+    document.getElementsByClassName("question-submit")[0].classList.add("question-submit-fade-out");
   }
 
   update(field) {
@@ -144,13 +144,13 @@ class QuestionCompose extends React.Component {
 
             <section className="question-media">
                 <div className="question-media--player">
-                  <h2>Player 1</h2>
+                  <h2>{this.props.currentUser.username}</h2>
                   <div className="question-img--wrapper">
                     <img id="slide-left" src="http://lorempixel.com/output/cats-q-c-100-100-4.jpg"></img>
                   </div>
                 </div>
                 <div className="question-media--player">
-                  <h2>Player 2</h2>
+                  <h2>{this.props.friendName}</h2>
                   <div className="question-img--wrapper">
                     <img id="slide-right" src="http://lorempixel.com/output/cats-q-c-100-100-4.jpg"></img>
                   </div>

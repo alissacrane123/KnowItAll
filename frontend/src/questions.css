@@ -74,8 +74,8 @@
 }
 
 .question-inputs {
-  margin: 20px 0px;
-  width: 83%;
+  margin: 20px -20px;
+  width: 115%;
 }
 
 .question-input-container h2 {
@@ -146,31 +146,58 @@
   overflow: hidden;
   width: 100px;
   height: 100px; 
-  border: 1px solid black;
+  /* border: 1px solid black; */
+}
+.question-img--wrapper::after {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -50%;
+  bottom: -50%;
+  left: -50%;
+  background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0));
+  transform: rotateZ(60deg) translate(-5em, 7.5em);
+  animation: sheen 1.5s 1.5s forwards;
 }
 
 #slide-left {
-  position: absolute;
-  left: -100px;
-  width: 100px;
-  height: 100px;
-  transition: 1s;
+  animation: 1.5s ease-out 0s 1 slideInFromLeft;
 }
 
 #slide-right {
-  position: absolute;
-  right: -100px;
-  width: 100px;
-  height: 100px;
-  transition: 1s;
+  animation: 1.5s ease-out 0s 1 slideInFromRight;
 }
-
-.main-div:hover #slide-left {
-  left: 0;
-}
-
-.main-div:hover #slide-right {
-  right: 0;
-}
-
 /* End slide in */
+
+.question-submit-fade-out {
+  animation: 1s fadeOut forwards;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes sheen {
+  100% {
+    transform: rotateZ(60deg) translate(1em, -9em);
+  }
+}
+
+@keyframes fadeOut {
+   0% {opacity: 1;}
+   100% {opacity: 0;} 
+} 
