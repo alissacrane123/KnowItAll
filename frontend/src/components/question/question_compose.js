@@ -20,7 +20,9 @@ class QuestionCompose extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-
+  componentWillUnmount() {
+    this.props.clearResults();
+  }
 
   handleClick(user) {
     this.props.clearResults();
