@@ -71,7 +71,7 @@ class QuestionCompose extends React.Component {
     this.props.fetchResults(this.state.body);
     // this.props.createAnswer(answer)
     // this.setState({ answer2: '' })
-
+    document.getElementsByClassName("question-submit")[0].classList.add("question-submit-fade-out");
   }
 
   update(field) {

@@ -169,6 +169,10 @@
 }
 /* End slide in */
 
+.question-submit-fade-out {
+  animation: 1s fadeOut forwards;
+}
+
 @keyframes slideInFromLeft {
   0% {
     transform: translateX(-100%);
@@ -192,3 +196,8 @@
     transform: rotateZ(60deg) translate(1em, -9em);
   }
 }
+
+@keyframes fadeOut {
+   0% {opacity: 1;}
+   100% {opacity: 0;} 
+} 
