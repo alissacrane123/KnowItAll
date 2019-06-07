@@ -15,6 +15,7 @@
 
 .current-button{
   text-align: center;
+  animation: 1s fadeIn forwards;
 }
 
 
