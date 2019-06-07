@@ -83,7 +83,6 @@ class QuestionCompose extends React.Component {
     this.setState({questionSent: true})
     let { createAnswer, poseQuestion } = this.props;
     let friendId = this.props.fetchFriendByUsername(this.state.friend)._id;
-    let {  createAnswer, poseQuestion } = this.props;
     poseQuestion(question)
       .then( 
         newQuestion => {

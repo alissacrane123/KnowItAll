@@ -34,8 +34,8 @@ class QuestionIndex extends React.Component {
     if (this.props.friends[0] === undefined) {
       friends = [];
     } else {
-      friends = this.props.friends.map(friendObj => (
-        <FriendContainer key={friendObj.id} friendObj={friendObj}/>
+      friends = this.props.friends.map((friendObj, idx) => (
+        <FriendContainer key={idx} friendObj={friendObj}/>
       ))
     }
 
