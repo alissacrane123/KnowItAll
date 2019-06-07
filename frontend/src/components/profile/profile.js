@@ -1,16 +1,13 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import {
-  PieChart, Pie, Sector, Cell, BarChart, Bar, XAxis, YAxis, CartesianGrid,
+  PieChart, Pie, BarChart, Bar, XAxis, YAxis, CartesianGrid,
   Tooltip, Legend, LineChart, Line,
 } from 'recharts';
 
 let dateFormat = require('dateformat');
 
 class Profile extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   componentDidMount() {
     this.props.fetchUserQuestions(this.props.currentUser.id);
@@ -25,7 +22,6 @@ class Profile extends React.Component {
     let dates;
     let lineData;
     let ttlRight;
-    let ttlWrong;
     let yourQuestions;
     let winnerQuestions;
 
@@ -56,17 +52,17 @@ class Profile extends React.Component {
       rightAnswers = 0;
     } else {
       totalAnswers = this.props.answers.all.length;
-      rightAnswers = this.props.answers.all.reduce(function(total,x){return x['winner']==true ? total+1 : total}, 0)
+      rightAnswers = this.props.answers.all.reduce(function(total,x){return x['winner']===true ? total+1 : total}, 0)
       wrongAnswers = totalAnswers - rightAnswers;
       dates = [...new Set(this.props.answers.all.map(item => dateFormat(item.date, "fullDate")))];
       barData = dates.reverse().map(date => { return {
          name: date,
-        right: this.props.answers.all.reduce(function (total, x) { return x['winner'] == true && dateFormat(x['date'], "fullDate")==date ? total+1 : total}, 0),
-        wrong: this.props.answers.all.reduce(function (total, x) { return x['winner'] == false && dateFormat(x['date'], "fullDate")==date ? total+1 : total}, 0),
-        amt: this.props.answers.all.reduce(function (total, x) { return dateFormat(x['date'], "fullDate")==date ? total+1 : total}, 0),
+        right: this.props.answers.all.reduce(function (total, x) { return x['winner'] === true && dateFormat(x['date'], "fullDate")===date ? total+1 : total}, 0),
+        wrong: this.props.answers.all.reduce(function (total, x) { return x['winner'] === false && dateFormat(x['date'], "fullDate")===date ? total+1 : total}, 0),
+        amt: this.props.answers.all.reduce(function (total, x) { return dateFormat(x['date'], "fullDate")===date ? total+1 : total}, 0),
       }});
       lineData = dates.map(date => {
-        ttlRight = this.props.answers.all.reduce(function (total, x) { return x['winner'] == true && dateFormat(x['date'], "fullDate") <= date ? total + 1 : total }, 0);
+        ttlRight = this.props.answers.all.reduce(function (total, x) { return x['winner'] === true && dateFormat(x['date'], "fullDate") <= date ? total + 1 : total }, 0);
         let ttlAmt = this.props.answers.all.reduce(function (total, x) { return dateFormat(x['date'], "fullDate") <= date ? total + 1 : total }, 0);
         return {
           name: date,
@@ -114,7 +110,6 @@ class Profile extends React.Component {
                   value,
                   index
                 }) => {
-                  console.log("handling label?");
                   const RADIAN = Math.PI / 180;
                   // eslint-disable-next-line
                   const radius = 25 + innerRadius + (outerRadius - innerRadius);

@@ -52,7 +52,7 @@ class QuestionCompose extends React.Component {
     let answer2;
     this.setState({questionSent: true})
 
-    let { newQuestion, createAnswer, poseQuestion, friendId } = this.props;
+    let {  createAnswer, poseQuestion, friendId } = this.props;
     poseQuestion(question)
       .then( 
         newQuestion => {
@@ -96,7 +96,7 @@ class QuestionCompose extends React.Component {
     if(this.state.winner !== ""){
       return (
         <div className="new-form-container" style={{paddingTop: "90px"}}>
-          <iframe src="https://giphy.com/embed/aWRWTF27ilPzy" width="480" height="359" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+          <iframe src="https://giphy.com/embed/aWRWTF27ilPzy" width="480" height="359" frameBorder="0" title="skeletor" class="giphy-embed" allowFullScreen></iframe>
           <h1>{this.state.winner || "brett"} wins!</h1>
       </div>
         )
@@ -124,7 +124,6 @@ class QuestionCompose extends React.Component {
       )
     }
 
-    let { friendId } = this.props;
     // debugger 
 
     return (
@@ -149,13 +148,13 @@ class QuestionCompose extends React.Component {
                 <div className="question-media-player-left">
                   <h2>{this.props.currentUser.username}</h2>
                   <div className="question-img--wrapper">
-                    <img src="http://lorempixel.com/output/cats-q-c-100-100-4.jpg"></img>
+                    <img src="http://lorempixel.com/output/cats-q-c-100-100-4.jpg" alt=""></img>
                   </div>
                 </div>
                 <div className="question-media-player-right">
                   <h2>{this.props.friendName || "brett"}</h2>
                   <div className="question-img--wrapper">
-                    <img src="http://lorempixel.com/output/cats-q-c-100-100-4.jpg"></img>
+                  <img src="http://lorempixel.com/output/cats-q-c-100-100-4.jpg" alt=""></img>
                   </div>
                 </div>
             </section>

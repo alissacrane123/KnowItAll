@@ -23,9 +23,9 @@ class QuestionIndex extends React.Component {
     if (!this.props.questions) {
       return null;
     } else {
-      questions = this.props.questions.map(question => (
-        <div key={question.id} className="question-item-container">
-          <div key={question.id} className="question-body">
+      questions = this.props.questions.map((question, idx) => (
+        <div key={idx} className="question-item-container">
+          <div key={idx} className="question-body">
             {question.body}
           </div>
         </div>
@@ -39,8 +39,8 @@ class QuestionIndex extends React.Component {
       // return null;
     } else {
       // debugger
-      friends = this.props.friends.map(friendObj => (
-        <Friend key={friendObj.id} currentUser={currentUser} friendObj={friendObj} fetchUser={fetchUser} users={users} fetchFriend={fetchFriend} stats={stats} fetchUserStats={fetchUserStats} fetchStats={fetchStats}/>
+      friends = this.props.friends.map((friendObj, idx) => (
+        <Friend key={idx} currentUser={currentUser} friendObj={friendObj} fetchUser={fetchUser} users={users} fetchFriend={fetchFriend} stats={stats} fetchUserStats={fetchUserStats} fetchStats={fetchStats}/>
       ))
       // friends = this.props.friends
     }

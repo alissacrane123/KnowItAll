@@ -78,12 +78,12 @@ class LoginForm extends React.Component {
   render() {
 
     let usernameError;
-    if ((this.props.errors != undefined && this.props.errors.username != undefined)) {
+    if ((this.props.errors !== undefined && this.props.errors.username !== undefined)) {
       usernameError = <p className="error">{this.props.errors.username}</p>;
     }
 
     let passwordError;
-    if ((this.props.errors != undefined && this.props.errors.password != undefined)) {
+    if ((this.props.errors !== undefined && this.props.errors.password !== undefined)) {
       passwordError = <p className="error">{this.props.errors.password}</p>;
     }
 

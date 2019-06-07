@@ -2,9 +2,6 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
 class Friend extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   componentDidMount() {
     let { fetchUser, friendObj, fetchUserStats, fetchStats } = this.props;
@@ -30,7 +27,7 @@ class Friend extends React.Component {
     if (!this.props.stats.all[0]) {
       score = 0;
     } else {
-      if (friend_stats != undefined) {
+      if (friend_stats !== undefined) {
         score = friend_stats.AvgPercent
       }
     }
