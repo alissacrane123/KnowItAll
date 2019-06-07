@@ -165,8 +165,18 @@
   animation: sheen 1.5s 1.5s forwards;
 }
 
-.question-media--player {
+.question-media-player-left {
+  animation: fadeInLeft 1.5s forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.question-media-player-right {
   animation: fadeInRight 1.5s forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .fight-bar::after {
