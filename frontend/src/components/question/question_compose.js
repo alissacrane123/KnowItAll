@@ -83,7 +83,7 @@ class QuestionCompose extends React.Component {
     this.setState({questionSent: true})
     let { createAnswer, poseQuestion } = this.props;
     let friendId = this.props.fetchFriendByUsername(this.state.friend)._id;
-
+    let {  createAnswer, poseQuestion } = this.props;
     poseQuestion(question)
       .then( 
         newQuestion => {
@@ -138,13 +138,13 @@ class QuestionCompose extends React.Component {
     if(this.state.winner !== ""){
       return (
         <div className="new-form-container" style={{paddingTop: "90px"}}>
-          <iframe src="https://giphy.com/embed/aWRWTF27ilPzy" width="480" height="359" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-          <h1>{this.state.winner} wins!</h1>
+          <iframe src="https://giphy.com/embed/aWRWTF27ilPzy" width="480" height="359" frameBorder="0" title="skeletor" class="giphy-embed" allowFullScreen></iframe>
+          <h1>{this.state.winner || "brett"} wins!</h1>
       </div>
         )
     }
     else if(!this.props.results[0] && this.state.questionSent === true ) {
-      results = ["LOADING RESULTS"]}
+      results = <div className="lds-facebook"><div></div><div></div><div></div></div>}
     else if(!this.props.results[0]) {
       results = [];
     } else {
@@ -181,20 +181,20 @@ class QuestionCompose extends React.Component {
                   className="question-inputs"
                 value={this.state.body}
                 onChange={this.update('body')}
-                placeholder="ex: Do doves cry?"
+                placeholder="ex: How old is Queen Elizabeth II?"
               />
             </div>
             <section className="question-media">
-                <div className="question-media--player">
+                <div className="question-media-player-left">
                   <h2>{this.props.currentUser.username}</h2>
                   <div className="question-img--wrapper">
-                  <img id="slide-left" height="100" src={userAvatar}></img>
+                    <img height="100" src={userAvatar}></img>
                   </div>
                 </div>
-                <div className="question-media--player">
+                <div className="question-media-player-right">
                   <h2>{this.state.friend}</h2>
                   <div className="question-img--wrapper">
-                  <img id="slide-right" height="100" src={this.state.friendAvatar}></img>
+                    <img height="100" src={this.state.friendAvatar}></img>
                   </div>
                 </div>
             </section>
@@ -203,14 +203,14 @@ class QuestionCompose extends React.Component {
                 <input className="question-inputs"
                   value={this.state.answer1}
                   onChange={this.update('answer1')}
-                  placeholder="ex: Yes, (TY Prince)"
+                  placeholder="ex: 89 years old"
                 />
               </div>
               <div className="answer-input-container">
                   <input className="question-inputs"
                   value={this.state.answer2}
                   onChange={this.update('answer2')}
-                  placeholder="ex: No Way"
+                  placeholder="ex: 93 years old"
                 />
               </div>
             </div> 

@@ -93,6 +93,7 @@
   justify-content: space-evenly;
   width: 60%;
   margin: 20px;
+  text-align: center;
 }
 
 #false {
@@ -107,6 +108,12 @@
   width: 90%;
   margin-top: 20px;
   margin-bottom: 20px;
+  animation: 1s fadeIn forwards;
+}
+
+.results-container {
+  text-align: left;
+  background-color: white;
 }
 
 .result-data-container {
@@ -160,8 +167,18 @@
   animation: sheen 1.5s 1.5s forwards;
 }
 
-#slide-left {
-  animation: 1.5s ease-out 0s 1 slideInFromLeft;
+.question-media-player-left {
+  animation: fadeInLeft 1.5s forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.question-media-player-right {
+  animation: fadeInRight 1.5s forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .fight-bar::after {
@@ -175,7 +192,7 @@
   top:0;
   left: 65%;
   z-index: -1;
-  animation: fadeInRight 1.5s forwards;
+  animation: fadeInRightWithSkew 1.5s forwards;
 }
 
 .fight-bar::before {
@@ -188,17 +205,54 @@
   top:0;
   left: -65%;
   z-index: -1;
-  animation: fadeInLeft 1.5s forwards;
-}
-
-#slide-right {
-  animation: 1.5s ease-out 0s 1 slideInFromRight;
+  animation: fadeInLeftWithSkew 1.5s forwards;
 }
 /* End slide in */
 
 .question-submit-fade-out {
   animation: 1s fadeOut forwards;
 }
+ /* loading wheel */
+.lds-facebook {
+  display: inline;
+  position: relative;
+  background-color: transparent;
+  left: 48.5%;
+  /* width: 64px;
+  height: 64px; */
+}
+.lds-facebook div {
+  display: inline-block;
+  position: absolute;
+  left: 6px;
+  width: 13px;
+  background: rgba(231, 144, 212, 0.5);
+  animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+.lds-facebook div:nth-child(1) {
+  left: 6px;
+  animation-delay: -0.24s;
+}
+.lds-facebook div:nth-child(2) {
+  left: 26px;
+  animation-delay: -0.12s;
+}
+.lds-facebook div:nth-child(3) {
+  left: 45px;
+  animation-delay: 0;
+}
+@keyframes lds-facebook {
+  0% {
+    top: 6px;
+    height: 51px;
+  }
+  50%, 100% {
+    top: 19px;
+    height: 26px;
+  }
+}
+/* end loading wheel */
+
 
 @keyframes slideInFromLeft {
   0% {
@@ -229,7 +283,12 @@
    100% {opacity: 0;} 
 } 
 
-@keyframes fadeInLeft {
+@keyframes fadeIn {
+   0% {opacity: 0;}
+   100% {opacity: 1;} 
+} 
+
+@keyframes fadeInLeftWithSkew {
    0% {
       opacity: 0;
       transform: translateX(-20px);
@@ -241,7 +300,7 @@
    }
 }   
 
-@keyframes fadeInRight {
+@keyframes fadeInRightWithSkew {
    0% {
       opacity: 0;
       transform: translateX(-20px);
@@ -250,5 +309,27 @@
       opacity: 1;
       transform: translateX(0);
       transform: skew(-20deg);
+   }
+}   
+
+@keyframes fadeInLeft {
+   0% {
+      opacity: 0;
+      transform: translateX(-20px);
+   }
+   100% {
+      opacity: 1;
+      transform: translateX(0);
+   }
+}   
+
+@keyframes fadeInRight {
+   0% {
+      opacity: 0;
+      transform: translateX(20px);
+   }
+   100% {
+      opacity: 1;
+      transform: translateX(0);
    }
 }   

@@ -21,9 +21,9 @@ class QuestionIndex extends React.Component {
     if (!this.props.questions) {
       return null;
     } else {
-      questions = this.props.questions.map(question => (
-        <div key={question.id} className="question-item-container">
-          <div key={question.id} className="question-body">
+      questions = this.props.questions.map((question, idx) => (
+        <div key={idx} className="question-item-container">
+          <div key={idx} className="question-body">
             {question.body}
           </div>
         </div>

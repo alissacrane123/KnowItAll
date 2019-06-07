@@ -68,17 +68,17 @@ class SignupForm extends React.Component {
   render() {
 
     let emailError;
-    if ((this.props.errors != undefined && this.props.errors.email != undefined)) {
+    if ((this.props.errors !== undefined && this.props.errors.email !== undefined)) {
       emailError = <p className="error">{this.props.errors.email}</p>;
     }
 
     let usernameError;
-    if ((this.props.errors != undefined && this.props.errors.username != undefined)) {
+    if ((this.props.errors !== undefined && this.props.errors.username !== undefined)) {
       usernameError = <p className="error">{this.props.errors.username}</p>;
     }
 
     let passwordError;
-    if ((this.props.errors != undefined && this.props.errors.password != undefined)) {
+    if ((this.props.errors !== undefined && this.props.errors.password !== undefined)) {
       passwordError = <p className="error">{this.props.errors.password}</p>;
     }
 
@@ -90,8 +90,8 @@ class SignupForm extends React.Component {
         <div className="signup-form-container">
           <form className="signup-form" onSubmit={this.handleSubmit}>
             <div className="session-header-container">
-              <div className="header-default">Sign Up</div>
               <Link className="main-link" to={'/login'}>Login</Link>
+              <div className="header-default">Sign Up</div>
             </div>
             {emailError}
             <div className="signup-inputs">
@@ -126,8 +126,8 @@ class SignupForm extends React.Component {
             </div>
             <input onClick={this.handleScroll} className="main-button" type="button" value="How It Works"/>
           </form>
-          <HowItWorks />
         </div>
+        <HowItWorks />
       </div>
     );
   }

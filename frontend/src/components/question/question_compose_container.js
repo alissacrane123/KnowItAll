@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import { poseQuestion } from '../../actions/question_actions';
 import { createAnswer, updateAnswer } from '../../actions/answer_actions';
 import QuestionCompose from './question_compose';
-import { create } from 'domain';
 import { fetchResults, clearResults } from '../../actions/result_actions';
 import { fetchFriendByUsername } from '../../actions/friend_actions';
 

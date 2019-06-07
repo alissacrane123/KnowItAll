@@ -2,6 +2,8 @@
   margin-top: 150px;
   display: flex;
   flex-direction: column;
+  position: absolute;
+  top: 520px;
 }
 
 .how-it-works--intro h1 {

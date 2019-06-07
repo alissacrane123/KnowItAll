@@ -47,7 +47,7 @@ class Friend extends React.Component {
     if (!this.props.stats.all[0]) {
       score = 0;
     } else {
-      if (this.friend_stats != undefined) {
+      if (this.friend_stats !== undefined) {
         score = this.friend_stats.AvgPercent
       }
     }
@@ -68,7 +68,7 @@ class Friend extends React.Component {
             
             {friend}
             
-            <div>{score}%<div style={{ fontSize: 12 }}>correct</div></div>
+            <div>{score || "0"}%<div style={{ fontSize: 12 }}>correct</div></div>
 
           </div>
         </Link>
