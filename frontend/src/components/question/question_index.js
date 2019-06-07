@@ -1,6 +1,7 @@
 import React from 'react';
 import FriendContainer from '../friend/friend_container';
 import CreateFriend from '../friend/create_friend';
+import { fetchAnswers } from '../../actions/answer_actions';
 
 class QuestionIndex extends React.Component {
   constructor(props) {
@@ -9,13 +10,28 @@ class QuestionIndex extends React.Component {
   }
 
   componentDidMount() {
-    let { fetchQuestions, fetchFriends, currentUser } = this.props
+    let { fetchQuestions, fetchFriends, currentUser, fetchAnswers } = this.props;
     fetchQuestions();
+    fetchAnswers();
     fetchFriends(currentUser.id);
   }
 
   render() {
     let { addFriend, currentUser } = this.props;
+    let answers = this.props.answers.all;
+
+    let ans = (id) =>{
+      let anses = answers[id];
+        if(anses && anses.length == 2){
+          return(
+            <div id ="answerscontainer" > 
+              <span id="ans"> {anses[0].body} </span>
+              <span id="ans"> {anses[1].body} </span>
+              </div>
+          )
+        }
+
+    }
     
     let questions;
     if (!this.props.questions) {
@@ -25,6 +41,7 @@ class QuestionIndex extends React.Component {
         <div key={idx} className="question-item-container">
           <div key={idx} className="question-body">
             {question.body}
+            {ans(question._id)}
           </div>
         </div>
       ));

@@ -11,8 +11,14 @@ router.get("/test", (req, res) => res.json({ msg: "This is the answers route" })
 
 router.get("/", (req, res) => {
     Answer.find()
-        .sort({ date: -1 })
-        .then(answers => res.json(answers))
+        .then(answers => 
+            {   answerObj = {};
+                answers.map(answer => {
+                    answerObj[answer.question] = answerObj[answer.question] || [];
+                    answerObj[answer.question].push(answer);
+            });
+            res.json(answerObj);
+        })
         .catch(err => res.status(404).json({ noAnswersFound: 'No answers found' }));
 });
 

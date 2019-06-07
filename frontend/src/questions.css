@@ -333,3 +333,14 @@
       transform: translateX(0);
    }
 }   
+
+
+#answerscontainer{
+  width: 100%; 
+  display: flex; 
+  justify-content: space-between;
+}
+#ans{
+  width: 45%;
+  text-align: center;
+}
