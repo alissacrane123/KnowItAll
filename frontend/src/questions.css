@@ -108,10 +108,12 @@
   width: 90%;
   margin-top: 20px;
   margin-bottom: 20px;
+  animation: 1s fadeIn forwards;
 }
 
 .results-container {
   text-align: left;
+  background-color: white;
 }
 
 .result-data-container {
@@ -165,8 +167,18 @@
   animation: sheen 1.5s 1.5s forwards;
 }
 
-.question-media--player {
+.question-media-player-left {
+  animation: fadeInLeft 1.5s forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.question-media-player-right {
   animation: fadeInRight 1.5s forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .fight-bar::after {
@@ -202,11 +214,12 @@
 }
  /* loading wheel */
 .lds-facebook {
-  display: inline-block;
+  display: inline;
   position: relative;
+  background-color: transparent;
   left: 48.5%;
-  width: 64px;
-  height: 64px;
+  /* width: 64px;
+  height: 64px; */
 }
 .lds-facebook div {
   display: inline-block;
@@ -268,6 +281,11 @@
 @keyframes fadeOut {
    0% {opacity: 1;}
    100% {opacity: 0;} 
+} 
+
+@keyframes fadeIn {
+   0% {opacity: 0;}
+   100% {opacity: 1;} 
 } 
 
 @keyframes fadeInLeftWithSkew {

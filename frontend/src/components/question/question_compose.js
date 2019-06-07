@@ -141,21 +141,21 @@ class QuestionCompose extends React.Component {
                   className="question-inputs"
                 value={this.state.body}
                 onChange={this.update('body')}
-                placeholder="ex: Do doves cry?"
+                placeholder="ex: How old is Queen Elizabeth II?"
               />
             </div>
 
             <section className="question-media">
-                <div className="question-media--player">
+                <div className="question-media-player-left">
                   <h2>{this.props.currentUser.username}</h2>
                   <div className="question-img--wrapper">
-                    <img id="slide-left" src="http://lorempixel.com/output/cats-q-c-100-100-4.jpg"></img>
+                    <img src="http://lorempixel.com/output/cats-q-c-100-100-4.jpg"></img>
                   </div>
                 </div>
-                <div className="question-media--player">
+                <div className="question-media-player-right">
                   <h2>{this.props.friendName || "brett"}</h2>
                   <div className="question-img--wrapper">
-                    <img id="slide-right" src="http://lorempixel.com/output/cats-q-c-100-100-4.jpg"></img>
+                    <img src="http://lorempixel.com/output/cats-q-c-100-100-4.jpg"></img>
                   </div>
                 </div>
             </section>
@@ -165,7 +165,7 @@ class QuestionCompose extends React.Component {
                 <input className="question-inputs"
                   value={this.state.answer1}
                   onChange={this.update('answer1')}
-                  placeholder="ex: Yes, (TY Prince)"
+                  placeholder="ex: 89 years old"
                 />
               </div>
 
@@ -173,7 +173,7 @@ class QuestionCompose extends React.Component {
                   <input className="question-inputs"
                   value={this.state.answer2}
                   onChange={this.update('answer2')}
-                  placeholder="ex: No Way"
+                  placeholder="ex: 93 years old"
                 />
               </div>
             </div> 
