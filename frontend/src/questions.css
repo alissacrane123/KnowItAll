@@ -165,8 +165,8 @@
   animation: sheen 1.5s 1.5s forwards;
 }
 
-#slide-left {
-  animation: 1.5s ease-out 0s 1 slideInFromLeft;
+.question-media--player {
+  animation: fadeInRight 1.5s forwards;
 }
 
 .fight-bar::after {
@@ -180,7 +180,7 @@
   top:0;
   left: 65%;
   z-index: -1;
-  animation: fadeInRight 1.5s forwards;
+  animation: fadeInRightWithSkew 1.5s forwards;
 }
 
 .fight-bar::before {
@@ -193,11 +193,7 @@
   top:0;
   left: -65%;
   z-index: -1;
-  animation: fadeInLeft 1.5s forwards;
-}
-
-#slide-right {
-  animation: 1.5s ease-out 0s 1 slideInFromRight;
+  animation: fadeInLeftWithSkew 1.5s forwards;
 }
 /* End slide in */
 
@@ -274,7 +270,7 @@
    100% {opacity: 0;} 
 } 
 
-@keyframes fadeInLeft {
+@keyframes fadeInLeftWithSkew {
    0% {
       opacity: 0;
       transform: translateX(-20px);
@@ -286,7 +282,7 @@
    }
 }   
 
-@keyframes fadeInRight {
+@keyframes fadeInRightWithSkew {
    0% {
       opacity: 0;
       transform: translateX(-20px);
@@ -295,5 +291,27 @@
       opacity: 1;
       transform: translateX(0);
       transform: skew(-20deg);
+   }
+}   
+
+@keyframes fadeInLeft {
+   0% {
+      opacity: 0;
+      transform: translateX(-20px);
+   }
+   100% {
+      opacity: 1;
+      transform: translateX(0);
+   }
+}   
+
+@keyframes fadeInRight {
+   0% {
+      opacity: 0;
+      transform: translateX(20px);
+   }
+   100% {
+      opacity: 1;
+      transform: translateX(0);
    }
 }   
