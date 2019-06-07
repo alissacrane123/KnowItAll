@@ -90,8 +90,8 @@ class SignupForm extends React.Component {
         <div className="signup-form-container">
           <form className="signup-form" onSubmit={this.handleSubmit}>
             <div className="session-header-container">
-              <div className="header-default">Sign Up</div>
               <Link className="main-link" to={'/login'}>Login</Link>
+              <div className="header-default">Sign Up</div>
             </div>
             {emailError}
             <div className="signup-inputs">
@@ -126,8 +126,8 @@ class SignupForm extends React.Component {
             </div>
             <input onClick={this.handleScroll} className="main-button" type="button" value="How It Works"/>
           </form>
-          <HowItWorks />
         </div>
+        <HowItWorks />
       </div>
     );
   }

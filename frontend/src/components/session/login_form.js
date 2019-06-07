@@ -121,8 +121,8 @@ class LoginForm extends React.Component {
             </div>
           </form>
           
-          <HowItWorks />
         </div>
+        <HowItWorks />
       </div>
     );
   }
