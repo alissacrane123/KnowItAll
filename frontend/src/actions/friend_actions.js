@@ -1,5 +1,6 @@
 
 import * as APIUtil from '../util/friend_api_util';
+import * as UserAPIUtil from '../util/user_api_util';
 
 export const RECEIVE_FRIENDS = "RECEIVE_FRIENDS";
 export const RECEIVE_FRIEND = "RECEIVE_FRIEND";
@@ -45,4 +46,12 @@ export const fetchFriend = friendId => dispatch => (
     .then(friend => dispatch(receiveFriend(friend)))
     .catch(err => console.log(err))
 )
+
+export const fetchFriendByUsername = username => dispatch => {
+  return UserAPIUtil.fetchUserByUsername(username)
+    .then(friend => dispatch(receiveFriend(friend)))
+    .catch(err => console.log(err))
+}
+
+
 

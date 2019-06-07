@@ -13,11 +13,41 @@ class QuestionCompose extends React.Component {
       answer2: '',
       questionId: undefined,
       winner: '',
-      questionSent: false
+      questionSent: false,
+      friendAvatar: '',
+      friend: ''
     }
+
+    let userAvatar;
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClick = this.handleClick.bind(this);
+  }
+
+  // persists friend & avatar on refresh, grab from localstorage 
+  // credit: https://hackernoon.com/how-to-take-advantage-of-local-storage-in-your-react-projects-a895f2b2d3f2
+  hydrateStateWithLocalStorage() {
+    // for all items in state
+    for (let key in this.state) {
+      // if the key exists in localStorage
+      if (localStorage.hasOwnProperty(key)) {
+        // get the key's value from localStorage
+        let value = localStorage.getItem(key);
+
+        // parse the localStorage string and setState
+        try {
+          value = JSON.parse(value);
+          this.setState({ [key]: value });
+        } catch (e) {
+          // handle empty string
+          this.setState({ [key]: value });
+        }
+      }
+    }
+  }
+
+  componentDidMount() {
+    this.hydrateStateWithLocalStorage()
   }
 
   componentWillUnmount() {
@@ -26,7 +56,8 @@ class QuestionCompose extends React.Component {
 
   handleClick(user) {
     this.props.clearResults();
-    let { updateAnswer, currentUser, friendId, friendName } = this.props
+    let { updateAnswer, currentUser } = this.props
+    let friendId = this.props.fetchFriendByUsername(this.state.friend)._id;
     let data;
 
     if (user === 'current') {
@@ -34,25 +65,25 @@ class QuestionCompose extends React.Component {
       data = { userId: currentUser.id, questionId: this.state.questionId };
       updateAnswer(data);
     } else {
-      this.setState({winner: friendName});
+      this.setState({winner: this.state.friend});
       data = { userId: friendId, questionId: this.state.questionId};
       updateAnswer(data);
     }
-
   }
 
   handleSubmit(e) {
     e.preventDefault();
+    
     let question = {
       body: this.state.body,
       authorId: this.state.authorId
     };
-
     let answer1;
     let answer2;
     this.setState({questionSent: true})
-
-    let {  createAnswer, poseQuestion, friendId } = this.props;
+    let { createAnswer, poseQuestion } = this.props;
+    let friendId = this.props.fetchFriendByUsername(this.state.friend)._id;
+    let {  createAnswer, poseQuestion } = this.props;
     poseQuestion(question)
       .then( 
         newQuestion => {
@@ -71,8 +102,6 @@ class QuestionCompose extends React.Component {
         })
 
     this.props.fetchResults(this.state.body);
-    // this.props.createAnswer(answer)
-    // this.setState({ answer2: '' })
     document.getElementsByClassName("question-submit")[0].classList.add("question-submit-fade-out");
   }
 
@@ -90,8 +119,21 @@ class QuestionCompose extends React.Component {
     }
   }
 
+  assignAvatar(score) {
+    if (score > 75) {
+      return "https://66.media.tumblr.com/a263296449a822e94dbd85e43daf2fce/tumblr_pspc1jZDky1wyb2l8o1_540.png"
+    } else if (score > 50) {
+      return "https://66.media.tumblr.com/b95a7055813bc8448637d9007674d5b4/tumblr_psqresCYwa1wyb2l8o3_540.png"
+    } else if (score > 25) {
+      return "https://66.media.tumblr.com/1c0def0a05d9e2dcfa8804026261780f/tumblr_psqresCYwa1wyb2l8o1_540.png"
+    } else {
+      return "https://66.media.tumblr.com/4ed22aa527fd985650829a9919100917/tumblr_psqresCYwa1wyb2l8o2_540.png"
+    }
+  }
+
   render() {
     let results;
+    let userAvatar;
 
     if(this.state.winner !== ""){
       return (
@@ -104,14 +146,11 @@ class QuestionCompose extends React.Component {
     else if(!this.props.results[0] && this.state.questionSent === true ) {
       results = <div className="lds-facebook"><div></div><div></div><div></div></div>}
     else if(!this.props.results[0]) {
-      // return null;
       results = [];
     } else {
-      // debugger
       results = this.props.results.map(result => (
         <Result result={result} />
       ))
-      // debugger 
       results.unshift(
         <div className="buttons-container">
           <div className="current-button">
@@ -124,14 +163,16 @@ class QuestionCompose extends React.Component {
       )
     }
 
-    // debugger 
+    if (!this.props.stats.user[0]) {
+      return null;
+    } else {
+      let score = this.props.stats.user[0].AvgPercent;
+      userAvatar = this.assignAvatar(score)
+    }
 
     return (
       <div className="new-body-wrapper">
         <div className="new-body-container">
-
-          
-
           <form className="new-form-container" onSubmit={this.handleSubmit}>
             <div className="fight-bar"></div>
             <div className="question-input-container">
@@ -143,22 +184,20 @@ class QuestionCompose extends React.Component {
                 placeholder="ex: How old is Queen Elizabeth II?"
               />
             </div>
-
             <section className="question-media">
                 <div className="question-media-player-left">
                   <h2>{this.props.currentUser.username}</h2>
                   <div className="question-img--wrapper">
-                    <img src="http://lorempixel.com/output/cats-q-c-100-100-4.jpg" alt=""></img>
+                    <img height="100" src={userAvatar}></img>
                   </div>
                 </div>
                 <div className="question-media-player-right">
-                  <h2>{this.props.friendName || "brett"}</h2>
+                  <h2>{this.state.friend}</h2>
                   <div className="question-img--wrapper">
-                  <img src="http://lorempixel.com/output/cats-q-c-100-100-4.jpg" alt=""></img>
+                    <img height="100" src={this.state.friendAvatar}></img>
                   </div>
                 </div>
             </section>
-            
             <div className="answers-container">
               <div className="answer-input-container">
                 <input className="question-inputs"
@@ -167,7 +206,6 @@ class QuestionCompose extends React.Component {
                   placeholder="ex: 89 years old"
                 />
               </div>
-
               <div className="answer-input-container">
                   <input className="question-inputs"
                   value={this.state.answer2}
