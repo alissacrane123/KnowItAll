@@ -120,9 +120,9 @@ class LoginForm extends React.Component {
               <input onClick={this.handleScroll} className="main-button" id="how-it-works" type="button" value="How It Works" />
             </div>
           </form>
-          
+          <HowItWorks />
         </div>
-        <HowItWorks />
+       
       </div>
     );
   }

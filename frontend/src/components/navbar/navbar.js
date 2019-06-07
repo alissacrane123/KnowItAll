@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import { withRouter } from 'react-router-dom'
+
 // import './navbar.css'
 
 class NavBar extends React.Component {
@@ -28,6 +29,7 @@ class NavBar extends React.Component {
     if (this.props.loggedIn) {
       return (
         <div className="navbar-buttons-container">
+          <Link className="nav-link" to={'/howitworks'}><button className="nav-button" >HOW IT WORKS</button></Link>
           {/* <Link className="nav-link" to={'/new'}><button className="nav-button" >Challenge</button></Link> */}
           <Link className="nav-link" to={'/questions'}><button className="nav-button" >FEED</button></Link>
           <Link className="nav-link" to={'/profile'}><button className="nav-button" >PROFILE</button></Link>

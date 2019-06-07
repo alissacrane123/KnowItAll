@@ -126,8 +126,9 @@ class SignupForm extends React.Component {
             </div>
             <input onClick={this.handleScroll} className="main-button" type="button" value="How It Works"/>
           </form>
+          <HowItWorks />
         </div>
-        <HowItWorks />
+        
       </div>
     );
   }
