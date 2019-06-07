@@ -8,7 +8,8 @@ class QuestionIndex extends React.Component {
     super(props)
     this.state = {
       questions: [],
-      stats: {}
+      stats: {},
+      showans: null,
     }
   }
 
@@ -21,22 +22,43 @@ class QuestionIndex extends React.Component {
     fetchFriends(currentUser.id);
     fetchStats();
   }
+  
+  showans(id){
+    if(this.state.showans ===id){
+      this.setState({showans: null});
+    }else{
+    this.setState({showans: id});
+    }
+  }
 
   render() {
     let { addFriend, currentUser } = this.props;
     let answers = this.props.answers.all;
+    let style = (answer) =>{
+      if(answer.winner){
+        return({color: "green"});
+      }else{
+        return({color: "red"});
+      }
 
+    };
     let ans = (id) =>{
       let anses = answers[id];
+      if (this.state.showans === id) {
         if(anses && anses.length == 2){
           return(
-            <div id ="answerscontainer" > 
-              <span id="ans"> {anses[0].body} </span>
-              <span id="ans"> {anses[1].body} </span>
+            <div id="answerscontainer" key={id}> 
+              <div id="ans" style={style(anses[0])}> Answer 1: <br /> {anses[0].body} </div>
+              <div id="ans" style={style(anses[1])}> Answer 2: <br /> {anses[1].body} </div>
               </div>
-          )
-        }
 
+          )
+        }else{
+          return (<div id="answerscontainer" key={id}>
+            <span style={{color: "red", width: "100%"}} id="ans"> No answers recorded for this question </span>
+            </div>)
+        }
+      }
     }
     
     let questions;
@@ -44,7 +66,7 @@ class QuestionIndex extends React.Component {
       return null;
     } else {
       questions = this.props.questions.map((question, idx) => (
-        <div key={idx} className="question-item-container">
+        <div key={idx} className="question-item-container" onClick={()=>this.showans(question._id)}>
           <div key={idx} className="question-body">
             {question.body}
             {ans(question._id)}

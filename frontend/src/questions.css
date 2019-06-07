@@ -64,6 +64,10 @@
   flex-direction: column;
 }
 
+.question-item-container{
+  cursor: pointer;
+}
+
 .question-item-container,
 .result-data-container,
 .friend-container {
@@ -339,6 +343,7 @@
   width: 100%; 
   display: flex; 
   justify-content: space-between;
+  padding: 5px;
 }
 #ans{
   width: 45%;
