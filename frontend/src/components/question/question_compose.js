@@ -1,5 +1,6 @@
 import React from 'react';
 import Result from './results';
+import { Link } from 'react-router-dom';
 
 class QuestionCompose extends React.Component {
   constructor(props) {
@@ -137,8 +138,10 @@ class QuestionCompose extends React.Component {
     if(this.state.winner !== ""){
       return (
         <div className="new-form-container" style={{paddingTop: "90px"}}>
+          <div className="add-margin"></div>
           <iframe src="https://giphy.com/embed/aWRWTF27ilPzy" width="480" height="359" frameBorder="0" title="skeletor" class="giphy-embed" allowFullScreen></iframe>
           <h1>{this.state.winner || "brett"} wins!</h1>
+          <Link className="back-to-feed" to={'/questions'}>...Back to the Feed</Link>
       </div>
         )
     }
