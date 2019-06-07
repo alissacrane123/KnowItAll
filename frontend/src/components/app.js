@@ -8,6 +8,7 @@ import SignupFormContainer from './session/signup_form_container';
 import QuestionComposeContainer from './question/question_compose_container';
 import QuestionIndexContainer from './question/question_index_container';
 import ProfileContainer from './profile/profile_container';
+import HowItWorks from './how-it-works/how_it_works';
 
 const App = () => (
   <div className="main-div">
@@ -22,6 +23,7 @@ const App = () => (
       <ProtectedRoute exact path="/questions" component={QuestionIndexContainer} />
       <ProtectedRoute exact path="/new" component={QuestionComposeContainer} />
       <ProtectedRoute exact path="/profile" component={ProfileContainer} />
+      <ProtectedRoute exact path='/howitworks' component={HowItWorks} />
     </Switch>
   </div>
 );

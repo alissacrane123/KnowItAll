@@ -43,6 +43,7 @@ class Profile extends React.Component {
         <div key={question.id} className="question-item-container" id={`${winnerQuestions[question._id]}`}>
           <div className="question-body">
             {question.body}
+            {winnerQuestions[question._id]}
           </div>
         </div>)
     );
