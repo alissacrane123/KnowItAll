@@ -23,6 +23,7 @@
     /* max-width: 50%; */
     width: 100%;
     background: rgb(49, 134, 173, 0.7);
+    border-bottom: rgb(49, 134, 173, 0.7) solid 2px;
     /* background: white; */
     text-align: center;
     font-family: Roboto, "Helvetica Neue", sans-serif;

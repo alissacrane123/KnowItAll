@@ -90,7 +90,7 @@ class LoginForm extends React.Component {
     return (
       <div className="main-body-container">
         <div className="main-title-container">
-          <h1 className="main-title">KNOW IT ALL</h1>
+          <h1 className="main-title">KnowItAll</h1>
         </div>
         <div className="session-form-container">
           <form className="session-form" onSubmit={this.handleSubmit}>
