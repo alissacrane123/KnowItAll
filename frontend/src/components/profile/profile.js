@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import {
   PieChart, Pie, BarChart, Bar, XAxis, YAxis, CartesianGrid,
-  Tooltip, Legend, LineChart, Line,
+  Tooltip, Legend, LineChart, Line, Label
 } from 'recharts';
 
 let dateFormat = require('dateformat');
@@ -39,12 +39,15 @@ class Profile extends React.Component {
         result[key] = item[key];
         return result;
       }, {});
+
+      
       yourQuestions = this.props.questions.user.slice(0,18).map(question => (
         <div key={question.id} className="question-item-container" id={`${winnerQuestions[question._id]}`}>
           <div className="question-body">
             {question.body}
-            {winnerQuestions[question._id]}
           </div>
+
+          <p>{(`${winnerQuestions[question._id]}` === 'true') ? 'Won' : 'Lost' }</p>
         </div>)
     );
     }
@@ -85,20 +88,11 @@ class Profile extends React.Component {
         <div className="profile-margin"></div>
         <div className="profile-container">
           
-          <div className="index-questions-container2" id="profile-questions-container">
-            <div className="index-header-container" >
-              <div className="index-header">
-                Your Questions Listed Below:
-              </div>
-            </div>
-
-            <div className="questions-container">
-              {yourQuestions}
-            </div>
-          </div>
+          
           
           <div className="charts-container">
             
+            <h3>Total Answers</h3>
             <div className="pie-chart-container"></div>
             <PieChart width={450} height={300} margin={{ top: 15, right: 40, left: 40, bottom: 0 }}>
               <Pie startAngle={180} endAngle={0} data={pieData} cx={200} cy={200} outerRadius={160} fill="rgba(231, 144, 212, 0.5)"
@@ -134,11 +128,19 @@ class Profile extends React.Component {
               />
             </PieChart>
             
+            <h3>Daily Rank</h3>
             <LineChart width={600} height={400} data={lineData}
               margin={{ top: 15, right: 50, left: 20, bottom: 5 }}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="name" />
-              <YAxis />
+              <YAxis>
+                <Label
+                  value="# Answers"
+                  position="insideLeft"
+                  angle={-90}
+                  style={{ textAnchor: 'middle' }}
+                />
+              </YAxis>
               <Tooltip />
               <Legend />
               <Line type="monotone" dataKey="Score" stroke="rgb(150, 137, 137)" dot={
@@ -171,6 +173,7 @@ class Profile extends React.Component {
               />
             </LineChart>
             <div className="pie-margin"></div>
+            <h3>Daily Answers Breakdown</h3>
             <BarChart
               width={600}
               height={400}
@@ -181,12 +184,30 @@ class Profile extends React.Component {
             >
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="name" />
-              <YAxis />
+              <YAxis>
+                <Label
+                  value="# Answers"
+                  position="insideLeft"
+                  angle={-90}
+                  style={{ textAnchor: 'middle' }}
+                />
+              </YAxis>
               <Tooltip />
               <Legend />
               <Bar dataKey="wrong" stackId="a" fill="rgb(150, 137, 137)" />
               <Bar dataKey="right" stackId="a" fill="rgba(231, 144, 212, 0.5)" />
             </BarChart>
+          </div>
+          <div className="index-questions-container2" id="profile-questions-container">
+            <div className="index-header-container" >
+              <div className="index-header">
+                Questions Asked Listed Below:
+              </div>
+            </div>
+
+            <div className="questions-container">
+              {yourQuestions}
+            </div>
           </div>
         </div>
       </div>
