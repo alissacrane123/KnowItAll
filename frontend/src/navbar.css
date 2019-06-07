@@ -8,6 +8,7 @@
   justify-content: space-between;
   background: white;
   border-bottom: 2px solid rgb(180, 179, 179);
+  z-index: 25;
 }
 
 .navbar-container {
@@ -19,6 +20,7 @@
   flex-direction: row;
   justify-content: space-between;
   background: rgba(231, 144, 212, 0.5);
+  z-index: 25;
 }
 
 

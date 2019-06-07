@@ -1,9 +1,7 @@
 .how-it-works--main {
-  margin-top: 150px;
+  margin-top: 120px;
   display: flex;
   flex-direction: column;
-  position: absolute;
-  top: 520px;
 }
 
 .how-it-works--intro h1 {

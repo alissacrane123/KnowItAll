@@ -5,13 +5,17 @@ import CreateFriend from '../friend/create_friend';
 class QuestionIndex extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { questions: [] }
+    this.state = {
+      questions: [],
+      stats: {}
+    }
   }
 
   componentDidMount() {
-    let { fetchQuestions, fetchFriends, currentUser } = this.props
+    let { fetchQuestions, fetchFriends, currentUser, fetchStats } = this.props
     fetchQuestions();
     fetchFriends(currentUser.id);
+    fetchStats();
   }
 
   render() {
@@ -37,6 +41,12 @@ class QuestionIndex extends React.Component {
       friends = this.props.friends.map((friendObj, idx) => (
         <FriendContainer key={idx} friendObj={friendObj}/>
       ))
+    }
+
+    if (this.props.stats.all[0] !== undefined) {
+      this.props.stats.all.forEach( stat => {
+        this.state.stats[stat._id] = stat.AvgPercent
+      })
     }
 
     return (
