@@ -18,7 +18,7 @@ router.post("/register", (req, res) => {
     return res.status(400).json(errors);
   }
 
-  User.findOne({ name: req.body.username }).then(user => {
+  User.findOne({ username: req.body.username }).then(user => {
     if (user) {
       errors.username = "User already exists";
       return res.status(400).json(errors);
@@ -65,6 +65,17 @@ router.get('/:id', (req, res) => {
     .catch(err => res.json(err))
 })
 
+router.get('/username/:username', (req, res) => {
+  User.findOne({ username: req.params.username})
+    .then(user => {
+      if (!user) {
+        return res.status(404).json({ username: 'This user does not exist' });
+      }
+
+      res.json(user)
+    })
+    .catch(err => res.json(err))
+})
 
 router.post('/login', (req, res) => {
   const username = req.body.username;

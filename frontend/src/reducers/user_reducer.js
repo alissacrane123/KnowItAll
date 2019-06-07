@@ -13,7 +13,7 @@ import { RECEIVE_FRIEND, RECEIVE_FRIENDS, CLEAR_FRIENDS } from '../actions/frien
 
 // MIGHT MAKE FRIENDSREDUCER INSTEAD 
 
-const UsersReducer = (state = { friends: {}, friend: {}, users: {} }, action) => {
+const UsersReducer = (state = { friends: [], friend: {}, users: {} }, action) => {
   Object.freeze(state);
   let newState = Object.assign({}, state);
   // debugger
