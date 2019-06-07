@@ -39,12 +39,15 @@ class Profile extends React.Component {
         result[key] = item[key];
         return result;
       }, {});
+
+      debugger
       yourQuestions = this.props.questions.user.slice(0,18).map(question => (
         <div key={question.id} className="question-item-container" id={`${winnerQuestions[question._id]}`}>
           <div className="question-body">
             {question.body}
-            {winnerQuestions[question._id]}
           </div>
+
+          <p>{(`${winnerQuestions[question._id]}` === 'true') ? 'Won' : 'Lost' }</p>
         </div>)
     );
     }
@@ -85,17 +88,7 @@ class Profile extends React.Component {
         <div className="profile-margin"></div>
         <div className="profile-container">
           
-          <div className="index-questions-container2" id="profile-questions-container">
-            <div className="index-header-container" >
-              <div className="index-header">
-                Your Questions Listed Below:
-              </div>
-            </div>
-
-            <div className="questions-container">
-              {yourQuestions}
-            </div>
-          </div>
+          
           
           <div className="charts-container">
             
@@ -187,6 +180,17 @@ class Profile extends React.Component {
               <Bar dataKey="wrong" stackId="a" fill="rgb(150, 137, 137)" />
               <Bar dataKey="right" stackId="a" fill="rgba(231, 144, 212, 0.5)" />
             </BarChart>
+          </div>
+          <div className="index-questions-container2" id="profile-questions-container">
+            <div className="index-header-container" >
+              <div className="index-header">
+                Your Questions Listed Below:
+              </div>
+            </div>
+
+            <div className="questions-container">
+              {yourQuestions}
+            </div>
           </div>
         </div>
       </div>
