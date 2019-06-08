@@ -13,9 +13,9 @@ import HowItWorks from './how-it-works/how_it_works';
 const App = () => (
   <div className="main-div">
     <Switch>
-      <AuthRoute exact path="/" component={LoginFormContainer} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
+      <AuthRoute exact path="/" component={LoginFormContainer} />
       <NavBarContainer />
     </Switch>
 
