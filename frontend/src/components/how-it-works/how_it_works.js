@@ -4,10 +4,10 @@ function HowItWorks() {
 
   return (
     <div className="body-container">
-      <section className="index-container">
-        <section className="how-it-works--intro">
-          <h1>How KnowItAll Works</h1>
-          <section>
+      <section className="container-list-col-top">
+        <section className="container-list-col-center">
+          <h1 className="page-title">How KnowItAll Works</h1>
+          <section className="how-it-works-intro">
             Are you and your friends competitive, do you love to call BS? We do too, in order to use this app you 
             need some friends, imaginary are fine, as long as they play fair. Okay, you are now hanging out with said friends. 
             Charlie shares that he would love own a flamingo. Whaattt? You kindly point out that, you cannot own a flamingo.    

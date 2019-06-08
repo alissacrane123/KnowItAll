@@ -1,7 +1,7 @@
-.how-it-works--intro section {
-  font-size : 30px;
+.how-it-works-intro {
+  font-size: 30px;
   text-align: center;
-  margin: 50px;
+  width: 90%;
 }
 
 .how-it-works--section,

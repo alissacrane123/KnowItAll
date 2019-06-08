@@ -220,7 +220,7 @@ class QuestionCompose extends React.Component {
         </div>
 
         <div className="results-body-container">
-          <div className="index-container-top">
+          <div className="container-list-col-top">
             {results}
           </div>
         </div>
