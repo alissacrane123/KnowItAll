@@ -5,6 +5,14 @@
   width: 100%;
 }
 
+.add-margin {
+  margin-top: 20px;
+}
+
+.back-to-feed {
+  margin-top: 300px;
+}
+
 .main-body-container {
   display: flex;
   flex-direction: column;

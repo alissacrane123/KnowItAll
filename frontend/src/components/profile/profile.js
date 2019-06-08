@@ -42,7 +42,7 @@ class Profile extends React.Component {
 
       
       yourQuestions = this.props.questions.user.slice(0,18).map(question => (
-        <div key={question.id} className="question-item-container" id={`${winnerQuestions[question._id]}`}>
+        <div key={question.id} style={{cursor: 'default'}} className="question-item-container" id={`${winnerQuestions[question._id]}`}>
           <div className="question-body">
             {question.body}
           </div>
