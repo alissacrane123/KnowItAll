@@ -48,16 +48,11 @@
 }
 
 .index-question-container2 {
-        margin-left: auto;
-  /* height: 100%; */
-  /* width: 100%; */
+  margin-left: auto;
   display: flex;
   flex-direction: column;  
   margin-right: 80px;
-  /* margin-left: 40px;   */
   border-radius: 4px;
-  /* background: pink; */
   margin-top: 30px;
   width: 47%;
-  /* align-items: center; */
 }

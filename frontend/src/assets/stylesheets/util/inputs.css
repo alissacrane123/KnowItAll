@@ -1,0 +1,24 @@
+.general-input {
+  height: 25px;
+  border-radius: 5px;
+  border: none;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.session-inputs {
+  height: 300px;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.question-inputs{
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+input[type="submit"]{
+  cursor: pointer;
+}
+

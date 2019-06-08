@@ -5,21 +5,9 @@
   padding-top: 90px;
 }
 
-
 .new-form-container{
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-}
-
-.current-button{
-  text-align: center;
-  animation: 1s fadeIn forwards;
-}
-
-
-.question-inputs{
-  font-size: 18px;
-  margin-top: 5px;
 }

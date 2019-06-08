@@ -15,7 +15,8 @@
   margin: 50px;
 }
 
-.how-it-works--section, .how-it-works--section-1 {
+.how-it-works--section,
+.how-it-works--section-1 {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -28,20 +29,24 @@
   background:#EEEEEE;
 }
 
-.how-it-works--section:hover img, .how-it-works--section-1:hover img{
+.how-it-works--section:hover img,
+.how-it-works--section-1:hover img {
   -webkit-transform: rotate(-3deg);
   -moz-transform: rotate(-3deg);
 }
 
-.how-it-works--section img, .how-it-works--section-1 img {
+.how-it-works--section img,
+.how-it-works--section-1 img {
   height: 180px;
 }
 
-.how-it-works--section article, .how-it-works--section-1 article {
+.how-it-works--section article,
+.how-it-works--section-1 article {
   width: 60%;
 }
 
-.how-it-works--section p, .how-it-works--section-1 p {
+.how-it-works--section p,
+.how-it-works--section-1 p {
   font-size: 24px;
 }
 

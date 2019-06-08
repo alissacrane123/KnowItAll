@@ -23,7 +23,6 @@
   z-index: 25;
 }
 
-
 .navbar-buttons-container {
   display: flex;
   flex-direction: row;
@@ -35,22 +34,6 @@
 .nav-link {
   /* height: 100%; */
   padding: 20px;
-}
-
-.nav-button {
-  width: 90px;
-  height: 40px;
-  /* border-radius: 4px; */
-  background: none;
-  border: none;
-  font-size: 16px;
-  COLOR: rgb(150, 137, 137);
-  font-weight: bolder;
-  outline: none;
-}
-
-.nav-button:hover {
-  border-bottom: 2px solid white;
 }
 
 .logo-img {

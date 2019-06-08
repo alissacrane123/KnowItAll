@@ -40,7 +40,8 @@
   cursor: pointer;
 }
 
-.index-questions-container, .result-container {
+.index-questions-container,
+.result-container {
   margin-left: auto;
   display: flex;
   flex-direction: column;  
@@ -225,6 +226,7 @@
   /* width: 64px;
   height: 64px; */
 }
+
 .lds-facebook div {
   display: inline-block;
   position: absolute;
@@ -233,18 +235,22 @@
   background: rgba(231, 144, 212, 0.5);
   animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
 }
+
 .lds-facebook div:nth-child(1) {
   left: 6px;
   animation-delay: -0.24s;
 }
+
 .lds-facebook div:nth-child(2) {
   left: 26px;
   animation-delay: -0.12s;
 }
+
 .lds-facebook div:nth-child(3) {
   left: 45px;
   animation-delay: 0;
 }
+
 @keyframes lds-facebook {
   0% {
     top: 6px;
@@ -256,7 +262,6 @@
   }
 }
 /* end loading wheel */
-
 
 @keyframes slideInFromLeft {
   0% {
@@ -338,13 +343,13 @@
    }
 }   
 
-
 #answerscontainer{
   width: 100%; 
   display: flex; 
   justify-content: space-between;
   padding: 5px;
 }
+
 #ans{
   width: 45%;
   text-align: center;
