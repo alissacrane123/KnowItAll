@@ -19,7 +19,7 @@ class LoginForm extends React.Component {
     this.clearedErrors = false;
   }
 
-  componentWillReceiveProps(nextProps) { // componentDidUpdate
+  componentWillReceiveProps(nextProps) {
     if (nextProps.currentUser === true) {
       this.props.history.push('/questions');
     }
@@ -98,16 +98,16 @@ class LoginForm extends React.Component {
               <div className="header-default">Login</div>
               <Link className="main-link" to={'/signup'}>Sign Up</Link>
             </div>
-            <div className="login-inputs">
+            <div className="session-inputs">
               {usernameError}
-              <input className="login-input"
+              <input className="general-input"
                 type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
                 placeholder="username"
               />
               {passwordError}
-              <input className="login-input"
+              <input className="general-input"
                 type="password"
                 value={this.state.password}
                 onChange={this.update('password')}

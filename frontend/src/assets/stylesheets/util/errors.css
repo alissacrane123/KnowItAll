@@ -1,0 +1,9 @@
+.error {
+  margin: 0px;
+  font-weight: bolder;
+  color: white;
+}
+
+.login-errors {
+  z-index: 10px;
+}

@@ -87,40 +87,40 @@ class SignupForm extends React.Component {
         <div className="main-title-container">
           <h1 className="main-title">KnowItAll</h1>
         </div>
-        <div className="signup-form-container">
-          <form className="signup-form" onSubmit={this.handleSubmit}>
+        <div className="session-form-container">
+          <form className="session-form" onSubmit={this.handleSubmit}>
             <div className="session-header-container">
               <Link className="main-link" to={'/login'}>Login</Link>
               <div className="header-default">Sign Up</div>
             </div>
             {emailError}
-            <div className="signup-inputs">
-              <input className="signup-input" type="text"
+            <div className="session-inputs">
+              <input className="general-input" type="text"
                   value={this.state.email}
                   onChange={this.update('email')}
                   placeholder="Email"
                 />
               {usernameError}
-              <input className="signup-input" type="text"
+              <input className="general-input" type="text"
                   value={this.state.username}
                   onChange={this.update('username')}
                   placeholder="username"
                 />
               {passwordError}
-              <input className="signup-input" 
+              <input className="general-input" 
                   type="password"
                   value={this.state.password}
                   onChange={this.update('password')}
                   placeholder="Password"
                 />
-              <input className="signup-input"
+              <input className="general-input"
                   type="password"
                   value={this.state.password2}
                   onChange={this.update('password2')}
                   placeholder="Confirm Password"
                 />
             </div>
-            <div className="signup-submit">
+            <div className="session-submit">
               <input className="login-submit"
                 type="submit" value="Submit" />
             </div>

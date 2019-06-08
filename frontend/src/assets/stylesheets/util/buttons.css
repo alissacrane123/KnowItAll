@@ -1,0 +1,43 @@
+.main-button {
+  height: 100%;
+  width: 100%;
+  border-radius: 4px;
+  position: relative;
+  top: 10px;
+  left: 106px;
+}
+
+.login-submit, .main-button {
+  height: 40px;
+  width: 127px;
+  border: none;
+  border-radius: 5px;
+  background: rgb(231, 164, 217);
+  color: white;
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+button {
+  cursor: pointer;
+}
+
+.nav-button {
+  width: 90px;
+  height: 40px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  COLOR: rgb(150, 137, 137);
+  font-weight: bolder;
+  outline: none;
+}
+
+.nav-button:hover {
+  border-bottom: 2px solid white;
+}
+
+.current-button{
+  text-align: center;
+  animation: 1s fadeIn forwards;
+}

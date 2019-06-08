@@ -1,0 +1,8 @@
+#root, html, body, .main-div {
+  height: 100%;
+  width: 100%;
+}
+
+a {
+  cursor: pointer;
+}

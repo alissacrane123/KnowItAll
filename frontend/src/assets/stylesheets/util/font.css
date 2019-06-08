@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.how-it-works--section p,
+.how-it-works--section-1 p {
+  font-size: 24px;
+}
+
+.how-it-works--intro h1 {
+  font-size: 40px;
+  text-align: center;
+}
