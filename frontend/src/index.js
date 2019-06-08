@@ -7,13 +7,13 @@ import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 import * as APIUtils from './util/answer_api_util';
 
-import './index.css';
-import './main.css';
-import './navbar.css';
-import './new.css';
-import './questions.css';
-import './profile.css';
-import './how-it-works.css';
+import './assets/css/index.css';
+import './assets/css/main.css';
+import './assets/css/navbar.css';
+import './assets/css/new.css';
+import './assets/css/questions.css';
+import './assets/css/profile.css';
+import './assets/css/how-it-works.css';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
