@@ -114,15 +114,8 @@
   border-left: 6px solid rgb(231, 164, 217);
 }
 
-/* --------- BUTTONS ------------- */
-
 .back-to-feed {
   margin-top: 300px;
-}
-
-#how-it-works {
-  position: relative;
-  top: 13px;
 }
 
 .signup-submit, .switch-signup, .main-button {

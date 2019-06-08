@@ -1,0 +1,32 @@
+.result-container {
+  width: 90%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  animation: 1s fadeIn forwards;
+}
+
+.results-container {
+  text-align: left;
+  background-color: white;
+}
+
+.result-data-container {
+  list-style: none;
+}
+
+.result-container {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;  
+  margin-right: 80px;
+  border-radius: 4px;
+  margin-top: 100px;
+  width: 45%;
+}
+
+.result-data-container {
+  min-height: 30px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: rgba(231, 144, 212, 0.5);
+}

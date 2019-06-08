@@ -1,0 +1,37 @@
+.friend-container {
+  min-height: 30px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: rgba(231, 144, 212, 0.5);
+}
+
+.friend-container:hover {
+  transform: scale(1.1, 1.1);
+  cursor: pointer;
+}
+
+.add-friend-form {
+  min-height: 130px;
+}
+
+.new-friend-submit-container {
+  height: 30px;
+  width: 40px;
+}
+
+.friend-link-continer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: space-between;
+  align-items: center;
+  border: 1px solid rgb(180, 179, 179);
+}
+
+.friend-link {
+  width: 25%;
+  color: rgb(150, 137, 137);
+  font-weight: 700;
+  font-size: 24px;
+  text-decoration: none;
+}

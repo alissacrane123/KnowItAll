@@ -14,10 +14,15 @@ import './assets/stylesheets/util/errors.css';
 import './assets/stylesheets/util/inputs.css';
 import './assets/stylesheets/main.css';
 import './assets/stylesheets/navbar.css';
-import './assets/stylesheets/new.css';
+import './assets/stylesheets/new-question.css';
 import './assets/stylesheets/questions.css';
+import './assets/stylesheets/friend.css';
+import './assets/stylesheets/answers.css';
+import './assets/stylesheets/results.css';
+import './assets/stylesheets/util/list.css';
 import './assets/stylesheets/profile.css';
 import './assets/stylesheets/how-it-works.css';
+import './assets/shame.css';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
