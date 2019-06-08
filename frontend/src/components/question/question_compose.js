@@ -9,7 +9,7 @@ class QuestionCompose extends React.Component {
     this.state = { 
       body: "",
       authorId: this.props.currentUser.id,
-      otherUserId: '',
+      friendId: '',
       answer1: '',
       answer2: '',
       questionId: undefined,
@@ -57,9 +57,9 @@ class QuestionCompose extends React.Component {
 
   handleClick(user) {
     this.props.clearResults();
-    let { updateAnswer, currentUser } = this.props
-    let friendId = this.props.fetchFriendByUsername(this.state.friend)._id;
+    let { updateAnswer, currentUser } = this.props;
     let data;
+    
 
     if (user === 'current') {
       this.setState({winner: currentUser.username});
@@ -67,7 +67,7 @@ class QuestionCompose extends React.Component {
       updateAnswer(data);
     } else {
       this.setState({winner: this.state.friend});
-      data = { userId: friendId, questionId: this.state.questionId};
+      data = { userId: this.state.friendId, questionId: this.state.questionId};
       updateAnswer(data);
     }
   }
@@ -83,21 +83,20 @@ class QuestionCompose extends React.Component {
     let answer2;
     this.setState({questionSent: true})
     let { createAnswer, poseQuestion } = this.props;
-    let friendId = this.props.fetchFriendByUsername(this.state.friend)._id;
+    // let friendId = this.props.fetchFriendByUsername(this.state.friend)._id;
     poseQuestion(question)
       .then( 
         newQuestion => {
           if (newQuestion !== undefined) {
             answer1 = { body: this.state.answer1, 
                         authorId: this.state.authorId,
-                        questionId: newQuestion.question.data._id}
-            createAnswer(answer1)
-
+                        questionId: newQuestion.question.data._id};
+            createAnswer(answer1);
             answer2 = { body: this.state.answer2,
-                        authorId: friendId,
-                        questionId: newQuestion.question.data._id}
-            createAnswer(answer2)
-            this.setState({ questionId: newQuestion.question.data.id})
+                        authorId: this.state.friendId,
+                        questionId: newQuestion.question.data._id};
+            createAnswer(answer2);
+            this.setState({ questionId: newQuestion.question.data.id});
           }
         })
 

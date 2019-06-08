@@ -14,9 +14,10 @@ class Friend extends React.Component {
     fetchUserStats(friendObj.friend_id);
   }
 
-  handleStorage(friendAvatar, friend) {
+  handleStorage(friendAvatar, friend, friendId) {
     localStorage.setItem("friendAvatar", friendAvatar);
     localStorage.setItem("friend", friend);
+    localStorage.setItem("friendId", friendId);
   }
 
   assignAvatar(score) {
@@ -53,6 +54,7 @@ class Friend extends React.Component {
     }
     
     let friend = users[friendObj.friend_id].username;
+    let friendId = friendObj.friend_id;
 
     if (!this.props.stats.all[0]) {
       return null;
@@ -62,7 +64,7 @@ class Friend extends React.Component {
 
     return (
       <div className="friend-container">
-        <Link className="friend-link" to={{ pathname: '/new', state: {test: "test"}}} onClick={() => this.handleStorage(friendAvatar, friend)}>
+        <Link className="friend-link" to={{ pathname: '/new', state: {test: "test"}}} onClick={() => this.handleStorage(friendAvatar, friend, friendId)}>
           <div className="friend-link-continer">
             <div><img src={friendAvatar} height="70"></img></div>
             
