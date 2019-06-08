@@ -1,9 +1,10 @@
 # KnowItAll
-**MERN stack project**
+
+
 [Live Demo](https://knowitall-app.herokuapp.com)
 **KnowItAll** is an application that allows you to challenge your friends to see who’s right. 
 Users can see how they rank against friends, track challenges, and see fact challenges in their area.
-
+Implemented using MongoDB Express.js React-Redux and Node.js
 ## Background and Overview
 When you are hanging out with a friend and they say something totally off, you kindly correct them. However, they’re pretty sure their right and your wrong. What do you do? Settle it by googling of course. Well, what if you could track all these little challenges. KnowItAll will do it for you! Type in your question and get served the most relevant google and wiki results. Declare an official round winner, and you’ll be able to look back on all your proudest and most idiotic moments!
 
