@@ -8,6 +8,7 @@
 .results-container {
   text-align: left;
   background-color: white;
+  width: 100%;
 }
 
 .result-data-container {
@@ -21,7 +22,6 @@
   margin-right: 80px;
   border-radius: 4px;
   margin-top: 100px;
-  width: 45%;
 }
 
 .result-data-container {
