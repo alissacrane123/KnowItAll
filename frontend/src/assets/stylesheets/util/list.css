@@ -1,32 +1,72 @@
-.index-container {
+.header-container {
+  margin: 5px;
+  font-size: 18px;
+}
+
+/* ------ ALIGNMENT ------ */
+
+.container-list-col-center {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  align-items: center;
 }
 
-.index-container-top {
+.container-list-col-start {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
 }
 
-.index-container-two-col-even {
+.container-list-row-center {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  width: 45%;
+  align-items: center;
 }
 
-.index-container-two-col-top {
+.container-list-row-l-r {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  width: 45%;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.header-container {
-  margin: 5px;
-  font-size: 18px;
+/* ------ WIDTHS ------ */
+
+.container-2-col {
+  width: 45%
 }
+
+.container-1-3-col {
+  width: 30%
+}
+
+.container-2-3-col {
+  width: 60%
+}
+
+.container-col-1 {
+  width: 90%
+}
+
+/* ------ MIN HEIGHTS ------ */
+
+.container-list-item-sm {
+  min-height: 30px;
+}
+
+.container-list-item-md {
+  min-height: 100px;
+}
+
+.container-list-item-lg {
+  min-height: 300px;
+}
+
+.container-list-item-xl {
+  min-height: 450px;
+}
+
 

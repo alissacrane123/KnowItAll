@@ -1,7 +1,6 @@
 .result-container {
   width: 90%;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 20px 0px;
   animation: 1s fadeIn forwards;
 }
 
