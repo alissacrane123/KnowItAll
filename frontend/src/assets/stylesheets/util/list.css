@@ -1,0 +1,25 @@
+.index-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.index-container-two-col-even {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 45%;
+}
+
+.index-container-two-col-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 45%;
+}
+
+.header-container {
+  margin: 5px;
+  font-size: 18px;
+}
+

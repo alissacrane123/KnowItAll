@@ -81,17 +81,12 @@ class Profile extends React.Component {
     ];
 
     return (
-      <div className="profile-container-wrapper">
+      <div className="body-container">
         <div className="profile-header">
           <div className="prof-header">Welcome, {this.props.currentUser.username}!</div>
         </div>
-        <div className="profile-margin"></div>
         <div className="profile-container">
-          
-          
-          
           <div className="charts-container">
-            
             <h3>Total Answers</h3>
             <div className="pie-chart-container"></div>
             <PieChart width={450} height={300} margin={{ top: 15, right: 40, left: 40, bottom: 0 }}>
