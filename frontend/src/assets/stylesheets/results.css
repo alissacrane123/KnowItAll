@@ -5,28 +5,8 @@
   animation: 1s fadeIn forwards;
 }
 
-.results-container {
-  text-align: left;
-  background-color: white;
-  width: 100%;
-}
-
-.result-data-container {
-  list-style: none;
-}
-
-.result-container {
-  margin-left: auto;
-  display: flex;
-  flex-direction: column;  
-  margin-right: 80px;
-  border-radius: 4px;
-  margin-top: 100px;
-}
-
 .result-data-container {
   min-height: 30px;
   padding: 10px;
-  margin-bottom: 10px;
   background: rgba(231, 144, 212, 0.5);
 }
