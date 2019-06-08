@@ -109,7 +109,6 @@ router.get("/user/:id", (req, res) => {
 
 router.patch("/", (req, res) => {
     let authorId = req.body.userId;
-    console.log(authorId);
     Answer.find({ author: authorId })
         .sort({ date: -1 })
         .then(answers => {
