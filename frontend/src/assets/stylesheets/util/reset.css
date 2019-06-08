@@ -7,6 +7,10 @@ a {
   cursor: pointer;
 }
 
+ul {
+  list-style: none;
+}
+
 .body-container {
   display: flex;
   flex-direction: column;

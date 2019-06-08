@@ -4,6 +4,13 @@
   justify-content: space-evenly;
 }
 
+.index-container-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 .index-container-two-col-even {
   display: flex;
   flex-direction: column;
