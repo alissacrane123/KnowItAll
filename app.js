@@ -15,7 +15,7 @@ const path = require('path');
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('frontend/build'));
-  app.get('/', (req, res) => {
+  app.get('/*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
   })
 }
@@ -27,17 +27,6 @@ mongoose
   
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
-
-app.get("/", (req, res) => {
-  const user = new User({
-    username: 'alissa',
-    email: 'alissa@gmail.com',
-    password: 'password'
-  });
-  user.save()
-  res.send("Hello World")
-});
 
 app.use("/api/users", users);
 app.use("/api/questions", questions);
