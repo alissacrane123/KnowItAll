@@ -5,7 +5,7 @@
   padding-top: 90px;
 }
 
-.new-form-container{
+.new-form-container {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -28,6 +28,28 @@
   width: 60%;
   margin: 20px;
   text-align: center;
+}
+
+.index-body-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  color: rgb(119, 112, 112);
+  margin-top: 150px;
+}
+
+.index-header-container {
+  font-size: 18px;
+  color: rgb(119, 112, 112);
+}
+
+.question-item-container {
+  min-height: 30px;
+  margin: 5px;
+  padding: 10px;
+  background: rgba(231, 144, 212, 0.5);
+  box-sizing: border-box;
+  cursor: pointer;
 }
 
 

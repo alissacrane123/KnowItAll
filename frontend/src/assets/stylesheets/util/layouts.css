@@ -3,6 +3,20 @@
   font-size: 18px;
 }
 
+.index-body-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  color: rgb(119, 112, 112);
+  margin-top: 150px;
+}
+
+.index-header-container {
+  font-size: 18px;
+  color: rgb(119, 112, 112);
+}
+
+
 /* ------ ALIGNMENT ------ */
 
 .container-list-col-center {

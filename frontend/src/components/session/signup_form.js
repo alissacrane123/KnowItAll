@@ -1,6 +1,5 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import HowItWorks from '../how-it-works/how_it_works';
 
 class SignupForm extends React.Component {
@@ -15,7 +14,6 @@ class SignupForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleScroll = this.handleScroll.bind(this);
     this.clearedErrors = false;
   }
 
@@ -45,28 +43,7 @@ class SignupForm extends React.Component {
     this.props.signup(user, this.props.history);
   }
 
-  handleScroll() {
-    window.scroll({
-      behavior: 'smooth',
-      left: 0,
-      top: 700
-    });
-  }
-
-  renderErrors() {
-    return (
-      <ul className="errors-container">
-        {Object.keys(this.state.errors).map((error, i) => (
-          <li className="errors" key={`error-${i}`}>
-            {this.state.errors[error]}
-          </li>
-        ))}
-      </ul>
-    );
-  }
-
   render() {
-
     let emailError;
     if ((this.props.errors !== undefined && this.props.errors.email !== undefined)) {
       emailError = <p className="error">{this.props.errors.email}</p>;
@@ -83,52 +60,44 @@ class SignupForm extends React.Component {
     }
 
     return (
-      <div className="main-body-container">
-        <div className="main-title-container">
-          <h1 className="main-title">KnowItAll</h1>
+      <div className="session-img-container">
+        <div className="index-body-container">
+          <div className="container-2-3-col">
+            <form className="container-list-col-center" onSubmit={this.handleSubmit}>
+              {emailError}
+              <div className="container-list-item-xl">
+                <div className="container-list-col-center">
+                  <input className="session-input" type="text"
+                      value={this.state.email}
+                      onChange={this.update('email')}
+                      placeholder="Email"
+                  />
+                  {usernameError}
+                  <input className="session-input" type="text"
+                      value={this.state.username}
+                      onChange={this.update('username')}
+                      placeholder="username"
+                  />
+                  {passwordError}
+                  <input className="session-input" 
+                      type="password"
+                      value={this.state.password}
+                      onChange={this.update('password')}
+                      placeholder="Password"
+                  />
+                  <input className="session-input"
+                      type="password"
+                      value={this.state.password2}
+                      onChange={this.update('password2')}
+                      placeholder="Confirm Password"
+                  />
+                  <input className="general-button" type="submit" value="Signup" />
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
-        <div className="session-form-container">
-          <form className="session-form" onSubmit={this.handleSubmit}>
-            <div className="session-header-container">
-              <Link className="main-link" to={'/login'}>Login</Link>
-              <div className="header-default">Sign Up</div>
-            </div>
-            {emailError}
-            <div className="session-inputs">
-              <input className="general-input" type="text"
-                  value={this.state.email}
-                  onChange={this.update('email')}
-                  placeholder="Email"
-                />
-              {usernameError}
-              <input className="general-input" type="text"
-                  value={this.state.username}
-                  onChange={this.update('username')}
-                  placeholder="username"
-                />
-              {passwordError}
-              <input className="general-input" 
-                  type="password"
-                  value={this.state.password}
-                  onChange={this.update('password')}
-                  placeholder="Password"
-                />
-              <input className="general-input"
-                  type="password"
-                  value={this.state.password2}
-                  onChange={this.update('password2')}
-                  placeholder="Confirm Password"
-                />
-            </div>
-            <div className="session-submit">
-              <input className="login-submit"
-                type="submit" value="Submit" />
-            </div>
-            <input onClick={this.handleScroll} className="main-button" type="button" value="How It Works"/>
-          </form>
-          <HowItWorks />
-        </div>
-        
+        <HowItWorks />
       </div>
     );
   }
