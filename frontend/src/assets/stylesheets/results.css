@@ -9,3 +9,7 @@
   padding: 10px;
   background: rgba(231, 144, 212, 0.5);
 }
+
+.winner-container {
+  width: 42%;
+}

@@ -5,62 +5,11 @@
 /* --------- MAIN ------------- */
 
 .main-body-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   height: 680px;
   width: 100%;
   background-image: url("https://images.unsplash.com/photo-1554147850-dd1191b9b948?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80");
   background-size: cover;
   background-repeat: no-repeat;
-}
-
-.main-title-container {
-  position: absolute;
-  top: 0px;
-  width: 100%;
-  background: rgb(49, 134, 173, 0.7);
-  border-bottom: rgb(49, 134, 173, 0.7) solid 2px;
-  text-align: center;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-}
-
-.main-title {
-  color: white;
-  text-align: center;
-}
-
-.main-links-container  {
-  position: absolute;
-  top: 150px;
-  width: 100%;
-}
-
-.main-links {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-  padding: 50px;
-}
-
-.main-link {
-  text-decoration: none;
-  color: white;
-  margin-left: 2px;
-  font-size: 25px;
-  background:  rgba(231, 164, 217, 0.769);
-  border-radius: 5px 5px 0px 0px;
-  padding: 5px;
-}
-
-.main-line {
-  position: absolute;
-  top: 12%;
-  left: 49.8%;
-  height: 200px;
-  border-left: 6px solid rgb(231, 164, 217);
 }
 
 /* --------- SESSION ------------- */
