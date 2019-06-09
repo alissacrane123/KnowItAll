@@ -138,10 +138,10 @@ class QuestionCompose extends React.Component {
       return (
         <div className="body-container">
           <iframe src="https://giphy.com/embed/aWRWTF27ilPzy" width="480" height="359" frameBorder="0" title="skeletor" class="giphy-embed" allowFullScreen></iframe>
-          <h1 lassName="centered-paragraph">{this.state.winner || "brett"} wins!</h1>
+          <h1 className="centered-text">{this.state.winner || "brett"} wins!</h1>
           <Link to={'/questions'}>...Back to the Feed</Link>
-      </div>
-        )
+        </div>
+      )
     }
     else if(!this.props.results[0] && this.state.questionSent === true ) {
       results = <div className="lds-facebook"><div></div><div></div><div></div></div>}
@@ -153,10 +153,10 @@ class QuestionCompose extends React.Component {
       ))
       results.unshift(
         <div className="winner-container">
-        <div className="container-list-row-centered">
-            <button className="general-button" onClick={() =>this.handleClick('current')}>I WON</button>
-            <button className="general-button" onClick={()=>this.handleClick('friend')}>FRIEND WON</button>
-        </div>
+          <div className="container-list-row-center">
+              <button className="general-button" onClick={() =>this.handleClick('current')}>I WON</button>
+              <button className="general-button" onClick={()=>this.handleClick('friend')}>FRIEND WON</button>
+          </div>
         </div>
       )
     }
@@ -176,7 +176,7 @@ class QuestionCompose extends React.Component {
               <div className="centered-text"><h2>ASK YOUR QUESTION</h2></div>
               <div className="container-list-col-center">
                 <input type="textarea"
-                className="general-input-grey"
+                  className="general-input-grey"
                   value={this.state.body}
                   onChange={this.update('body')}
                   placeholder="ex: How old is Queen Elizabeth II?"

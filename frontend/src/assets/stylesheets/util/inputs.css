@@ -1,4 +1,4 @@
-.general-input {
+.general-input, .session-input {
   height: 25px;
   border-radius: 5px;
   border: none;
@@ -6,6 +6,11 @@
   padding: 10px;
   background: white;
 }
+
+.session-input {
+  width: 60%;
+}
+
 
 .general-input-grey {
   height: 25px;
