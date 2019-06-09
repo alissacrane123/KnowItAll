@@ -8,11 +8,9 @@ import { fetchUserStats, fetchStats } from '../../actions/stats_actions';
 import QuestionIndex from './question_index';
 
 const mapStateToProps = (state) => {
-  // debugger
   return {
     currentUser: state.session.user,
     questions: Object.values(state.questions.all),
-    // friends: Object.values(state.users.friends),
     friends: state.users.friends,
     users: state.users.users, // object
     newFriend: state.users.friend,

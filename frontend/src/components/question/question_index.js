@@ -90,19 +90,23 @@ class QuestionIndex extends React.Component {
 
   return (
     <div className="index-body-container">
-      <div className="container-list-col-top">
-        <div className="header-container">
-          <h2>CHALLENGE A FRIEND:</h2>
+      <div className="container-2-col">
+        <div className="container-list-col-start">
+          <div className="header-container">
+            <h2>CHALLENGE A FRIEND:</h2>
+          </div>
+          { friends }
+          <CreateFriend addFriend={addFriend} currentUser={currentUser} />
         </div>
-        { friends }
-        <CreateFriend addFriend={addFriend} currentUser={currentUser} />
       </div>
-      <div className="container-list-col-top">
-        <div className="header-container" >
-          <h3>Question Feed:</h3>
+      <div className="container-2-col">
+        <div className="container-list-col-start">
+          <div className="header-container" >
+            <h3>Question Feed:</h3>
+          </div>
+          {questions}
         </div>
-        {questions}
-      </div>
+    </div>
     </div>
   )}
 }

@@ -101,7 +101,7 @@ class QuestionCompose extends React.Component {
         })
 
     this.props.fetchResults(this.state.body);
-    document.getElementsByClassName("question-submit")[0].classList.add("question-submit-fade-out");
+    document.getElementsByClassName("general-button")[0].classList.add("question-submit-fade-out");
   }
 
   update(field) {
@@ -112,9 +112,9 @@ class QuestionCompose extends React.Component {
 
   questionSubmitButton() {
     if(this.state.body && this.state.answer1 && this.state.answer2) {
-      return <input className="question-submit" type="submit" value="Submit" />
+      return <input className="general-button" type="submit" value="Submit" />
     } else {
-      return <input className="question-submit" disabled type="submit" value="Submit" />
+      return <input className="general-button" disabled type="submit" value="Submit" />
     }
   }
 
@@ -136,11 +136,10 @@ class QuestionCompose extends React.Component {
 
     if(this.state.winner !== ""){
       return (
-        <div className="new-form-container" style={{paddingTop: "90px"}}>
-          <div className="add-margin"></div>
+        <div className="body-container">
           <iframe src="https://giphy.com/embed/aWRWTF27ilPzy" width="480" height="359" frameBorder="0" title="skeletor" class="giphy-embed" allowFullScreen></iframe>
-          <h1>{this.state.winner || "brett"} wins!</h1>
-          <Link className="back-to-feed" to={'/questions'}>...Back to the Feed</Link>
+          <h1 lassName="centered-paragraph">{this.state.winner || "brett"} wins!</h1>
+          <Link to={'/questions'}>...Back to the Feed</Link>
       </div>
         )
     }
@@ -153,13 +152,11 @@ class QuestionCompose extends React.Component {
         <Result result={result} />
       ))
       results.unshift(
-        <div className="buttons-container">
-          <div className="current-button">
-            <button onClick={() =>this.handleClick('current')}>I WON</button>
-          </div>
-          <div className="current-button">
-            <button onClick={()=>this.handleClick('friend')}>FRIEND WON</button>
-          </div>
+        <div className="winner-container">
+        <div className="container-list-row-centered">
+            <button className="general-button" onClick={() =>this.handleClick('current')}>I WON</button>
+            <button className="general-button" onClick={()=>this.handleClick('friend')}>FRIEND WON</button>
+        </div>
         </div>
       )
     }
@@ -172,18 +169,19 @@ class QuestionCompose extends React.Component {
     }
 
     return (
-      <div className="new-body-wrapper">
-        <div className="new-body-container">
+      <div className="body-container">
           <form className="new-form-container" onSubmit={this.handleSubmit}>
             <div className="fight-bar"></div>
-            <div className="question-input-container">
-              <h2>ASK YOUR QUESTION</h2>
-              <input type="textarea"
-                  className="question-inputs"
-                value={this.state.body}
-                onChange={this.update('body')}
-                placeholder="ex: How old is Queen Elizabeth II?"
-              />
+            <div className="container-list-col-center">
+              <div className="centered-text"><h2>ASK YOUR QUESTION</h2></div>
+              <div className="container-list-col-center">
+                <input type="textarea"
+                className="general-input-grey"
+                  value={this.state.body}
+                  onChange={this.update('body')}
+                  placeholder="ex: How old is Queen Elizabeth II?"
+                />
+              </div>
             </div>
             <section className="question-media">
                 <div className="question-media-player-left">
@@ -199,30 +197,30 @@ class QuestionCompose extends React.Component {
                   </div>
                 </div>
             </section>
-            <div className="answers-container">
-              <div className="answer-input-container">
-                <input className="question-inputs"
-                  value={this.state.answer1}
-                  onChange={this.update('answer1')}
-                  placeholder="ex: 89 years old"
-                />
-              </div>
-              <div className="answer-input-container">
-                  <input className="question-inputs"
-                  value={this.state.answer2}
-                  onChange={this.update('answer2')}
-                  placeholder="ex: 93 years old"
-                />
+
+            <div className="container-2-3-col">
+              <div className="container-list-row-l-r">
+                <div className="container-list-col-center">
+                  <input className="general-input"
+                    value={this.state.answer1}
+                    onChange={this.update('answer1')}
+                    placeholder="ex: 89 years old"
+                  />
+                </div>
+                <div className="container-list-col-center">
+                  <input className="general-input"
+                    value={this.state.answer2}
+                    onChange={this.update('answer2')}
+                    placeholder="ex: 93 years old"
+                  />
+                </div>
               </div>
             </div> 
-              {this.questionSubmitButton()}
+            {this.questionSubmitButton()}
           </form>
-        </div>
 
-        <div className="results-body-container">
-          <div className="container-list-col-top">
-            {results}
-          </div>
+        <div className="container-list-col-center">
+          {results}
         </div>
       </div>  
     )

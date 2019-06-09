@@ -63,18 +63,17 @@ class Friend extends React.Component {
     }
 
     return (
-      <div className="friend-container">
-        <Link className="friend-link" to={{ pathname: '/new', state: {test: "test"}}} onClick={() => this.handleStorage(friendAvatar, friend, friendId)}>
-          <div className="friend-link-continer">
-            <div><img src={friendAvatar} height="70"></img></div>
-            
-            {friend}
-            
-            <div>{score || "0"}%<div style={{ fontSize: 12 }}>correct</div></div>
-
-          </div>
-        </Link>
-      </div>
+      <div className="hover-bigger">
+        <div className="container-list-item-md">
+          <Link className="container-col-1" to={{ pathname: '/new', state: {test: "test"}}} onClick={() => this.handleStorage(friendAvatar, friend, friendId)}>
+              <ul className="container-list-row-center">
+                <li><img src={friendAvatar} height="70"></img></li>
+                <li>{friend}</li>
+                <li>{score || "0"}%<p className="centered-text">correct</p></li>
+              </ul>
+          </Link>
+        </div>
+    </div>
     )
   }
 }

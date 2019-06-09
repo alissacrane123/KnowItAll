@@ -1,41 +1,12 @@
-.nc2 {
-  position: fixed;
-  top: 0;
-  height: 90px;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  background: white;
-  border-bottom: 2px solid rgb(180, 179, 179);
-  z-index: 25;
-}
-
 .navbar-container {
   position: fixed;
   top: 0;
-  height: 90px;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  background: rgba(231, 144, 212, 0.5);
   z-index: 25;
+  background: rgb(231, 164, 217);
+  border-bottom: 2px solid grey;
 }
 
-.navbar-buttons-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  height: 100%;
-}
-
-.nav-link {
-  padding: 20px;
-}
-
-.logo-img {
+.navbar-logo-img {
   height: 60px;
-  margin-top: 13px;
-  margin-left: 18px;
+  margin: 15px 15px;
 }
