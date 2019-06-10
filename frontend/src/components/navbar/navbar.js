@@ -41,10 +41,10 @@ class NavBar extends React.Component {
   }
 
   getSessionLinks() {
-    if (this.props.location.pathname === "/login") {
-      return <Link to={'/signup'}><button className="navbar-button" onClick={this.handleScrollUp}><h2>SIGN UP</h2></button></Link>
-    } else {
+    if (this.props.location.pathname === "/signup") {
       return <Link to={'/login'}><button className="navbar-button" onClick={this.handleScrollUp}><h2>LOGIN</h2></button></Link>
+    } else {
+      return <Link to={'/signup'}><button className="navbar-button" onClick={this.handleScrollUp}><h2>SIGN UP</h2></button></Link>
     }
   }
 
