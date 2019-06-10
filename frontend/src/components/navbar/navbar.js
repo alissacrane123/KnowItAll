@@ -40,6 +40,13 @@ class NavBar extends React.Component {
     });
   }
 
+  getSessionLinks() {
+    if (this.props.location.pathname === "/login") {
+      return <Link to={'/signup'}><button className="navbar-button" onClick={this.handleScrollUp}><h2>SIGN UP</h2></button></Link>
+    } else {
+      return <Link to={'/login'}><button className="navbar-button" onClick={this.handleScrollUp}><h2>LOGIN</h2></button></Link>
+    }
+  }
 
  
   // Selectively render links dependent on whether the user is logged in
@@ -57,8 +64,7 @@ class NavBar extends React.Component {
       return (
         <div className="container-list-row-end">
           <Link ><button className="navbar-button" onClick={this.handleScrollDown}><h2>HOW IT WORKS</h2></button></Link>
-          <Link to={'/signup'}><button className="navbar-button" onClick={this.handleScrollUp}><h2>SIGN UP</h2></button></Link>
-          <Link to={'/login'}><button className="navbar-button" onClick={this.handleScrollUp}><h2>LOGIN</h2></button></Link>
+          {this.getSessionLinks()}
         </div>
       );
     }

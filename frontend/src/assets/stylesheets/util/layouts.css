@@ -131,6 +131,10 @@
   -moz-transform: rotate(-3deg);
 }
 
+.topButtonSection:hover .top-button {
+  display: flex;
+}
+
 .hover-bigger:hover {
   transform: scale(1.1, 1.1);
 }
