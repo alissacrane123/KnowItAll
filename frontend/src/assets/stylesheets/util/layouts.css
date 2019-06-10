@@ -3,6 +3,10 @@
   font-size: 18px;
 }
 
+.header-how-it-works {
+  margin-bottom: 60px;
+}
+
 .index-body-container {
   display: flex;
   flex-direction: row;
@@ -122,7 +126,7 @@
 
 /* ------ HOVER EFFECTS ------ */
 
-.icon-xl:hover {
+.container-list-row-center:hover .icon-xl {
   -webkit-transform: rotate(-3deg);
   -moz-transform: rotate(-3deg);
 }
@@ -130,3 +134,4 @@
 .hover-bigger:hover {
   transform: scale(1.1, 1.1);
 }
+

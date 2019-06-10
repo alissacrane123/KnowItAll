@@ -12,6 +12,7 @@ import './assets/stylesheets/util/font.css';
 import './assets/stylesheets/util/buttons.css';
 import './assets/stylesheets/util/errors.css';
 import './assets/stylesheets/util/inputs.css';
+import './assets/stylesheets/util/colors.css';
 import './assets/stylesheets/session.css';
 import './assets/stylesheets/navbar.css';
 import './assets/stylesheets/question.css';
