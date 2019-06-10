@@ -201,14 +201,14 @@ class QuestionCompose extends React.Component {
             <div className="container-2-3-col">
               <div className="container-list-row-l-r">
                 <div className="container-list-col-center">
-                  <input className="general-input"
+                  <input className="general-input-grey"
                     value={this.state.answer1}
                     onChange={this.update('answer1')}
                     placeholder="ex: 89 years old"
                   />
                 </div>
                 <div className="container-list-col-center">
-                  <input className="general-input"
+                  <input className="general-input-grey"
                     value={this.state.answer2}
                     onChange={this.update('answer2')}
                     placeholder="ex: 93 years old"

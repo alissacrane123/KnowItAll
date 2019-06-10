@@ -5,6 +5,7 @@
 
 div, section, article, p, h3, h2, h1, h4 {
   width: 100%;
+  font-family: 'Roboto', sans-serif;
 }
 
 a {
@@ -40,7 +41,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  color: black;
+  color: #f2a104;
   margin-top: 100px;
   align-items: center;
 }

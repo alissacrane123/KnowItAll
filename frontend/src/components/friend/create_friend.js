@@ -40,7 +40,7 @@ class CreateFriend extends React.Component {
           To <strong>Add</strong> a new friend, enter their username below:
         </h4>
         <div className="container-2-3-col">
-          <div className="container-list-col-start">
+          <div className="sub-container-list-col-start">
             <input className="general-input-grey"
                     type="text" 
                     value={this.state.username}
