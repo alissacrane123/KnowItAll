@@ -15,19 +15,6 @@ This will need:
 * Construct an app that presents the accumulation resulting matches in a interesting and interactive manor
 * Decide how to best facilitate connecting users during challenges, and complexity of handling match winner logic
 
-## Functionality and MVP
-* Application with landing page for user signup/login
-* User Auth
-* Page for quickly connecting(challenging) friends, additionally leverage page to reflect leaderboard stats
-* Once challenge form has been submitted, serve google search results. Ensure a winner is selected at the end of each challenge. Visual of winner.
-* Stats page of prior challenges
-* Feed of challenges in your area with comment functionality. Filter to your challenges, your friends challenges, recent challenges, local challenges.
-* Production README
-#### Bonus Features
-* Suggest winnder based on search results of challenge
-* Allow challenge functionality without sign-in
-* Filtering on stats page
-
 ## Technologies and Technical Challenges
 KnowItAll’s core application is a streamlined search API of google results, with a backend built on MongoDB to save user search queries and resulting scores between users. The database will be populated by user input. 
 
