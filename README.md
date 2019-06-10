@@ -145,15 +145,3 @@ We worked through the MERN curriculum online and created a User Auth system foll
 | created_at   | datetime  | not null              |
 | updated_at   | datetime  | not null              |
 * `Friend` belongs_to `User`, foreign_key: `user_id`
-
-#### Emojis
-| column name  | data type | details               |
-|--------------|-----------|-----------------------|
-| id           | integer   | not null, primary key |
-| author_id    | integer   | not null, indexed     |
-| question_id  | integer   | not null, indexed     |
-| emoji_id     | string    | not null              |
-| created_at   | datetime  | not null              |
-| updated_at   | datetime  | not null              |
-* `Emoji` belongs_to `User`, foreign_key: `user_id`
-* `Emoji` belongs_to `Question`, foreign_key: `user_id`
