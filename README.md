@@ -44,7 +44,3 @@ The app will have several visualizations, via the stats page and small visual ic
 #### Technical Challenges:
 * Creating visualizations using Recharts
 * Fetching data
-
-#### Things accomplished over the weekend
-Things Accomplished Over the Weekend
-We worked through the MERN curriculum online and created a User Auth system following the new guidelines. We also generated the frontend skeleton for the app and will begin to add functionality tomorrow.
