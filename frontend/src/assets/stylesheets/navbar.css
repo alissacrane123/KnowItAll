@@ -2,11 +2,16 @@
   position: fixed;
   top: 0;
   z-index: 25;
-  background: rgb(231, 164, 217);
-  border-bottom: 2px solid grey;
+  background: #4774D9;
+  border-bottom: 2px solid white;
 }
 
-.navbar-logo-img {
+.navbar-logo {
+  font-family: 'Rubik', sans-serif;
+  font-style: italic;
+  font-weight: 900;
   height: 60px;
   margin: 15px 15px;
+  font-size: 45px;
+  color: #fb8000;
 }

@@ -1,4 +1,5 @@
 .general-input, .session-input {
+  font-family: 'Roboto', sans-serif;
   height: 25px;
   border-radius: 5px;
   border: none;
@@ -8,9 +9,8 @@
 }
 
 .session-input {
-  width: 60%;
+  width: 45%;
 }
-
 
 .general-input-grey {
   height: 25px;

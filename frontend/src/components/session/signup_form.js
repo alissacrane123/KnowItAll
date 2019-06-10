@@ -83,7 +83,7 @@ class SignupForm extends React.Component {
                       type="password"
                       value={this.state.password}
                       onChange={this.update('password')}
-                      placeholder="Password"
+                      placeholder="password"
                   />
                   <input className="session-input"
                       type="password"

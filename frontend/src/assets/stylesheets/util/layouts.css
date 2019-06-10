@@ -66,6 +66,16 @@
 
 .centered-text {
   text-align: center;
+  font-family: 'Roboto', sans-serif;
+  color: black;
+  z-index: 1;
+}
+
+.centered-text-logo {
+  font-family: 'Rubik', sans-serif;
+  font-style: italic;
+  font-weight: 900;
+  color: #fb8000;
 }
 
 /* ------ WIDTHS ------ */

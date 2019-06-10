@@ -83,7 +83,7 @@ class LoginForm extends React.Component {
                     type="password"
                     value={this.state.password}
                     onChange={this.update('password')}
-                    placeholder="Password"
+                    placeholder="password"
                   />
                   <input type="submit" value="LOG IN" className="general-button" />
                   <button className="general-button" onClick={this.handleDemoSubmit}>DEMO</button>

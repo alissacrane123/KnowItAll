@@ -1,8 +1,9 @@
 .general-button, .top-button {
+  font-family: 'Roboto', sans-serif;
   height: 40px;
   width: 127px;
   border-radius: 5px;
-  background: rgb(231, 164, 217);
+  background: #4774D9;
   color: white;
   font-size: 16px;
   font-weight: bolder;
@@ -25,7 +26,8 @@
 }
 
 .navbar-button {
-  color: rgb(150, 137, 137);
+  color: white;
+  font-size: 12px;
   font-weight: bolder;
   margin-right: 10px;
   height: 40px;
