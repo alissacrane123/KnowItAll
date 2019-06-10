@@ -61,24 +61,3 @@ The app will have several visualizations, via the stats page and small visual ic
 #### Things accomplished over the weekend
 Things Accomplished Over the Weekend
 We worked through the MERN curriculum online and created a User Auth system following the new guidelines. We also generated the frontend skeleton for the app and will begin to add functionality tomorrow.
-
-### Group Members and Work Breakdown
-
-##### Day 1 - Saturday 5/13
-* Build login/signup & index feed components - Alissa
-* Build stats component & search component - Aubrie
-* Build and test routes - Brett/Nate
-* Research & test API connections - Aubrie
-
-##### Day 2 - Sunday 5/14
-* Link backend routes and Google API to frontend components
-* Connect React to database
-* Add methods to fetch data for components
-* Add filters to components
-
-##### Day 3 - Monday 5/15
-* Demo login
-* CSS polish
-* Test & debug
-
-## Resources
