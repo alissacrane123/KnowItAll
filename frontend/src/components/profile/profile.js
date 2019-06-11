@@ -24,6 +24,7 @@ class Profile extends React.Component {
     let ttlRight;
     let yourQuestions;
     let winnerQuestions;
+    let color;
 
     if (!this.props.answers.all[0] || !this.props.questions.user[0]) {
       // return null;

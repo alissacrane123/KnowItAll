@@ -17,7 +17,7 @@
 
 .index-header-container {
   font-size: 18px;
-  color: #f2a104;
+  color: black;
   margin-top: 10px;
 }
 
@@ -45,6 +45,8 @@
   align-items: center;
   color: black;
   font-size: 25px;
+  font-family: 'Rubika', sans-serif;
+  font-style: italic;
 }
 
 .container-list-row-start {

@@ -11,8 +11,9 @@
   font-size: 25px;
   font-weight: bolder;
   justify-content: center;
-  color: #f2a104;
-  font-family: sans-serif 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: black;
+  font-family: 'Rubika', sans-serif;
+  font-style: italic;
 }
 
 .profile-container {
