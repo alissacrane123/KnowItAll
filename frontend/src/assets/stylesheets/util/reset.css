@@ -41,7 +41,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  color: #f2a104;
+  color: black;
   margin-top: 100px;
   align-items: center;
 }

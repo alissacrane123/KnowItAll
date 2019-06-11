@@ -1,13 +1,19 @@
 .general-button, .top-button {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Rubik', sans-serif;
+  font-style: italic;
   height: 40px;
   width: 127px;
   border-radius: 5px;
-  background: #4774D9;
-  color: #f2a104;
+  background: #FE518A;
+  color: #FFE050;
   font-size: 16px;
   font-weight: bolder;
   margin: 10px 0px;
+  border-bottom: 3px solid black;
+}
+
+.general-button:hover {
+  border-bottom: 0px;
 }
 
 .top-button {
@@ -26,15 +32,20 @@
 }
 
 .navbar-button {
-  color: #f2a104;
+  color: #FFE050;
   font-size: 12px;
   font-weight: bolder;
   margin-right: 10px;
   height: 40px;
+  font-family: 'Rubik', sans-serif;
+  font-style: italic;
+  -webkit-text-fill-color: #FFE151;
+  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-width: 1px; 
 }
 
 .navbar-button:hover {
-  border-bottom: 2px solid #f2a104;
+  border-bottom: 2px solid black;
 }
 
 .hidden {

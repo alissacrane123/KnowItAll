@@ -43,17 +43,22 @@
   color: rgb(119, 112, 112);
 }
 
+.header-container {
+  font-family: 'Rubik', sans-serif;
+  font-style: italic;
+}
+
 .question-item-container {
   min-height: 30px;
   margin: 5px;
   padding: 10px;
   font-size: 20px;
   border-radius: 8px;
-  background: rgba(68, 113, 216, .75);
+  background: #00AEEF;
   box-sizing: border-box;
   cursor: pointer;
   width: 99%;
-  color: #192e5b;
+  color: black;
 }
 
 .question-img--wrapper::after {

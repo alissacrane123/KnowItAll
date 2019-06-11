@@ -33,9 +33,9 @@ class QuestionIndex extends React.Component {
     let answers = this.props.answers.all;
     let style = (answer) =>{
       if(answer.winner){
-        return ({ color: "#AECE22"});
+        return ({ color: "#FFE151"});
       }else{
-        return ({ color: "#961400"});
+        return ({ color: "#FE518A"});
       }
 
     };

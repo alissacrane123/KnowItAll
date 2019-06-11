@@ -1,7 +1,8 @@
 .session-img-container {
   height: 830px;
   width: 100%;
-  background-image: url("https://animals.sandiegozoo.org/sites/default/files/2017-12/animals_hero_birdofparadise-story.jpg");
+  background-image: url("https://d21ill4q5f8m3f.cloudfront.net/wp-content/uploads/2017/02/BOTB20thumbnail-1300x600.png");
+  background-position: 0px 50px;
   background-size: cover;
   background-repeat: no-repeat;
   position: absolute;
