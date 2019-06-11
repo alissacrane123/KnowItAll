@@ -15,7 +15,8 @@ const mapStateToProps = (state) => {
     users: state.users.users, // object
     newFriend: state.users.friend,
     answers: state.answers,
-    stats: state.stats
+    stats: state.stats,
+    errors: state.errors,
   };
 };
 

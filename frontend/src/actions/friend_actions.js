@@ -4,6 +4,7 @@ import * as UserAPIUtil from '../util/user_api_util';
 
 export const RECEIVE_FRIENDS = "RECEIVE_FRIENDS";
 export const RECEIVE_FRIEND = "RECEIVE_FRIEND";
+export const RECEIVE_FRIEND_ERRORS = "RECEIVE_FRIEND_ERRORS";
 export const CLEAR_FRIENDS = "CLEAR_FRIENDS";
 
 // export const RECEIVE_NEW_FRIEND = "RECEIVE_NEW_FRIEND"; // UNSURE
@@ -23,6 +24,11 @@ export const receiveFriend = friend => ({
   friend
 })
 
+export const receiveErrors = errors => ({
+  type: RECEIVE_FRIEND_ERRORS,
+  errors
+});
+
 export const clearFriends = () => {
   return {
     type: CLEAR_FRIENDS
@@ -32,8 +38,8 @@ export const clearFriends = () => {
 export const addFriend = data => dispatch => (
   APIUtil.addFriend(data)
     .then(friend => dispatch(receiveFriend(friend)))
-    .catch(err => console.log(err))
-)
+    .catch(err => dispatch(receiveErrors(err.response.data)))
+);
 
 export const fetchFriends = currentUserId => dispatch => (
   APIUtil.fetchFriends(currentUserId)

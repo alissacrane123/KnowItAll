@@ -29,7 +29,7 @@ class QuestionIndex extends React.Component {
   }
 
   render() {
-    let { addFriend, currentUser } = this.props;
+    let { addFriend, currentUser, errors } = this.props;
     let answers = this.props.answers.all;
     let style = (answer) =>{
       if(answer.winner){
@@ -96,7 +96,7 @@ class QuestionIndex extends React.Component {
             <h2>CHALLENGE A FRIEND:</h2>
           </div>
           { friends }
-          <CreateFriend addFriend={addFriend} currentUser={currentUser} />
+          <CreateFriend addFriend={addFriend} currentUser={currentUser} errors={errors}/>
         </div>
       </div>
       <div className="container-2-col">
