@@ -39,8 +39,9 @@
 }
 
 .index-header-container {
-  font-size: 18px;
   color: rgb(119, 112, 112);
+  font-family: 'Rubik', sans-serif;
+  font-style: italic;
 }
 
 .header-container {
