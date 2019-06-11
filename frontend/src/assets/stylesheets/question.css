@@ -54,11 +54,12 @@
   padding: 10px;
   font-size: 20px;
   border-radius: 8px;
-  background: #00AEEF;
+  background: #41cbff;
   box-sizing: border-box;
   cursor: pointer;
   width: 99%;
   color: black;
+  border-bottom: 3px solid black;
 }
 
 .question-img--wrapper::after {

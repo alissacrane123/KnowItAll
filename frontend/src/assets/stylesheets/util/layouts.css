@@ -120,8 +120,9 @@
   justify-content: center;
   margin-bottom: 10px;
   border-radius: 10px;
-  background-color:#00AEEF;
+  background-color:#41cbff;
   border-bottom: 3px solid black;
+  box-sizing: border-box;
 }
 
 .container-list-item-lg {
