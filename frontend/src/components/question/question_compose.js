@@ -154,8 +154,8 @@ class QuestionCompose extends React.Component {
       results.unshift(
         <div className="winner-container">
           <div className="container-list-row-center">
-              <button className="general-button" onClick={() =>this.handleClick('current')}>I WON</button>
-              <button className="general-button" onClick={()=>this.handleClick('friend')}>FRIEND WON</button>
+              <button className="general-button win-button" onClick={() =>this.handleClick('current')}>I WON</button>
+            <button className="general-button lost-button" onClick={()=>this.handleClick('friend')}>FRIEND WON</button>
           </div>
         </div>
       )

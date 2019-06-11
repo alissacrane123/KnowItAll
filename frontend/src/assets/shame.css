@@ -1,9 +1,9 @@
 #false {
-  background:rgb(150, 137, 137);
+  background:rgba(150,20,0, .5);
 }
 
 #true {
-  background: rgba(231, 144, 212, 0.5);
+  background: rgba(174,206,34, .5);
 }
 
 #wizard-leader {

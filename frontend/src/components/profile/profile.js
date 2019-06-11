@@ -90,7 +90,7 @@ class Profile extends React.Component {
             <h3>Total Answers</h3>
             <div className="pie-chart-container"></div>
             <PieChart width={450} height={300} margin={{ top: 15, right: 40, left: 40, bottom: 0 }}>
-              <Pie startAngle={180} endAngle={0} data={pieData} cx={200} cy={200} outerRadius={160} fill="rgba(231, 144, 212, 0.5)"
+              <Pie startAngle={180} endAngle={0} data={pieData} cx={200} cy={200} outerRadius={160} fill="rgba(174,206,34, .5)"
                 label={({
                   cx,
                   cy,
@@ -131,6 +131,7 @@ class Profile extends React.Component {
               <YAxis>
                 <Label
                   value="# Answers"
+                  fill="rgb(150, 137, 137)"
                   position="insideLeft"
                   angle={-90}
                   style={{ textAnchor: 'middle' }}
@@ -182,6 +183,7 @@ class Profile extends React.Component {
               <YAxis>
                 <Label
                   value="# Answers"
+                  fill="rgb(150, 137, 137)"
                   position="insideLeft"
                   angle={-90}
                   style={{ textAnchor: 'middle' }}
@@ -189,8 +191,8 @@ class Profile extends React.Component {
               </YAxis>
               <Tooltip />
               <Legend />
-              <Bar dataKey="wrong" stackId="a" fill="rgb(150, 137, 137)" />
-              <Bar dataKey="right" stackId="a" fill="rgba(231, 144, 212, 0.5)" />
+              <Bar dataKey="wrong" stackId="a" fill="rgba(150,20,0, .5)" />
+              <Bar dataKey="right" stackId="a" fill="rgba(174,206,34, .5)" />
             </BarChart>
           </div>
           <div className="index-questions-container2" id="profile-questions-container">
