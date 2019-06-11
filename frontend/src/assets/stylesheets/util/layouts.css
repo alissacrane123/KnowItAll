@@ -17,7 +17,7 @@
 
 .index-header-container {
   font-size: 18px;
-  color: #f2a104;
+  color: black;
   margin-top: 10px;
 }
 
@@ -70,7 +70,6 @@
 
 .centered-text {
   text-align: center;
-  font-family: 'Roboto', sans-serif;
   color: black;
   
   z-index: 1;

@@ -7,7 +7,7 @@
 .result-data-container {
   min-height: 30px;
   padding: 10px;
-  background: #4774d9;
+  background: #41cbff;
 }
 
 .winner-container {
@@ -15,9 +15,9 @@
 }
 
 .result-title {
-  color: #192e5b;
+  color: black;
 }
 
 .result-item-body {
-  color: #192e5b;
+  color: black;
 }

@@ -47,6 +47,7 @@ class Profile extends React.Component {
             {question.body}
           </div>
 
+
           <p>{(`${winnerQuestions[question._id]}` === 'true') ? 'Won' : 'Lost' }</p>
         </div>)
     );
@@ -90,7 +91,7 @@ class Profile extends React.Component {
             <h3>Total Answers</h3>
             <div className="pie-chart-container"></div>
             <PieChart width={450} height={300} margin={{ top: 15, right: 40, left: 40, bottom: 0 }}>
-              <Pie startAngle={180} endAngle={0} data={pieData} cx={200} cy={200} outerRadius={160} fill="rgba(174,206,34, .5)"
+              <Pie startAngle={180} endAngle={0} data={pieData} cx={200} cy={200} outerRadius={160} fill="#FFE050"
                 label={({
                   cx,
                   cy,
@@ -191,8 +192,8 @@ class Profile extends React.Component {
               </YAxis>
               <Tooltip />
               <Legend />
-              <Bar dataKey="wrong" stackId="a" fill="rgba(150,20,0, .5)" />
-              <Bar dataKey="right" stackId="a" fill="rgba(174,206,34, .5)" />
+              <Bar dataKey="wrong" stackId="a" fill="#FE518A" />
+              <Bar dataKey="right" stackId="a" fill="#FFE050" />
             </BarChart>
           </div>
           <div className="index-questions-container2" id="profile-questions-container">
