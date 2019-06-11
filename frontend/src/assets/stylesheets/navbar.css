@@ -2,11 +2,19 @@
   position: fixed;
   top: 0;
   z-index: 25;
-  background: rgb(231, 164, 217);
-  border-bottom: 2px solid grey;
+  background: #FE518A;
+  border-bottom: 3px solid black;
 }
 
-.navbar-logo-img {
+.navbar-logo {
+  font-family: 'Rubik', sans-serif;
+  font-style: italic;
+  font-weight: 900;
   height: 60px;
   margin: 15px 15px;
+  font-size: 45px;
+  color: #FFE050;
+  -webkit-text-fill-color: #FFE151;
+  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-width: 3px; 
 }

@@ -5,13 +5,13 @@
 
 div, section, article, p, h3, h2, h1, h4 {
   width: 100%;
+  font-family: 'Roboto', sans-serif;
 }
 
 a {
   cursor: pointer;
   font-size: 24px;
   text-decoration: none;
-  color: rgb(119, 112, 112);
   font-weight: 700;
 }
 
@@ -41,8 +41,8 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  color: rgb(119, 112, 112);
-  margin-top: 150px;
+  color: black;
+  margin-top: 100px;
   align-items: center;
 }
 

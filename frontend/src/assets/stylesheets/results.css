@@ -7,9 +7,17 @@
 .result-data-container {
   min-height: 30px;
   padding: 10px;
-  background: rgba(231, 144, 212, 0.5);
+  background: #4774d9;
 }
 
 .winner-container {
   width: 42%;
+}
+
+.result-title {
+  color: #192e5b;
+}
+
+.result-item-body {
+  color: #192e5b;
 }

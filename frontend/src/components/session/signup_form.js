@@ -64,9 +64,9 @@ class SignupForm extends React.Component {
         <div className="index-body-container">
           <div className="container-2-3-col">
             <form className="container-list-col-center" onSubmit={this.handleSubmit}>
-              {emailError}
               <div className="container-list-item-xl">
                 <div className="container-list-col-center">
+                  {emailError}
                   <input className="session-input" type="text"
                       value={this.state.email}
                       onChange={this.update('email')}
@@ -83,7 +83,7 @@ class SignupForm extends React.Component {
                       type="password"
                       value={this.state.password}
                       onChange={this.update('password')}
-                      placeholder="Password"
+                      placeholder="password"
                   />
                   <input className="session-input"
                       type="password"

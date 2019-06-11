@@ -21,7 +21,7 @@ class HowItWorks extends React.Component {
           <section className="container-list-col-start">
             <div className="header-how-it-works">
             <section className="container-list-col-center">
-              <h1 className="centered-text">How KnowItAll Works</h1>
+                <h1 className="centered-text">How <span className="centered-text-logo">KnowItAll</span> Works</h1>
               <section className="centered-text">
                 <h2>
                   Are you and your friends competitive, do you love to call BS? We do too, in order to use this app you 

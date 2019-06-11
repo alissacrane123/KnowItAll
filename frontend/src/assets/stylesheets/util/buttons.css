@@ -1,12 +1,19 @@
 .general-button, .top-button {
+  font-family: 'Rubik', sans-serif;
+  font-style: italic;
   height: 40px;
   width: 127px;
   border-radius: 5px;
-  background: rgb(231, 164, 217);
-  color: white;
+  background: #FE518A;
+  color: #FFE050;
   font-size: 16px;
   font-weight: bolder;
   margin: 10px 0px;
+  border-bottom: 3px solid black;
+}
+
+.general-button:hover {
+  border-bottom: 0px;
 }
 
 .top-button {
@@ -25,16 +32,30 @@
 }
 
 .navbar-button {
-  color: rgb(150, 137, 137);
+  color: #FFE050;
+  font-size: 12px;
   font-weight: bolder;
   margin-right: 10px;
   height: 40px;
+  font-family: 'Rubik', sans-serif;
+  font-style: italic;
+  -webkit-text-fill-color: #FFE151;
+  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-width: 1px; 
 }
 
 .navbar-button:hover {
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid black;
 }
 
 .hidden {
   display: none;
+}
+
+.win-button {
+  margin-left: -160px;
+}
+
+.lost-button {
+  margin-right: -160px;
 }
