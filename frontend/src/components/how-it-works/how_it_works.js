@@ -37,7 +37,7 @@ class HowItWorks extends React.Component {
               <div className="background-grey-1-col">
                 <section className="container-list-item-lg">
                   <section className="container-list-row-center">
-                    <img className="icon-xl" src="https://66.media.tumblr.com/2caa0defd52f13a3e140424249fde6b6/tumblr_psmv01FkER1wyb2l8o1_540.png" alt=""></img>
+                    <img className="icon-xl" src="https://66.media.tumblr.com/efde17997708c341d3b97478541b4163/tumblr_pszzcqB5AI1wyb2l8o1_1280.png" alt=""></img>
                     <article className="container-2-3-col">
                       <h2>1 // OPEN KNOWITALL</h2>
                       <h3>Open the KnowItAll app on one of your phones. Challenge Charlie by clicking his name on your friend list.</h3>
