@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import {
   PieChart, Pie, BarChart, Bar, XAxis, YAxis, CartesianGrid,
-  Tooltip, Legend, LineChart, Line, Label
+  Tooltip, Legend, LineChart, Line, Label, ResponsiveContainer
 } from 'recharts';
 
 let dateFormat = require('dateformat');
@@ -22,6 +22,7 @@ class Profile extends React.Component {
     let dates;
     let lineData;
     let ttlRight;
+    let ttlAmt;
     let yourQuestions;
     let winnerQuestions;
 
@@ -59,16 +60,16 @@ class Profile extends React.Component {
       totalAnswers = this.props.answers.all.length;
       rightAnswers = this.props.answers.all.reduce(function(total,x){return x['winner']===true ? total+1 : total}, 0)
       wrongAnswers = totalAnswers - rightAnswers;
-      dates = [...new Set(this.props.answers.all.map(item => dateFormat(item.date, "fullDate")))];
+      dates = [...new Set(this.props.answers.all.map(item => dateFormat(item.date, "m/d")))];
       barData = dates.reverse().map(date => { return {
          name: date,
-        right: this.props.answers.all.reduce(function (total, x) { return x['winner'] === true && dateFormat(x['date'], "fullDate")===date ? total+1 : total}, 0),
-        wrong: this.props.answers.all.reduce(function (total, x) { return x['winner'] === false && dateFormat(x['date'], "fullDate")===date ? total+1 : total}, 0),
-        amt: this.props.answers.all.reduce(function (total, x) { return dateFormat(x['date'], "fullDate")===date ? total+1 : total}, 0),
+        right: this.props.answers.all.reduce(function (total, x) { return x['winner'] === true && dateFormat(x['date'], "m/d")===date ? total+1 : total}, 0),
+        wrong: this.props.answers.all.reduce(function (total, x) { return x['winner'] === false && dateFormat(x['date'], "m/d")===date ? total+1 : total}, 0),
+        amt: this.props.answers.all.reduce(function (total, x) { return dateFormat(x['date'], "m/d")===date ? total+1 : total}, 0),
       }});
       lineData = dates.map(date => {
-        ttlRight = this.props.answers.all.reduce(function (total, x) { return x['winner'] === true && dateFormat(x['date'], "fullDate") <= date ? total + 1 : total }, 0);
-        let ttlAmt = this.props.answers.all.reduce(function (total, x) { return dateFormat(x['date'], "fullDate") <= date ? total + 1 : total }, 0);
+        ttlRight = this.props.answers.all.reduce(function (total, x) { return x['winner'] === true && dateFormat(x['date'], "m/d") <= date ? total + 1 : total }, 0);
+        ttlAmt = this.props.answers.all.reduce(function (total, x) { return dateFormat(x['date'], "m/d") <= date ? total + 1 : total }, 0);
         return {
           name: date,
           Score: parseInt((ttlRight / ttlAmt) * 100),
@@ -82,50 +83,61 @@ class Profile extends React.Component {
     ];
 
     return (
-      <div className="body-container">
+      <div className="index-body-container">
+        <div className="container-col-1">
         <div className="profile-header">
           <div className="prof-header">Welcome, {this.props.currentUser.username}!</div>
         </div>
-        <div className="profile-container">
-          <div className="charts-container">
-            <h3>Total Answers</h3>
-            <div className="pie-chart-container"></div>
-            <PieChart width={450} height={300} margin={{ top: 15, right: 40, left: 40, bottom: 0 }}>
-              <Pie startAngle={180} endAngle={0} data={pieData} cx={200} cy={200} outerRadius={160} fill="#FFE050"
-                label={({
-                  cx,
-                  cy,
-                  midAngle,
-                  innerRadius,
-                  outerRadius,
-                  value,
-                  index
-                }) => {
-                  const RADIAN = Math.PI / 180;
-                  // eslint-disable-next-line
-                  const radius = 25 + innerRadius + (outerRadius - innerRadius);
-                  // eslint-disable-next-line
-                  const x = cx + radius * Math.cos(-midAngle * RADIAN);
-                  // eslint-disable-next-line
-                  const y = cy + radius * Math.sin(-midAngle * RADIAN);
+        
+        <div className="container-list-row-start-start">
+          <div className="container-2-col">
+            <div className="chart-container">
+              <h3 className="profile-header-text">Total Answers</h3>
+              <ResponsiveContainer>
+              <PieChart margin={{ top: 50, right: 40, left: 80, bottom: 0 }} style={{top: '-50px'}}>
+                <Pie startAngle={180} endAngle={0} data={pieData} outerRadius="90%" innerRadius="70%" fill="#FFE050"
+                  label={({
+                    cx,
+                    cy,
+                    midAngle,
+                    innerRadius,
+                    outerRadius,
+                    value,
+                    index
+                  }) => {
+                    const RADIAN = Math.PI / 180;
+                    // eslint-disable-next-line
+                    const radius = 25 + innerRadius + (outerRadius - innerRadius);
+                    // eslint-disable-next-line
+                    const x = cx + radius * Math.cos(-midAngle * RADIAN);
+                    // eslint-disable-next-line
+                    const y = cy + radius * Math.sin(-midAngle * RADIAN);
 
-                  return (
-                    <text
-                      x={x}
-                      y={y}
-                      fill="rgb(150, 137, 137)"
-                      textAnchor={x > cx ? "start" : "end"}
-                      dominantBaseline="central"
-                    >
-                      {pieData[index].name} ({value})
-                </text>
-                  );
-                }}
-              />
-            </PieChart>
+                    return (
+                      <text
+                        x={x}
+                        y={y}
+                        fill="rgb(150, 137, 137)"
+                        textAnchor={x > cx ? "start" : "end"}
+                        dominantBaseline="central"
+                        className="chart-axis-label"
+                      >
+                        {pieData[index].name} ({value})
+                  </text>
+                    );
+                  }}
+                />
+                {/* <Legend /> */}
+              </PieChart>
+              </ResponsiveContainer>
+              </div>
             
+            
+            
+            <div className="chart-container-offset">
             <h3>Daily Rank</h3>
-            <LineChart width={600} height={400} data={lineData}
+            <ResponsiveContainer>
+            <LineChart data={lineData}
               margin={{ top: 15, right: 50, left: 20, bottom: 5 }}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="name" />
@@ -169,11 +181,13 @@ class Profile extends React.Component {
                 } 
               />
             </LineChart>
-            <div className="pie-margin"></div>
+            </ResponsiveContainer>
+            </div>
+            
             <h3>Daily Answers Breakdown</h3>
+            <div className="chart-container">
+                <ResponsiveContainer>
             <BarChart
-              width={600}
-              height={400}
               data={barData}
               margin={{
                 top: 15, right: 30, left: 20, bottom: 5,
@@ -195,8 +209,12 @@ class Profile extends React.Component {
               <Bar dataKey="wrong" stackId="a" fill="#FE518A" />
               <Bar dataKey="right" stackId="a" fill="#FFE050" />
             </BarChart>
+            </ResponsiveContainer>
+            </div>
           </div>
-          <div className="index-questions-container2" id="profile-questions-container">
+
+
+            <div className="container-2-col" id="profile-questions-container">
             <div className="index-header-container" >
               <div className="index-header">
                 Questions Asked Listed Below:
@@ -207,6 +225,7 @@ class Profile extends React.Component {
               {yourQuestions}
             </div>
           </div>
+        </div>
         </div>
       </div>
     );

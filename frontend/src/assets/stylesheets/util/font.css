@@ -16,3 +16,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.chart-axis-label, tspan {
+  font-size: 16px;
+  z-index: 24;
+}

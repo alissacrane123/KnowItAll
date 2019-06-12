@@ -47,6 +47,15 @@
   font-size: 25px;
 }
 
+.container-list-row-start-start {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: start;
+  color: black;
+  font-size: 25px;
+}
+
 .container-list-row-start {
   display: flex;
   flex-direction: row;
