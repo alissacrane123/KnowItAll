@@ -24,6 +24,8 @@ class Profile extends React.Component {
     let ttlRight;
     let yourQuestions;
     let winnerQuestions;
+    let color;
+    let text;
 
     if (!this.props.answers.all[0] || !this.props.questions.user[0]) {
       // return null;
@@ -41,15 +43,17 @@ class Profile extends React.Component {
       }, {});
 
       
-      yourQuestions = this.props.questions.user.slice(0,18).map(question => (
+      yourQuestions = this.props.questions.user.slice(0,18).map(question => {
+        {color = (`${winnerQuestions[question._id]}` === 'true') ? '#FFE050' : '#FE518A' }
+
+        return (
         <div key={question.id} style={{cursor: 'default'}} className="question-item-container" id={`${winnerQuestions[question._id]}`}>
           <div className="question-body">
             {question.body}
           </div>
 
-
-          <p>{(`${winnerQuestions[question._id]}` === 'true') ? 'Won' : 'Lost' }</p>
-        </div>)
+          <p style={{ color: color}}>{(`${winnerQuestions[question._id]}` === 'true') ? 'Won' : 'Lost' }</p>
+        </div>)}
     );
     }
 
