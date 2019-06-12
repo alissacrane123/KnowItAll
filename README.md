@@ -23,6 +23,7 @@ Other technologies used:
 
 ## Screenshots
 
+
 ## Technical Info
 
 ## Future Features
