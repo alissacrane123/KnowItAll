@@ -21,6 +21,8 @@ Other technologies used:
 
 ### HowItWorks | Question Feed | Add a Friend
 ![](https://media.giphy.com/media/dZFqelhbHzYptpsLPF/giphy.gif)
+### Challenge A Friend
+![](https://media.giphy.com/media/Kd03sqhAC2eSWFR1n7/giphy.gif)
 ### Question Statistics
 ![](https://media.giphy.com/media/iEw5r61Y1vvcpGcMtm/giphy.gif)
 
