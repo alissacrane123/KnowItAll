@@ -19,7 +19,9 @@ Other technologies used:
 * Question Statistics profile page
 * Create/read/delete functionality for Google Custom Search Query
 
-### Question Statistics profile page
+### HowItWorks | Question Feed | Add a Friend
+![](https://media.giphy.com/media/dZFqelhbHzYptpsLPF/giphy.gif)
+### Question Statistics
 ![](https://media.giphy.com/media/iEw5r61Y1vvcpGcMtm/giphy.gif)
 
 ## Technical Info
