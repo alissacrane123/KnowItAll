@@ -20,7 +20,7 @@ Other technologies used:
 * Create/read/delete functionality for Google Custom Search Query
 
 ### HowItWorks | Question Feed | Add a Friend
-![](https://media.giphy.com/media/dZFqelhbHzYptpsLPF/giphy.gif)
+![](https://media.giphy.com/media/SUuSit3ghrrLZ2YSZj/giphy.gif)
 ### Challenge A Friend
 ![](https://media.giphy.com/media/Kd03sqhAC2eSWFR1n7/giphy.gif)
 ### Question Statistics
