@@ -20,7 +20,7 @@ Other technologies used:
 
 ## Visuals
 ![](https://media.giphy.com/media/SUuSit3ghrrLZ2YSZj/giphy.gif)
-![](https://media.giphy.com/media/Kd03sqhAC2eSWFR1n7/giphy.gif)
+![](https://media.giphy.com/media/dBryXA63Jg617KzhMZ/giphy.gif)
 ![](https://media.giphy.com/media/iEw5r61Y1vvcpGcMtm/giphy.gif)
 
 ## Technical Info
