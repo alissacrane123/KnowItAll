@@ -1,5 +1,5 @@
 # Welcome to KnowItAll
-KnowItAll is a simple, fun challenge app for friends to fact check each other's statements and keep score. Enter a friend's idiotic statement and add each of your answers, KnowItAll will serve up google results through SERP API & Google Custom Search. Select a winner, and KnowItAll will keep the score. View each of your friends rank, your personal stats, and past challenges.
+KnowItAll is a simple, fun challenge app for friends to fact check each other's statements and keep score. Enter a friend's idiotic statement and add each of your answers, KnowItAll will serve up google results through Serp Api (which in turn uses Google Custom Search). Select a winner, and KnowItAll will keep the score. View each of your friends rank, your personal stats, and past challenges.
 
 [Live Demo](https://knowitall-app.herokuapp.com)
 
@@ -14,8 +14,7 @@ KnowItAll is a simple, fun challenge app for friends to fact check each other's 
 KnowItAll is a team-built web-application utilizing the MERN stack (MongoDB, Express, React, Node.js). 
 
 Other technologies used: 
-* Google API
-* SERP
+* Serp API (uses Google Custom Search)
 * Recharts visualization library
 * Axios
 
