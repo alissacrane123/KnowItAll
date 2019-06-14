@@ -51,7 +51,7 @@ router.get("/stats/user/:id", (req, res) => {
 });
 ````
 
-### SERP API
+### Serp API
 User search entires are first processed to ensure options returned from the API call only relate to the intended question. The data returned from the axios call is then filtered to relevant information that will be rendered on the frontend.
 
 ````javaScript
@@ -75,7 +75,7 @@ router.get("/:searchQuery", (req, res) => {
 ````
 
 ### Persisting Friend Data through localStorage
-Challenges must be attributed to two users. The currentUser data is bootstrapped and thus always available, friend data is set as a key in localStorage. This ensures the data persists until a new friend is challenged, even if the browser is refreshed or closed.
+Challenges must be attributed to two users. The currentUser can be identified through jwtToken in localStorage, when a challenge is initiated friend data is also set in localStorage. This ensures the data persists until a new friend is challenged, even if the browser is refreshed or closed.
 
 ````javaScript
 
