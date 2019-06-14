@@ -14,10 +14,11 @@ class Friend extends React.Component {
     fetchUserStats(friendObj.friend_id);
   }
 
-  handleStorage(friendAvatar, friend, friendId) {
+  handleStorage(friendAvatar, friend, friendId, userAvatar) {
     localStorage.setItem("friendAvatar", friendAvatar);
     localStorage.setItem("friend", friend);
     localStorage.setItem("friendId", friendId);
+    localStorage.setItem("userAvatar", userAvatar);
   }
 
   assignAvatar(score) {
@@ -34,22 +35,27 @@ class Friend extends React.Component {
 
   render() {
     let { users, friendObj, currentUser } = this.props;
-    let friendAvatar, score;
+    let friendAvatar, score, userAvatar, userScore;
     
     // check if there are any users && friend loaded or if friendObj is self then
     // start conditional rendering of score & avatar
     if (Object.keys(users).length === 0 ||
-          users[friendObj.friend_id] === undefined || friendObj.friend_id === currentUser.id ) {
+      users[friendObj.friend_id] === undefined || friendObj.friend_id === currentUser.id) {
       return null;
     }
     
     this.friend_stats = this.props.stats.all.filter(el => el._id === friendObj.friend_id)[0];
+    this.user_stats = this.props.stats.all.filter(el => el._id === currentUser.id)[0];
 
     if (!this.props.stats.all[0]) {
       score = 0;
     } else {
       if (this.friend_stats !== undefined) {
         score = this.friend_stats.AvgPercent
+      }
+
+      if (this.user_stats !== undefined) {
+        userScore = this.user_stats.AvgPercent
       }
     }
     
@@ -59,13 +65,14 @@ class Friend extends React.Component {
     if (!this.props.stats.all[0]) {
       return null;
     } else {
-      friendAvatar = this.assignAvatar(score)      
+      friendAvatar = this.assignAvatar(score)    
+      userAvatar = this.assignAvatar(userScore)  
     }
 
     return (
       <div className="hover-bigger">
         <div className="container-list-item-md">
-          <Link className="container-col-1" to={{ pathname: '/new', state: {test: "test"}}} onClick={() => this.handleStorage(friendAvatar, friend, friendId)}>
+          <Link className="container-col-1" to={{ pathname: '/new'}} onClick={() => this.handleStorage(friendAvatar, friend, friendId, userAvatar)}>
               <ul className="container-list-row-center">
                 <li><img src={friendAvatar} height="70"></img></li>
                 <li>{friend}</li>

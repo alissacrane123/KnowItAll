@@ -75,10 +75,7 @@ class NavBar extends React.Component {
       <div className="container-col-1">
       <div className="navbar-container">
           <div className="container-list-row-l-r">
-              <Link to={'/'}>
-                {/* <img className="navbar-logo-img" height="60px" src="https://66.media.tumblr.com/c3713205799d45db82b3c7de42053888/tumblr_prk4e73csi1wyb2l8o1_640.png" alt="block letters KnowItAll"></img> */}
-              <h1 className="navbar-logo">KnowItAll</h1>
-              </Link>
+              <Link to={'/'}><h1 className="navbar-logo">KnowItAll</h1></Link>
               {this.getLinks()}
           </div>
         </div>

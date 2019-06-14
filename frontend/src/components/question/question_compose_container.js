@@ -7,20 +7,20 @@ import { fetchFriendByUsername } from '../../actions/friend_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
-  let assignAvatar;
+  // let assignAvatar;
 
-  if (ownProps.location.state !== undefined) {
-    assignAvatar = ownProps.location.state.assignAvatar;
-  } else {
-    assignAvatar = null;
-  }
+  // if (ownProps.location.state !== undefined) {
+  //   assignAvatar = ownProps.location.state.assignAvatar;
+  // } else {
+  //   assignAvatar = null;
+  // }
 
   return {
     currentUser: state.session.user,
     newQuestion: state.questions.new,
     results: state.results.all,
     users: state.users,
-    assignAvatar,
+    // assignAvatar,
     stats: state.stats
   };
 };
