@@ -51,6 +51,56 @@ router.get("/stats/user/:id", (req, res) => {
 });
 ````
 
+### SERP API
+User search entires are first processed to ensure options returned from the API call only relate to the intended question. The data returned from the axios call is then filtered to relevant information that will be rendered on the frontend.
+
+````javaScript
+
+router.get("/:searchQuery", (req, res) => {
+  const processedQuery = req.params.searchQuery.split(" ").join("+");
+  const queryToUse = processedQuery;
+
+    axios({
+      method: "get",
+      url: `https://serpapi.com/search.json?q=${
+        queryToUse}&location=United+States&hl=en&gl=us&google_domain=google.com&api_key={secretKey}`
+    })
+      .then(result => {
+       res.send(JSON.stringify(result.data.organic_results));
+      })
+      .catch(err => {
+       res.status(400).json(err);
+      });
+});
+````
+
+### Persisting Friend Data through localStorage
+Challenges must be attributed to two users. The currentUser data is bootstrapped and thus always available, friend data is set as a key in localStorage. This ensures the data persists until a new friend is challenged, even if the browser is refreshed or closed.
+
+````javaScript
+
+handleStorage(friendAvatar, friend, friendId) {
+  localStorage.setItem("friendAvatar", friendAvatar);
+  localStorage.setItem("friend", friend);
+ }
+
+render() {
+  return (
+    <div className="hover-bigger">
+      <div className="container-list-item-md">
+        <Link className="container-col-1" to={{ pathname: '/new'}} onClick={() => this.handleStorage(friendAvatar, friend, friendId)}>
+          <ul className="container-list-row-center">
+            <li><img src={friendAvatar} height="70"></img></li>
+            <li>{friend}</li>
+            <li>{score || "0"}%<p className="centered-text">correct</p></li>
+          </ul>
+        </Link>
+      </div>
+    </div>
+  )
+}
+````
+
 ## Future Features
 * Transition to React Native mobile application
 * Question Commenting
