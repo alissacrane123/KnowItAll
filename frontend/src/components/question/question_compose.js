@@ -16,10 +16,9 @@ class QuestionCompose extends React.Component {
       winner: '',
       questionSent: false,
       friendAvatar: '',
+      userAvatar: '',
       friend: ''
     }
-
-    let userAvatar;
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -83,7 +82,6 @@ class QuestionCompose extends React.Component {
     let answer2;
     this.setState({questionSent: true})
     let { createAnswer, poseQuestion } = this.props;
-    // let friendId = this.props.fetchFriendByUsername(this.state.friend)._id;
     poseQuestion(question)
       .then( 
         newQuestion => {
@@ -118,21 +116,8 @@ class QuestionCompose extends React.Component {
     }
   }
 
-  assignAvatar(score) {
-    if (score > 75) {
-      return "https://66.media.tumblr.com/a263296449a822e94dbd85e43daf2fce/tumblr_pspc1jZDky1wyb2l8o1_540.png"
-    } else if (score > 50) {
-      return "https://66.media.tumblr.com/b95a7055813bc8448637d9007674d5b4/tumblr_psqresCYwa1wyb2l8o3_540.png"
-    } else if (score > 25) {
-      return "https://66.media.tumblr.com/1c0def0a05d9e2dcfa8804026261780f/tumblr_psqresCYwa1wyb2l8o1_540.png"
-    } else {
-      return "https://66.media.tumblr.com/4ed22aa527fd985650829a9919100917/tumblr_psqresCYwa1wyb2l8o2_540.png"
-    }
-  }
-
   render() {
     let results;
-    let userAvatar;
 
     if(this.state.winner !== ""){
       return (
@@ -161,13 +146,6 @@ class QuestionCompose extends React.Component {
       )
     }
 
-    if (!this.props.stats.user[0]) {
-      return null;
-    } else {
-      let score = this.props.stats.user[0].AvgPercent;
-      userAvatar = this.assignAvatar(score)
-    }
-
     return (
       <div className="body-container">
           <form className="new-form-container" onSubmit={this.handleSubmit}>
@@ -187,7 +165,7 @@ class QuestionCompose extends React.Component {
                 <div className="question-media-player-left">
                   <h2>{this.props.currentUser.username}</h2>
                   <div className="question-img--wrapper">
-                    <img height="100" src={userAvatar}></img>
+                    <img height="100" src={this.state.userAvatar}></img>
                   </div>
                 </div>
                 <div className="question-media-player-right">
