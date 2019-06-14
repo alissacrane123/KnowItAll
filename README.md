@@ -78,16 +78,17 @@ Challenges must be attributed to two users. The currentUser can be identified th
 
 ````javaScript
 
-handleStorage(friendAvatar, friend, friendId) {
+handleStorage(friendAvatar, friend, friendId, userAvatar) {
   localStorage.setItem("friendAvatar", friendAvatar);
   localStorage.setItem("friend", friend);
+  localStorage.setItem("userAvatar", userAvatar);
  }
 
 render() {
   return (
     <div className="hover-bigger">
       <div className="container-list-item-md">
-        <Link className="container-col-1" to={{ pathname: '/new'}} onClick={() => this.handleStorage(friendAvatar, friend, friendId)}>
+        <Link className="container-col-1" to={{ pathname: '/new'}} onClick={() => this.handleStorage(friendAvatar, friend, friendId,  userAvatar)}>
           <ul className="container-list-row-center">
             <li><img src={friendAvatar} height="70"></img></li>
             <li>{friend}</li>
