@@ -3,6 +3,13 @@ KnowItAll is a simple, fun challenge app for friends to fact check each other's 
 
 [Live Demo](https://knowitall-app.herokuapp.com)
 
+## Features
+* Add Friends, View Feed of Questions + Answers
+* Record Question Challenge data between two users
+* Custom Avatar rendering based on Question Statistics
+* Question Statistics profile page
+* Create/read/delete functionality for Google Custom Search Query
+
 ## Technologies
 KnowItAll is a team-built web-application utilizing the MERN stack (MongoDB, Express, React, Node.js). 
 
@@ -12,18 +19,9 @@ Other technologies used:
 * Recharts visualization library
 * Axios
 
-## Features
-* Add Friends, View Feed of Questions + Answers
-* Record Question Challenge data between two users
-* Custom Avatar rendering based on Question Statistics
-* Question Statistics profile page
-* Create/read/delete functionality for Google Custom Search Query
-
-### HowItWorks | Question Feed | Add a Friend
+## Visuals
 ![](https://media.giphy.com/media/SUuSit3ghrrLZ2YSZj/giphy.gif)
-### Challenge A Friend
 ![](https://media.giphy.com/media/Kd03sqhAC2eSWFR1n7/giphy.gif)
-### Question Statistics
 ![](https://media.giphy.com/media/iEw5r61Y1vvcpGcMtm/giphy.gif)
 
 ## Technical Info
