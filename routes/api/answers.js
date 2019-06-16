@@ -65,6 +65,31 @@ router.get("/stats/user/:id", (req, res) => {
         .catch(err => res.status(404).json({ noAnswersFound: 'No answers found' }));
 });
 
+router.get("/stats/daily/user/:id", (req, res) => {
+    let myId = ObjectId.createFromHexString(req.params.id)
+    Answer.aggregate([
+        { $match: { author: myId } },
+        { 
+            $project: { newdate: { '$dateToString': { format: '%m-%d', date: '$date' } }, winner: 1 }
+        },
+        {
+            $group: {
+                _id: "$newdate",
+                amt: { $sum: 1 },
+                Right: { $sum: { $cond: [{ $eq: ["$winner", true] }, 1, 0] } },
+            }
+        },
+        {
+            $project: {
+                name: "$_id", amt: 1, Right: 1, Wrong: { $subtract: ["$amt", "$Right"] }, Score: { $toInt: { $multiply: [{ $divide: ["$Right", "$amt"] }, 100] } }
+            }
+        },
+        { $sort: { _id: 1 } }
+    ])
+        .then(answers => res.json(answers))
+        .catch(err => res.status(404).json({ noAnswersFound: 'No answers found' }));
+});
+
 
 router.post('/',
     // passport.authenticate('jwt', { session: false }),
