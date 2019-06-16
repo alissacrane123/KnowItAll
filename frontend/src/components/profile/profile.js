@@ -35,17 +35,19 @@ class Profile extends React.Component {
         return result;
       }, {});
 
-      yourQuestions = this.props.questions.user.slice(0,18).map(question => {
-        { color = (`${winnerQuestions[question._id]}` === 'true') ? '#FFE050' : '#FE518A' }
-        return (
-          <div key={question.id} style={{cursor: 'default'}} className="question-item-container" id={`${winnerQuestions[question._id]}`}>
-            <div className="question-body">
-              {question.body}
-            </div>
-            <p style={{ color: color}}>{(`${winnerQuestions[question._id]}` === 'true') ? 'Won' : 'Lost' }</p>
-          </div> 
-        )
-      });
+      if (this.props.questions.user) {
+        yourQuestions = this.props.questions.user.slice(0,18).map(question => {
+          { color = (`${winnerQuestions[question._id]}` === 'true') ? '#FFE050' : '#FE518A' }
+          return (
+            <div key={question.id} style={{cursor: 'default'}} className="question-item-container" id={`${winnerQuestions[question._id]}`}>
+              <div className="question-body">
+                {question.body}
+              </div>
+              <p style={{ color: color}}>{(`${winnerQuestions[question._id]}` === 'true') ? 'Won' : 'Lost' }</p>
+            </div> 
+          )
+        });
+      }
     }
 
     if (!this.props.stats.user[0] || !this.props.stats.userDaily[0] ) {
