@@ -51,7 +51,7 @@ router.get("/stats/user/:id", (req, res) => {
 ````
 
 ### Serp API
-User search entires are first processed to ensure options returned from the API call only relate to the intended question. The data returned from the axios call is then filtered to relevant information that will be rendered on the frontend.
+User search entries are first processed to ensure options returned from the API call relate only to the intended question. The data returned from the axios call is then filtered to information that will be rendered on the frontend.
 
 ````javaScript
 
